@@ -1,0 +1,394 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+:root {
+  --cafe: #5B2924;
+  --amarillo: #EEC170;
+  --claro: #F2EADC;
+  --naranja: #FF9F1C;
+  --pastel: #F2D2B3;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap; 
+  background-color: var(--pastel);   
+}
+
+
+
+.carrito{
+  width: 50px;
+  padding-left: 20px ;
+padding-right: 30px;
+}
+
+.menu{
+  margin-top: 20px;
+  border: 2px solid black;
+  text-align: center; 
+}
+h1{
+  color: var(--cafe);
+}
+span{
+  color: var(--naranja);
+}
+a{
+  padding-left: 10px;
+  color: var(--naranja);
+}
+.menu a {
+  text-decoration: none;
+  color: var(--cafe);
+}
+.img_container{
+  cursor: pointer;
+  transition: all .3s ease;
+  border: 6px solid white;
+}
+
+.linea_encabezado{
+padding-top: 20px;
+  border-bottom: 2px solid black;
+width: 100%;
+background-clip: border-box;
+background: var(--pastel)
+}
+
+
+
+.menu{
+  margin-top: 20px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.boton_img{
+  padding-bottom: 10px;
+}
+
+.boton_Guardar{
+  padding-top: 25px;
+
+  padding-bottom: 200px;
+}
+
+
+div{
+  box-sizing: border-box;
+}
+
+.img_logo{
+width: 200px;
+padding-left: 20px;
+padding-top: 20px;
+
+}
+
+.busqueda{
+flex-basis: 20%;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.logo{
+    flex-basis: 40%;
+}
+.links{
+    flex-basis: 40%;
+}
+.titulo{
+    padding-top: 60px;
+}
+
+.carrito{
+  width: 50px;
+  padding-left: 20px ;
+padding-right: 30px;
+}
+
+
+.menu a {
+  text-decoration: none;
+}
+
+.linea_encabezado{
+padding-top: 20px;
+border-bottom: 2px solid black;
+width: 100%;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -----------------END HEADER STYLE----------------------- */
+
+
+#tituloInicioSesion{
+    padding-left: 400px;
+    color: #5B2924;
+}
+
+p {
+    padding-right: 10px;
+}
+
+.inicioSesion {
+    display: flex;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: black;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: #5B2924;
+}
+
+.datosInicioSesion {
+    flex-basis: 50%;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    color: white;
+} 
+
+.nuevoCliente {
+  flex-basis: 50%;
+  padding: 30px 15px;
+  color: white;
+} 
+
+button {
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: gray;
+}
+
+input {
+    padding-right: 300px;
+  }
+
+/* -----------------END HEADER STYLE----------------------- */
+
+
+
+.headerCarrito {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 30px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #5B2924;
+    margin-bottom: 20px;
+}
+.headerCarrito h2 {
+    flex-basis: 60%;
+}
+.headerCarrito div {
+    flex-basis: 40%;
+}
+
+.detallesCarrito {
+    display: flex;
+}
+
+.detallesCarrito h2 {
+    flex-basis: 33%;
+}
+
+.productoCarrito{
+    display: flex;
+    border-bottom: 1px;
+
+}
+
+.regaloEliminar {
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-color: #5B2924;
+  margin-bottom: 20px;
+}
+
+.regaloEliminar form {
+  flex-basis: 50%;
+  text-align: left;
+  margin-top: 10px;
+}
+.regaloEliminar button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  margin-left: 430px;
+  margin-bottom: 20px;
+}
+
+.regaloEliminar button:hover {
+  background-color: grey;
+}
+
+.eliminar {
+  flex-basis: 50%;
+}
+
+eliminar button{
+  text-align: right;
+}
+.productoCarrito a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  color: black;
+}
+
+}
+
+    .detallesLibro {
+        flex-basis: 60%;
+        display: flex;
+    }
+    .imagenLibro {
+        height: 300px;
+    }
+
+    .libro {
+      display: flex;
+    }
+    .libro div {
+      float: right;
+      flex-basis: 50%;
+      text-align:center;
+    }
+
+    .detallesLibro p{
+        flex-basis: 50%;
+        text-align: left;
+    }
+
+    .libro {
+        flex-basis: 60%;
+    }
+
+
+    .precioCantidad {
+        flex-basis: 40%;
+        display: flex;
+    }
+    
+    .precioCantidad p {
+        flex-basis: 33%;
+    }
+
+    .precioCantidad div {
+        flex-basis: 33%;
+    }
+
+    #contadorLibros {
+      width: 3em;
+    }
+
+    .pagoTotal {
+      border-radius: 1px;
+      border-style: solid;
+      border-color: black;
+      margin-left: 400px;
+      margin-right: 400px;
+      background-color: #5B2924;
+      color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .pagoTotal h2 {
+      text-align: center;
+      border-bottom: black;
+      border-bottom-width: 2px;
+      border-bottom-style: dashed;
+      padding-bottom: 10px;
+
+    }
+
+    .subtotal {
+      display: flex;
+    }
+
+    .subtotal p {
+      flex-basis: 50%;
+    }
+
+    #price1 {
+      text-align: right;
+    }
+
+    .precioIVA {
+      display: flex;
+      border-bottom: black;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+    }
+
+    .precioIVA p {
+      flex-basis: 50%;
+    }
+
+    #price2 {
+      text-align: right;
+    }
+
+    .totalIVA {
+      display: flex;
+    }
+
+    .totalIVA p {
+      flex-basis: 50%;
+      font-weight: bolder;
+    }
+
+    #price3 {
+      text-align: right;
+    }
+
+    .continuarCompra {
+      background-color: black;
+      color: white;
+      margin-top: 30px;
+      padding: 10px;
+      border: none;
+      font-weight: bold;
+      text-align: center;
+      margin-left: 430px;
+      margin-bottom: 20px;
+    }
+
+    .continuarCompra:hover {
+      background-color: grey;
+    }
+
+    .puntos {
+      text-align: center;
+      padding-bottom: 20px;
+    }
