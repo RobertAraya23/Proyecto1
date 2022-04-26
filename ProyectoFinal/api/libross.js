@@ -33,7 +33,6 @@ router.post('/actualizar', function(req, res) {
 });
 
 router.post('/insertar', function(req, res) {
-  
   var libroNuevo = new libro({
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,

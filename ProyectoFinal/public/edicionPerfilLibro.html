@@ -146,6 +146,27 @@
 
     <script>
 
+
+        function selectedRowToInput()
+        {
+            var rIndex,table = docuent.getElementById("tablaLibro");
+           
+            for(var i = 0; i< table.rows.length; i++)
+            {
+                table.rows[i].onclick = function()
+                {
+                    rIndex = this.rowIndex;
+                    console.log(rIndex)
+                }
+            }
+        }
+
+        function selectedRowToInput()
+
+    function actualizar(){
+    
+}
+
     function tableSearch(){
         let input, filter, table, tr, td, txtValue;
         console.log("This is working")
@@ -180,9 +201,10 @@ function cargarTabla() {
             )
             .then (
                 function(json) {
-                for(var cont = 0;json.length > cont; cont++) {
+                for(var cont = 0; json.length > cont; cont++) {
                     
                     var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
+                   
                     document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
                 }
                 }
@@ -217,9 +239,14 @@ function cargarTabla() {
                 return response.json();
                 }
             ).then(
+
                 function(json){
+
+                    console.log("llegamos");
                 var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
-                document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+               
+                console.log(linea);
+             document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
             }
             )
         }
