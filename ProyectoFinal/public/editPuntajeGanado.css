@@ -1,0 +1,187 @@
+:root {
+  --cafe: #5B2924;
+  --amarillo: #EEC170;
+  --claro: #F2EADC;
+  --naranja: #FF9F1C;
+  --pastel: #F2D2B3;
+}
+.boton{
+  margin-left: 10px;
+}
+.body{
+  background-color: #F2D2B3;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--pastel);  
+}
+.container2{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--cafe);  
+}
+div{
+  box-sizing: border-box;
+}
+.img_logo{
+  width: 200px;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.busqueda{
+  flex-basis: 20%;
+}
+/* codigo para flechas de links del encabezado */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.logo{
+  flex-basis: 40%;
+}
+.links{
+  flex-basis: 40%;
+}
+.titulo{
+  padding-top: 60px;
+}
+.carrito{
+  width: 50px;
+  padding-left: 20px ;
+  padding-right: 20px;
+}
+.menu{
+  margin-top: 30px;
+  border: 2px solid black;
+  text-align: center; 
+}
+.menu a {
+  text-decoration: none;
+  color: var(--cafe);
+}
+.linea_encabezado{
+  text-decoration: underline;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+a{
+  color: var(--naranja);
+  text-decoration: none;
+}
+.color1{
+  color: var(--cafe);
+  margin-left: 10px;
+}
+h1{
+  color: var(--cafe);
+}
+span{
+  color: var(--naranja);
+}
+/*END HEADER*/
+
+.titulo_abajo{
+  text-align:center; 
+  padding:8px;
+}
+.container2{
+  width: 30%;
+}
+.container3{
+  width: 70%;
+}
+.container4{
+  width: 50%;
+  padding-left: 10rem;
+  padding-top: 120px;
+}
+
+.grid-layout{
+  background-color: #5B2924;
+  display: flex;
+  width: 100%;
+  height: 60%;
+  justify-content: space-around;
+  justify-content: flex-start;
+  margin: 10 auto;
+  padding: 20px;
+  margin-left: 1px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.titulo_perfil{
+  padding-left: 5px;
+  padding-top: 20px;
+  display: flex;
+}
+.titulo_perfil1{
+  padding-left: 5px;
+  padding-top: 5px;
+  display: flex;
+}
+.box {
+  border: 3px solid black;
+  background-image: url(http://media1.pravnikns.rs/2017/12/001-subtle-light-pattern-background-texture-vol5.jpg);
+  padding: 40px;
+  margin: 4px;
+  width: 450px;
+  height: 150px;
+  text-align: left;
+}
+.parrafo{
+  margin: 0;
+  padding: 0 1rem;
+  padding-bottom: 20px;
+}
+.box2 {
+  border: 3px solid black;
+  background-image: url(http://media1.pravnikns.rs/2017/12/001-subtle-light-pattern-background-texture-vol5.jpg);
+  padding: 40px;
+  margin: 4px;
+  width: 400px;
+  height: 200px;
+  text-align: left;
+}
+.parrafo2{
+  display: table-cell;
+  margin: 0;
+  padding: 0 1rem;
+}
+.box_direcciones {
+  border: 3px solid black;
+  background-image: url(http://media1.pravnikns.rs/2017/12/001-subtle-light-pattern-background-texture-vol5.jpg);
+  margin: 4px;
+  width: 660px;
+  height: 240px;
+  text-align: left;
+  
+}
+input {
+  padding-right: 150px;
+}
+.acomodo{
+  padding-top: 5px;
+  padding-right: 500px;
+}
+.contador{
+  padding-right: 10px;
+}
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:invalid:required {
+  background-image: linear(red);
+}
+
+input:valid {
+  border: 2px solid black;
+}

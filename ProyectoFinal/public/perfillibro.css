@@ -1,0 +1,308 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.info_libro h1{
+  color : white
+}
+:root {
+  --cafe: #5B2924;
+  --amarillo: #EEC170;
+  --claro: #F2EADC;
+  --naranja: #FF9F1C;
+  --pastel: #F2D2B3;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap; 
+  background-color: var(--pastel);   
+}
+
+.container2, .container3{
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--cafe);  
+}
+
+.container3{
+  padding-top: 20px;
+}
+
+
+.carrito{
+  width: 50px;
+  padding-left: 20px ;
+padding-right: 30px;
+}
+
+.menu{
+  margin-top: 20px;
+  border: 2px solid black;
+  text-align: center; 
+}
+h1{
+  color: var(--cafe);
+}
+span{
+  color: var(--naranja);
+}
+a{
+  padding-left: 10px;
+  color: var(--naranja);
+}
+.menu a {
+  text-decoration: none;
+  color: var(--cafe);
+}
+.img_container{
+  cursor: pointer;
+  transition: all .3s ease;
+  border: 6px solid black;
+}
+
+.linea_encabezado{
+padding-top: 20px;
+  border-bottom: 2px solid black;
+width: 100%;
+background-clip: border-box;
+background: var(--pastel)
+}
+
+.menu{
+  margin-top: 20px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.boton_img{
+  padding-bottom: 10px;
+}
+
+.boton_Guardar{
+  padding-top: 25px;
+
+  padding-bottom: 200px;
+}
+
+div{
+  box-sizing: border-box;
+}
+
+.img_logo{
+width: 200px;
+padding-left: 20px;
+padding-top: 20px;
+
+}
+
+.busqueda .opciones{
+flex-basis: 20%;
+}
+
+/* codigo para flechas de links del encabezado */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.logo{
+    flex-basis: 40%;
+}
+.links{
+    flex-basis: 40%;
+}
+.titulo{
+    padding-top: 60px;
+}
+
+.carrito{
+  width: 50px;
+  padding-left: 20px ;
+padding-right: 30px;
+}
+
+.menu{
+  margin-top: 20px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.menu a {
+  text-decoration: none;
+  
+}
+
+.linea_encabezado{
+padding-top: 20px;
+border-bottom: 2px solid black;
+width: 100%;
+}
+
+.portada{
+  flex-basis: 60%;
+  padding-top: 50px;
+  
+}
+
+.info_libro{
+  flex-basis: 40%;
+}
+
+.portada{
+  padding-left: 200px;
+  padding-top: 100px;
+
+}
+
+.img_libro{
+  margin-left: 60px;
+  border: white solid 2px
+}
+
+
+
+.calificacion{
+  flex-basis: 50%;
+}
+
+.premios{
+  flex-basis: 50%;
+}
+
+.premios h5{
+  margin: 0px;
+  padding-bottom: 5px;
+}
+
+
+/*Estrellas de calificación*/
+#form {
+  width: 300px;
+  margin: 0 auto;
+  height: 100px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: left;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.botonAñadir{
+  margin-right: 20px;
+  background-color: var(--pastel);
+  color: var(--cafe);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.botonAñadir:hover{
+  background-color:white;
+  color:black
+}
+
+.selectCantidadLibros{
+  position: relative;
+  
+}
+
+/*Select cantidad de libros a añadir:*/
+
+
+.box select {
+  background-color: var(--pastel);
+  color: var(--cafe);
+  padding: 12px;
+  width: 210px;
+  border: none;
+  font-size: 15px;
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  pointer-events: none;
+}
+
+
+.box select option {
+  padding: 30px;
+}
+
+
+
+.third {
+  border: none;
+  color: var(--cafe);
+  font-weight: bold;
+  box-shadow: 0 0 40px 40px var(--pastel) inset, 0 0 0 0 var(--pastel);
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  margin-right: 50px;
+  border-radius: 8px;
+}
+.third:hover {
+  box-shadow: 0 0 10px 0 var(--naranja) inset, 0 0 10px 4px var(--naranja);
+}
+h1{
+  font-family: 'Montserrat', sans-serif;
+}
+h3{
+  font-family: 'Montserrat', sans-serif;
+}
+h2{
+  font-family: 'Montserrat', sans-serif;
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;
+}

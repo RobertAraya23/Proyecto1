@@ -1,0 +1,199 @@
+<html>
+
+
+    <head>
+        <link rel="stylesheet" href="perfillibro.css">   
+        <title>Perfil del libro</title>   
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    </head>
+
+
+    <body>
+        
+        <div class="container">
+
+            <!--logo y nombre de empresa (izquirda arriba)-->
+            <div class="busqueda">
+
+                <img class="img_logo" src="img/logoNeo.png">
+
+            </div>
+            <div class="logo titulo">
+                <h1>El bazar de <span> las Sorpresas</span> </h1>
+            </div>
+
+            <!--busqueda, carrito, menu (derecha arriba)-->
+            <div class="links">
+                <p>
+                    <a href="home.html">Bienvenido al bazar de las sorpresas</a>
+                    <i class="arrow right"></i>
+                    <a href="registro.html">Registrarse</a>
+                    <i class="arrow right"></i>
+                    <a href="inicioSecion.html">Iniciar sesión</a>
+                </p>
+                
+                <div class="container" >
+                    <form>
+                        <input name="libroBuscar" id="libroBuscar" type="text" placeholder="Digite lo que desea buscar.."/>  
+        
+                        <button id="botonBuscar" onclick="cargarLibro()">Buscar</button>
+                        
+                    </form>
+                    <a href="carritoCompras.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="6" cy="19" r="2" />
+                            <circle cx="17" cy="19" r="2" />
+                            <path d="M17 17h-11v-14h-2" />
+                            <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                            <path d="M15 6h6m-3 -3v6" />
+                        </svg>
+                    </a>
+
+                    <a href="editarPerfil.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        </svg>
+                    </a>
+
+                    <form>
+                        <select name="contador">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </form>
+
+                </div>
+
+                <div class="menu">
+                    <p>
+                        <a href="catalogolibros.html">Catalogo libros</a>
+                        <a href="landingPageProducto.html">Nuestra empresa</a>
+                        <a href="landingPageEquipo.html">Neon Team</a>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="linea_encabezado"></div>
+        <!--END HEADER-->
+        
+    <!--cuerpo de la pagina-->
+        
+        <div class="container2">
+
+            <div class="portada">
+                <img src="img/quijote.jpg" id="imagen" class="img_libro">
+            <div class="container3">
+                
+                <div class="box" id="cantidadLibros">
+                    <select name="contador"  >
+                        <option value="">Cantidad</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <button type="submit" class="third">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info_libro">
+
+            <div>
+                <h1 id="titulo">Don quijote de la mancha</h1>
+                <h3>Autor: <a href="perfilAutor.html" id="nombreAutor">Miguel de cervantes saavedra</a></h3>
+                <h3>Código ISM: <span id="ism">9788441426764</span> </h3>
+                <h3>Editorial: <span id="editorial"></span></h3>
+                <h3>Reseña:</h3>
+                <p id="reseña">Este libro trata de un tal Alonso Quijano que es un hidalgo pobre de la Mancha, que de tanto leer novelas de caballería acaba volviéndose loco y creyendo ser un caballero andante, llamándose Don Quijote de la Mancha.</p> 
+            </div>
+            <div >
+
+                <h2>Premios en su honor:</h2>
+                <p id="premios">Premio Miguel de Cervantes, Premio Cervantes Gastronómico, Trofeo Cervantes </p>
+
+            </div>
+
+            <p>Fecha de publicación: <span id="fechaPublicacion"> 2011 </span> </p>
+            <p>Precio: <span id="precio"> ₡18,800 </span></p>
+
+            <p>Disponibilidad: <span id="disponibilidad"></span></p>
+            <p>Formato: <span id="formato"></span></p>
+            <p>Genero del Autor: <span id="genero"></span></p>
+        
+            <div class>
+                    <p>Calificar libro</p>
+                    <form>
+                        <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                            --><label for="radio1">★</label><!--
+                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                            --><label for="radio2">★</label><!--
+                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                            --><label for="radio3">★</label><!--
+                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                            --><label for="radio4">★</label><!--
+                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                            --><label for="radio5">★</label>
+                          </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function cargarLibro() {
+              var direccion = window.location.search;
+              var variables = new URLSearchParams(direccion);
+              console.log(variables)
+              var nombre = variables.get("nombre");
+        
+              var datos = {
+                nombreLibro: nombre
+              }
+              console.log("datos")
+        
+              fetch("http://localhost:8080/libros/buscar", {
+                method: 'POST',
+                body: JSON.stringify(datos),
+                headers: {'Content-Type': 'application/json'}
+              })
+                .then(
+                  function(response){
+                    return response.json();
+                  }
+                )
+                .then (
+                  function(json) {
+                    document.getElementById("titulo")= json.nombre
+                    document.getElementById("ism")= json.ism
+                    document.getElementById("editorial")= json.editorial
+                    document.getElementById("reseña")= json.resenna
+                    document.getElementById("premios")= json.premiosEnHonor
+                    document.getElementById("precio")= json.precio
+                    document.getElementById("disponibilidad")= json.disponibilidad
+                    document.getElementById("fechaPublicacion")= json.fechaPublicacion
+                    document.getElementById("Formato")= json.formato
+                    document.getElementById("nombreAutor")= json.idAutor
+                    document.getElementById("genero")= json.genero
+                    document.getElementById("imagen")= json.imagen
+                    document.getElementById("tablaEstudiantes").insertAdjacentHTML("beforeend", linea);
+                  }
+                ) 
+            }
+          </script>
+
+    </body>
+
+</html>
