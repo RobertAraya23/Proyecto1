@@ -1,0 +1,124 @@
+:root {
+    --cafe: #5B2924;
+    --amarillo: #EEC170;
+    --claro: #F2EADC;
+    --naranja: #FF9F1C;
+    --pastel: #F2D2B3;
+  }
+    .container{
+        display: flex;
+        flex-wrap: wrap; 
+        background-color: var(--pastel); 
+      }
+      .container2{
+        display: flex;
+        flex-wrap: wrap; 
+        background-color: var(--cafe);
+      }
+      
+      div{
+        box-sizing: border-box;
+      }
+      
+      .img_logo{
+      width: 200px;
+      margin-left: 20px;
+      margin-top: 20px;
+      
+      }
+      
+      .busqueda{
+      flex-basis: 20%;
+      }
+      
+      /* codigo para flechas de links del encabezado */
+      .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+      }
+      
+      .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      .logo{
+          flex-basis: 40%;
+      }
+      .links{
+          flex-basis: 40%;
+          
+      }
+    .color{
+      color: white;
+    }
+    .color1{
+      color: var(--cafe);
+    }
+      .titulo{
+          padding-top: 60px;
+      }
+      
+      .carrito{
+        width: 50px;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+      
+    .menu{
+        margin-top: 30px;
+        border: 2px solid black;
+        text-align: center; 
+      }
+      
+     
+      .linea_encabezado{
+        text-decoration: underline;
+        
+        border-bottom: 2px solid black;
+        width: 100%;
+      }
+    a{
+       
+        color: var(--naranja);
+        text-decoration: none;
+    }
+    .libros{
+        padding-top: 20px;
+        text-align: center;
+    }
+    .espacio{
+        padding-top: 30px;
+    }
+    .capa2{
+        flex-basis: 25%;
+    }
+    .capa3{
+        flex-basis: 50%;
+    }
+    .boton3{
+        border: 2px solid black;
+        margin-left: 8px;
+        width: 150px;
+      text-align: center;
+      margin-top: 80px; 
+      border-radius: 30px;
+     background-color: var(--cafe);
+     color: var(--claro);
+    }
+    h1{
+      color: var(--cafe);
+      font-family:'Montserrat', sans-serif;
+    }
+    
+    body{
+      background-color: var(--cafe);
+    }
+    span{
+      color:var(--naranja);
+    }
+    p{
+      font-family: Arial, Helvetica, sans-serif;
+      color:#ffffff;
+    }

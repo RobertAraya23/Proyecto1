@@ -1,0 +1,140 @@
+:root {
+    --cafe: #5B2924;
+    --amarillo: #EEC170;
+    --claro: #F2EADC;
+    --naranja: #FF9F1C;
+    --pastel: #F2D2B3;
+  }
+  
+  
+  .container{
+      display: flex;
+      flex-wrap: wrap;  
+      background-color: var(--pastel);
+    }
+    .container2{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    div{
+      box-sizing: border-box;
+    }
+    
+    .img_logo{
+    width: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+    
+    }
+    
+    .busqueda{
+    flex-basis: 20%;
+    }
+    
+    /* codigo para flechas de links del encabezado */
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+    
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+    .logo{
+        flex-basis: 40%;
+    }
+    .links{
+        flex-basis: 40%;
+    }
+    .titulo{
+        padding-top: 15rem;
+    }
+    
+    .carrito{
+      width: 50px;
+      padding-left: 20px ;
+      padding-right: 30px;
+    }
+    
+   .menu{
+      margin-top: 30px;
+      border: 2px solid black;
+      text-align: center; 
+      margin-left: 10px;
+    }
+   .menu a{
+  
+     margin-left: 10px;
+   }
+    
+   .color1{
+     color: var(--cafe);
+   }
+    
+    .linea_encabezado{
+      text-decoration: underline;
+     
+      border-bottom: 2px solid black;
+     
+    }
+    .espacio{
+      padding-top: 30px;
+      color: var(--claro);
+     
+  }
+  .titulo{
+      padding-left: 30px;
+      padding-top: 30px;
+  }
+  .linea{
+      text-decoration: underline;
+      padding-top: 20px;
+      border-bottom: 2px solid black;
+      margin-left: 30px;
+      margin-right: 150px;
+   
+  }
+  .capa3{
+      flex-basis: 50%;
+  }
+  .spacing{
+      padding-left: 30px;
+      color: var(--cafe);
+  }
+  .stilo{
+      margin-left: 30px;
+  }
+  .centrado{
+      text-align: center;
+  }
+  h1{
+    color: var(--naranja);
+    font-family: 'Montserrat', sans-serif;
+  }
+  span{
+    color: var(--cafe);
+  }
+  a{
+    color: var(--naranja);
+    text-decoration: none;
+  }
+  body{
+    background-color: var(--cafe);
+  }
+  .color{
+  color: var(--claro);
+  }
+  .color2{
+    color: #ffffff;
+  }
+  
+  .rojo{
+    border: 2px solid red ;
+  }
+  p{
+    font-family: Arial, Helvetica, sans-serif;
+  }

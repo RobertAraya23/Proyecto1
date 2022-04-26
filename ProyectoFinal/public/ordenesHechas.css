@@ -1,0 +1,125 @@
+:root {
+    --cafe: #5B2924;
+    --amarillo: #EEC170;
+    --claro: #F2EADC;
+    --naranja: #FF9F1C;
+    --pastel: #F2D2B3;
+  }
+  .container{
+      display: flex;
+      flex-wrap: wrap; 
+      background-color: var(--pastel); 
+    }
+    
+    div{
+      box-sizing: border-box;
+    }
+    
+    .img_logo{
+    width: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+    
+    }
+    
+    .busqueda{
+    flex-basis: 20%;
+    }
+    
+    /* codigo para flechas de links del encabezado */
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+    
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+    .logo{
+        flex-basis: 40%;
+    }
+    .links{
+        flex-basis: 40%;
+    }
+    .titulo{
+      
+        color: var(--naranja);
+        
+    }
+    
+    .carrito{
+      width: 50px;
+      padding-left: 20px ;
+      padding-right: 20px;
+    }
+    
+   .menu{
+      margin-top: 30px;
+      border: 2px solid black;
+      text-align: center; 
+    }
+    
+    .linea_encabezado{
+      text-decoration: underline;
+     
+      border-bottom: 2px solid black;
+      width: 100%;
+    }
+    h1{
+      color: var(--naranja);
+     
+      padding-right: 10px;
+      padding-top: 50px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    span{
+      color: var(--cafe);
+    }
+  a{
+      padding-left: 10px;
+      color: var(--naranja);
+      text-decoration: none;
+  }
+  .libros{
+      padding-top: 20px;
+      text-align: center;
+  }
+  .titulo1{
+      padding-left: 80px;
+      font-size: 25px;
+  }
+  .espacios{
+      word-spacing: 250px;
+      padding-left: 50px;
+      padding-top: 40px;
+  }
+  .linea{
+      text-decoration: underline;
+      border-bottom: 2px solid black;
+    }
+    
+    .capa2{
+        flex-basis: 25%;
+    }
+    
+    .espacio{
+        padding-top: 30px;
+    }
+    
+    .color{
+      background-color: var(--cafe);
+      color: #ffffff;
+    }
+    .color1{
+      color: var(--cafe);
+    }
+    body{
+      background-color: var(--cafe);
+    }
+    
+    
+      
+     
