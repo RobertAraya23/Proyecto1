@@ -14,6 +14,8 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use('/libros', require('./api/libross.js'));
 app.use('/perfilLibro', require('./api/libros.js'));
 app.use('/editarPerfil', require('./api/editars.js'));
 

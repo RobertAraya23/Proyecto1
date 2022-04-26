@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reportesYPuntos.css">
-    <title>reportesYPuntos</title>
-
+    <title>Reportes de la aplicación</title>
+   
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <!--logo y nombre de empresa (izquirda arriba)-->
         <div class="busqueda">
 
-            <img class="img_logo" src="img/logoNeo.jpg">
+            <img class="img_logo" src="logoNeo.jpeg">
 
         </div>
         <div class="logo titulo">
@@ -29,32 +29,23 @@
         <!--busqueda, carrito, menu (derecha arriba)-->
         <div class="links">
             <p>
-                <a href="home.html">Bienvenido al Bazar de las Sorpresas</a>
+                <a href="home.html">bienvenido al bazar de las sorpresas</a>
                 <i class="arrow right"></i>
-                <a href="registro.html">Registrarse</a>
+                <a href="registro.html">registrarse</a>
                 <i class="arrow right"></i>
-                <a href="inicioSecion.html">Iniciar sesión</a>
+                <a href="inicioSecion.html">Iniciar sesion</a>
             </p>
-
-            <div class="container">
-
-                <input type="text" placeholder="Digite lo que desea buscar..">
+            
+            <div class="container" >
+                
+                <input type="text" placeholder="Digite lo que desea buscar..">  
                 <a href="resultadoBusqueda.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="10" cy="10" r="7" />
-                        <line x1="21" y1="21" x2="15" y2="15" />
-                    </svg>
+                    <button>Buscar</button>
                 </a>
 
                 <a href="carritoCompras.html">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="6" cy="19" r="2" />
                         <circle cx="17" cy="19" r="2" />
                         <path d="M17 17h-11v-14h-2" />
@@ -64,23 +55,33 @@
                 </a>
 
                 <a href="editarPerfil.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="12" cy="7" r="4" />
                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                    </svg>
+                      </svg>
                 </a>
+
+                <form>
+                    <select name="contador">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                </form>
+
+
+                
+
 
             </div>
 
             <div class="menu">
                 <p>
-                    <a class="color" href="catalogolibros.html">Catálogo libros</a>
-                    <a class="color" href="landingPageProducto.html">Nuestra empresa</a>
-                    <a class="color" href="landingPageEquipo.html">Neon Team</a>
-
+                    <a href="catalogolibros.html">Catalogo libros</a>
+                    <a href="landingPageProducto.html">Nuestra empresa</a>
+                    <a href="landingPageEquipo.html">Neon Team</a>
+                    
                 </p>
             </div>
 
@@ -90,96 +91,76 @@
 
     </div>
     <div class="linea_encabezado"></div>
-    <!--cuerpo de la pagina-->
+<!--cuerpo de la pagina-->
 
     <div class="container">
         <div class="capa">
-            <h2>Cuenta <span>Administrativa</span></h2>
+            <h2>Cuenta <span> Administrativa </span></h2>
         </div>
         <div class="capa">
             <h2>Reportes <span> de Mes </span></h2>
 
             <p>Fecha de reporte</p>
-            <input type="date">
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-search" width="28"
-                    height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697" />
-                    <path d="M18 12v-5a2 2 0 0 0 -2 -2h-2" />
-                    <rect x="8" y="3" width="6" height="4" rx="2" />
-                    <path d="M8 11h4" />
-                    <path d="M8 15h3" />
-                    <circle cx="16.5" cy="17.5" r="2.5" />
-                    <path d="M18.5 19.5l2.5 2.5" />
-                </svg>
-
+            <input type="month">
+            <input type="Solicitar Reporte">
         </div>
 
     </div>
-
     <div class="container">
-        <div class="logo">
-            <div class="box">
-                <p class="parrafo">
-                    <a class="color" href="ordenesHechas.html">Ver pedidos</a><br>
-                    <a class="color" href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente
-                        Modificaciones</a><br>
-                    <a class="color" href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
-                    <a class="color" href="reportesYPuntos.html">Reportes</a><br>
-
-                </p>
+            <div class="logo">
+                <div class="box">
+                    <p class="parrafo">
+                        <a href="ordenesHechas.html">Ver pedidos</a><br>
+                        <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+                        <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+                        <a href="reportesYPuntos.html">Reportes</a><br>
+                    </p>
+                </div> 
+            </div>  
+            <div class="logo">
+                 
+                <h3>Lo que<span> se hizo</span></h3>
+                <div class="box1">
+                    <p class="parrafo">
+                        <p>Mes del reporte: Febrero</p>
+                        <p>Todo lo que se hizo </p>
+                        <p>Monto de ventas totales del mes: 80 mil colones</p>
+                        <p>Cantidad de libros vendidos: 25 libros</p>
+                            
+                    </p>
+                </div>
+                        
+                        
+              
             </div>
-        </div>
-
-
-
-        <div class="logo">
-
-            <h3>Lo que<span> se Hizo</span></h3>
-            <div class="box1">
-                <p class="parrafo">
-                <p>Mes del reporte: Febrero</p>
-                <p>Todo lo que se hizo </p>
-                <p>Monto de ventas totales del mes: 80 mil colones</p>
-                <p>Cantidad de libros vendidos: 25 libros</p>
-
-                </p>
+            <div class="logo">
+                <h3>Puntos <span> Usados</span></h3>
+             <div class="box1">
+                 <p class="parrafo">
+                     
+                        <p>
+                            Cantidad de puntos usados: 25000 mil puntos 
+                            en compras
+                        </p>
+                    </p>
+                 
+                </div>
+                        
             </div>
-
-
-
-        </div>
-        <div class="logo">
-            <h3>Puntos <span> Usados</span></h3>
-            <div class="box1">
-                <p class="parrafo">
-
-                <p>
-                    Cantidad de puntos usados: 25000 mil puntos
-                    en compras
-                </p>
-                </p>
-
-            </div>
-
-        </div>
-
+                    
     </div>
     <div class="box2">
         <p class="parrafo">
-            <a class="color" href="ordeneshechas.html">Ordenes hechas</a><br>
-            <a class="color" href="editOrdenes.html">Editar ordenes </a><br>
-            <a class="color" href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
-            <a class="color" href="edicionPerfilLibro.html">Edición de libros </a><br>
-            <a class="color" href="edicionPerfilAutor.html">Edición de perfil de Autores</a><br>
-            <a class="color" href="sociosComerciales.html">Agregar Socio Comercial</a><br>
-          
+            <a href="ordeneshechas.html">Ordenes hechas</a><br>
+            <a href="editOrdenes.html">Editar ordenes </a><br>
+            <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+            <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
+            <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
         </p>
-    </div>
-
+    </div>       
+          
 
 </body>
 
 </html>
+

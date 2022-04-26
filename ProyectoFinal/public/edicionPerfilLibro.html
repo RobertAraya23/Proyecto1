@@ -102,6 +102,10 @@
 </div>
 
 
+<div class="searchBar">
+    <h1>Busqueda por nombre:</h1>
+    <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por nombre">
+</div>
 
 <div class="backgroundAbajo">
 <div class="tabla">
@@ -147,19 +151,33 @@
     </div>
 </div>
 
-<div class="subEncabezado">
-    <h1>Buscar libros</h1>
-</div>
-
-
-    <div class="searchBar">
-<input type="text" name="Buscar" id="searchBar" placeholder="Buscar un libro por su nombre">
-</div>
-
-
 
 
     <script>
+
+    function tableSearch(){
+        let input, filter, table, tr, td, txtValue;
+        console.log("This is working")
+        //inicializando variables
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tablaLibro");
+        tr = table.getElementsByTagName("tr")
+
+        for(let i = 0; i<tr.length; i++){
+            td=tr[i].getElementsByTagName("td")[0];
+            if(td){
+                txtValue= td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                }
+                else{
+                    tr[i].style.display = "none"
+                }
+            }
+
+        }
+    }
 
 
 function cargarTabla() {
