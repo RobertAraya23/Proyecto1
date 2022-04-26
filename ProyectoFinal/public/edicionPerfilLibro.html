@@ -11,6 +11,7 @@
 </head>
 
 
+
 <body onload="cargarTabla()">
 
     <div class="container">
@@ -99,18 +100,18 @@
 <div class="tabla">
     <table border="1" id="tablaLibro" >
             <tr>
-            <td>Nombre              </td>
-            <td>Disponible</td>
-            <td>Fecha de publicacion</td>
-            <td>Formato</td>
-            <td>Genero</td>
-            <td>Precio</td>
-            <td>Reseña</td>
-            <td>Imagen</td>
-            <td>Ism</td>
-            <td>Editorial</td>
-            <td>Premios en honor</td>
-            <td>id autor</td>
+                <td>Nombre</td>
+                <td>Disponible</td>
+                <td>Fecha de publicacion</td>
+                <td>Formato</td>
+                <td>Genero</td>
+                <td>Precio</td>
+                <td>Reseña</td>
+                <td>Imagen</td>
+                <td>Ism</td>
+                <td>Editorial</td>
+                <td>Premios en honor</td>
+                <td>id autor</td>
             </tr>
         </table>
         <br/>
@@ -135,6 +136,8 @@
         <input type="text" id="idAutor" placeholder="Id Autor" />
         
         <button type="button"  onclick="insertarLibro()">Enviar</button>
+        <button type="button"  onclick="insertarLibro()">Editar</button>
+        <button type="button"  onclick="insertarLibro()">Eliminar</button>
         </form>
     </div>
 </div>
@@ -202,6 +205,7 @@ function cargarTabla() {
             idAutor: document.getElementById("idAutor").value
             }
             
+
             console.log(datos)
 
             fetch("http://localhost:8080/libros/insertar", {
@@ -214,12 +218,14 @@ function cargarTabla() {
                 }
             ).then(
                 function(json){
-              var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
+                var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
                 document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
             }
             )
         }
 
+
+            //validaciones
         var precio = document.getElementById("precio")
         var tituloLibro = document.getElementById("titulo")
         var nombreAutor = document.getElementById("autor")
