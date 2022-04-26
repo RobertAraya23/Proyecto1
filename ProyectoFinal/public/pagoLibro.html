@@ -1,0 +1,222 @@
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="metodosDePago.css">   
+    <title>Metodos de pago</title>   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!--logo y nombre de empresa (izquirda arriba)-->
+        <div class="busqueda">
+
+            <img class="img_logo" src="logoNeo.jpeg">
+
+        </div>
+        <div class="logo titulo">
+
+            <h1>El bazar de <span> las Sorpresas</span> </h1>
+        </div>
+
+
+
+        <!--busqueda, carrito, menu (derecha arriba)-->
+        <div class="links">
+            <p>
+                <a href="home.html">bienvenido al bazar de las sorpresas</a>
+                <i class="arrow right"></i>
+                <a href="registro.html">registrarse</a>
+                <i class="arrow right"></i>
+                <a href="inicioSecion.html">Iniciar sesion</a>
+            </p>
+            
+            <div class="container" >
+                
+                <input type="text" placeholder="Digite lo que desea buscar..">  
+                <a href="resultadoBusqueda.html">
+                    <button>Buscar</button>
+                </a>
+
+                <a href="carritoCompras.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                        <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                </a>
+
+                <a href="editarPerfil.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                      </svg>
+                </a>
+
+                <form>
+                    <select name="contador">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                </form>
+
+
+                
+
+
+            </div>
+
+            <div class="menu">
+                <p>
+                    <a href="catalogolibros.html">Catalogo libros</a>
+                    <a href="landingPageProducto.html">Nuestra empresa</a>
+                    <a href="landingPageEquipo.html">Neon Team</a>
+                    
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="linea_encabezado"></div>
+<!--cuerpo de la pagina-->
+    <!--END HEADER-->
+    
+    <!--cuerpo de la pagina-->
+        
+    <!--Menu Izquierda-->
+    
+    <!--Inicio despues del Header-->
+    <!--Parte de la derecha (Mi Perfil)-->
+
+
+    <div class="grid-layout">
+      <form action="">
+        <div>
+            <h1 class="titulo_abajo">Metodos de pago</h1>
+        </div>
+
+        <div class="linea_encabezado"></div>
+
+        <h2 class="titulo_perfil">Mi Perfil</h2>
+        <div class="container2">
+                <div class="box">
+                    <p class="parrafo">
+                        <a href="reportesYPuntos.html"> > Mi cuenta </a><br>
+                        <a href="ordenesHechas.html"> > Mis Pedidos</a><br>
+                        <a href="solicitarClienteFrecuente.html"> > Tarjeta Cliente Frecuente </a><br>
+                        <a href="pagoLibro.html"> > Metodos de Pago </a><br>
+                        <a href="ordeneshechas.html"> > Ordenes hechas</a><br>
+                        <a href="editOrdenes.html"> > Editar ordenes </a><br>
+                        <a href="descuentosIva.html"> > Porcentaje de descuento y el iva </a><br>
+                        <a href="edicionPerfilLibro.html"> > Edicion de libros </a><br>
+                        <a href="edicionPerfilAutor.html"> > Edicion de perfil de Autores</a><br>
+                        
+                    </p>
+                </div>
+
+                <div  class="containerContenido">
+
+                    <div class="contenedorPagos">
+
+                   
+
+                    <div class="metodoDePago">
+                        <h2>Visa</h2>
+                        <h2 class="tituloMetodosPago">Estado actual: <span class="spanActivado" id="estadoVisa">Activado</span> </h2>
+                        <h4>Cambiar estado Actual:</h4>
+                            <select name="contador" id="selectVisa" onchange="actualizacion ()">
+                                <option >--cambiar estado actual--</option>
+                                <option >Activado</option>
+                                <option >Desactivado</option>
+                            </select>
+                        
+
+                    </div>
+
+
+                    <div class="metodoDePago">
+                        <h2>Mastercard</h2>
+                        <h2 class="tituloMetodosPago">Estado actual: <span class="spanActivado" id="estadoMastercard">Activado</span> </h2>
+                        <h4>Cambiar estado Actual:</h4>
+                            <select name="contador" id="selectMastercard" onchange="actualizacion ()">
+                                <option >--cambiar estado actual--</option>
+                                <option >Activado</option>
+                                <option >Desactivado</option>
+                            </select>
+                        
+
+                    </div>
+
+                </div>
+          
+
+                <div  class="containerConteni2">
+
+                    <div class="contenedorPagos">
+
+                   
+
+                    <div class="metodoDePago">
+                        <h2>SINPE MOBIL</h2>
+                        <h2 class="tituloMetodosPago">Estado actual: <span class="spanActivado" id="estadoSinpe" >Activado </span> </h2>
+                        <h4>Cambiar estado Actual:</h4>
+                            <select name="contador" id="sinpe" onchange="actualizacion()">
+                                <option >--cambiar estado actual--</option>
+                                <option>Activado</option>
+                                <option>Desactivado</option>
+                            </select>
+                       
+
+                    </div>
+
+
+                    <div class="metodoDePago">
+                        <h2>Transferencias bancarias
+                        </h2>
+                        <h2 class="tituloMetodosPago">Estado actual: <span class="spanActivado" id="estadoTransferencia" >Activado </span> </h2>
+                        <h4>Cambiar estado Actual:</h4>
+                            <select name="contador" id="selectTransferencia" onchange="actualizacion()">
+                                <option >--cambiar estado actual--</option>
+                                <option>Activado</option>
+                                <option>Desactivado</option>
+                            </select>
+                       
+
+                    </div>
+
+                </div>
+        
+                
+            </div> 
+        </div>
+    </form> 
+    </div>
+
+    <div class="guardarCambios"> 
+
+        <button type="submit" class="button" onclick="actualizacion(), validarSeleccion()" >
+            <h3>Guardar Cambios</h3>
+        </button>
+    
+    </div>
+
+
+<script src="pagoLibro.js" ></script>
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,242 @@
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="editPerfilAutor.css">
+    <title>Editar perfil autor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+
+<body onload="cargarTabla()">
+
+    <div class="container">
+
+        <!--logo y nombre de empresa (izquirda arriba)-->
+        <div class="busqueda">
+
+            <img class="img_logo" src="logoNeo.jpeg">
+
+        </div>
+        <div class="logo titulo">
+
+            <h1>El bazar de <span> las Sorpresas</span> </h1>
+        </div>
+
+
+
+        <!--busqueda, carrito, menu (derecha arriba)-->
+        <div class="links">
+            <p>
+                <a href="home.html">bienvenido al bazar de las sorpresas</a>
+                <i class="arrow right"></i>
+                <a href="registro.html">registrarse</a>
+                <i class="arrow right"></i>
+                <a href="inicioSesion.html">Iniciar sesion</a>
+            </p>
+            
+            <div class="container" >
+                
+                <input type="text" placeholder="Digite lo que desea buscar..">  
+                <a href="resultadoBusqueda.html">
+                    <button>Buscar</button>
+                </a>
+
+                <a href="carritoCompras.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                        <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                </a>
+
+                <a href="editarPerfil.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                      </svg>
+                </a>
+
+                <form>
+                    <select name="contador">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                </form>
+
+
+                
+
+
+            </div>
+
+            <div class="menu">
+                <p>
+                    <a href="catalogolibros.html">Catalogo libros</a>
+                    <a href="landingPageProducto.html">Nuestra empresa</a>
+                    <a href="landingPageEquipo.html">Neon Team</a>
+                    
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="linea_encabezado"></div>
+
+<!--cuerpo de la pagina-->
+    
+
+                <!--Foto del autor-->
+    <div class="container2">
+
+        <div class="img_Autor">
+            <div class="boton_img">
+                <button>Cargar foto de autor</button>
+            </div>
+            <img src="cervantes.jpg" class="img_container" >
+        </div>
+
+                <!--Datos a editar del autor-->
+
+        <div class="campos_Editar">
+            
+
+            <table border="1" id="tablaEstudiantes">
+                <tr>
+                    <td>id</td>
+                  <td>Nombre del autor</td>
+                  <td>Lista de libros publicados</td>
+                  <td>Premios del autor</td>
+                  <td>Pais de nacimiento</td>
+                  <td>Fecha de nacimiento</td>
+                  <td>Genero del autor</td>
+                  <td>Fecha de defuncion</td>
+                </tr>
+              </table>
+              <br/>
+              <form>
+                <input type="text" id="nombre" placeholder="Nombre" />
+                <input type="text" id="listaLibrosPublicados" placeholder="Libros publicados" />
+                <input type="text" id="premios" placeholder="Premios del autor" />
+                <input type="text" id="paisNacimiento" placeholder="Pais de nacimiento" />
+                <input type="text" id="fechaNacimiento" placeholder="Fecha de nacimiento" />
+                <input type="text" id="generoAutor" placeholder="Genero del autor" />
+                <input type="text" id="fechaDefuncion" placeholder="Fecha de defuncion" />
+
+                <button type="button" onclick="insertarAutor()">Enviar</button>
+              </form>
+       
+        </div>
+        
+
+    </div>
+
+
+    <script>
+
+        var nombreAutor = document.getElementById("nombreAutor")
+        var libros = document.getElementById("libros")
+        var premios = document.getElementById("premios")
+        var pais = document.getElementById("pais")
+        var fechaNacimiento = document.getElementById("fechaNacimiento")
+        var genero = document.getElementById("genero")
+        var fechaDefuncion = document.getElementById("defuncion")
+
+        function validar(){
+
+            
+            if(nombreAutor.value =="" || nombreAutor.value.includes("!") || nombreAutor.value.includes("#") || nombreAutor.value.includes("$") || nombreAutor.value.includes("%") || nombreAutor.value.includes("&") || nombreAutor.value.includes("/") || nombreAutor.value.includes("(") || nombreAutor.value.includes(")")|| nombreAutor.value.includes("=")|| nombreAutor.value.includes("?")|| nombreAutor.value.includes("¿")){
+            alert("Error: Ingrese un nombre de autor válido, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
+        
+            return false
+        }
+
+        if( libros.value == ""){
+            alert("Error: Ingrese el nombre de los libros publicados por el autor")
+            
+            return false
+        } 
+
+        if( premios.value == ""){
+            alert("Error: Ingrese los premios ganados por el autor")
+            
+            return false
+        } 
+
+        if(pais.value =="" || pais.value.includes("!") || pais.value.includes("#") || pais.value.includes("$") || pais.value.includes("%") || pais.value.includes("&") || pais.value.includes("/") || pais.value.includes("(") || pais.value.includes(")")|| pais.value.includes("=")|| pais.value.includes("?")|| pais.value.includes("¿")){
+            alert("Error: Ingrese el nombre del país del autor, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
+        
+            return false
+        }
+
+        if( fechaNacimiento.value == ""){
+            alert("Error: Ingrese una fecha de nacimiento para el autor")
+            return false
+        }
+
+        if( genero.value == "vacía"){
+            alert("Error: Seleccione el genero del autor")
+            return false
+        }
+
+        alert("Los datos ingresados se han guardado exitosamente") }
+
+
+
+        function cargarTabla() {
+        fetch("autores/obtenerAutores")
+            .then(
+                function(response){
+                return response.json();
+                }
+            )
+            .then (
+                function(json) {
+                for(var cont = 0;json.length > cont; cont++) {
+                    var linea = "<tr><td>"+json[cont]._id+"</td><td>"+json[cont].nombre+"</td><td>"+json[cont].carrera+"</td><td>"+json[cont].edad+"</td><td>"+json[cont]._id+"</td><td><a href='perfil.html?id="+json[cont]._id+"'>VER</a></td></tr>";
+                    document.getElementById("tablaEstudiantes").insertAdjacentHTML("beforeend", linea);
+                }
+                }
+            ) 
+        }
+        
+        function insertarAutor() {
+            var datos = {
+            nombre: document.getElementById("nombre").value,
+            carrera: document.getElementById("carrera").value,
+            edad: document.getElementById("edad").value
+            }
+            
+            fetch("http://localhost:8080/estudiantes/insertar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            })
+            .then(
+                function(response){
+                return response.json();
+                }
+            )
+            .then(
+                function(json){
+                var linea = "<tr><td>"+json._id+"</td><td>"+json.nombre+"</td><td>"+json.carrera+"</td><td>"+json.edad+"</td></tr>";
+                document.getElementById("tablaEstudiantes").insertAdjacentHTML("beforeend", linea);
+                }
+            )
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>
