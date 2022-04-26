@@ -196,32 +196,32 @@ input {
 
 
 .headerCarrito {
-    display: flex;
-    padding-left: 50px;
-    padding-right: 30px;
-    border-bottom: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: #5B2924;
-    margin-bottom: 20px;
+  display: flex;
+  padding-left: 50px;
+  padding-right: 30px;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #5B2924;
+  margin-bottom: 20px;
 }
 .headerCarrito h2 {
-    flex-basis: 60%;
+  flex-basis: 60%;
 }
 .headerCarrito div {
-    flex-basis: 40%;
+  flex-basis: 40%;
 }
 
 .detallesCarrito {
-    display: flex;
+  display: flex;
 }
 
 .detallesCarrito h2 {
-    flex-basis: 33%;
+  flex-basis: 33%;
 }
 
 .productoCarrito{
-    display: flex;
-    border-bottom: 1px;
+  display: flex;
+  border-bottom: 1px;
 
 }
 
@@ -265,130 +265,130 @@ eliminar button{
   color: black;
 }
 
+
+
+.detallesLibro {
+    flex-basis: 60%;
+    display: flex;
+}
+.imagenLibro {
+    height: 300px;
 }
 
-    .detallesLibro {
-        flex-basis: 60%;
-        display: flex;
-    }
-    .imagenLibro {
-        height: 300px;
-    }
+.libro {
+  display: flex;
+}
+.libro div {
+  float: right;
+  flex-basis: 50%;
+  text-align:center;
+}
 
-    .libro {
-      display: flex;
-    }
-    .libro div {
-      float: right;
-      flex-basis: 50%;
-      text-align:center;
-    }
+.detallesLibro p{
+    flex-basis: 50%;
+    text-align: left;
+}
 
-    .detallesLibro p{
-        flex-basis: 50%;
-        text-align: left;
-    }
-
-    .libro {
-        flex-basis: 60%;
-    }
+.libro {
+    flex-basis: 60%;
+}
 
 
-    .precioCantidad {
-        flex-basis: 40%;
-        display: flex;
-    }
-    
-    .precioCantidad p {
-        flex-basis: 33%;
-    }
+.precioCantidad {
+    flex-basis: 40%;
+    display: flex;
+}
 
-    .precioCantidad div {
-        flex-basis: 33%;
-    }
+.precioCantidad p {
+    flex-basis: 33%;
+}
 
-    #contadorLibros {
-      width: 3em;
-    }
+.precioCantidad div {
+    flex-basis: 33%;
+}
 
-    .pagoTotal {
-      border-radius: 1px;
-      border-style: solid;
-      border-color: black;
-      margin-left: 400px;
-      margin-right: 400px;
-      background-color: #5B2924;
-      color: white;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+#contadorLibros {
+  width: 3em;
+}
 
-    .pagoTotal h2 {
-      text-align: center;
-      border-bottom: black;
-      border-bottom-width: 2px;
-      border-bottom-style: dashed;
-      padding-bottom: 10px;
+.pagoTotal {
+  border-radius: 1px;
+  border-style: solid;
+  border-color: black;
+  margin-left: 400px;
+  margin-right: 400px;
+  background-color: #5B2924;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
-    }
+.pagoTotal h2 {
+  text-align: center;
+  border-bottom: black;
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  padding-bottom: 10px;
 
-    .subtotal {
-      display: flex;
-    }
+}
 
-    .subtotal p {
-      flex-basis: 50%;
-    }
+.subtotal {
+  display: flex;
+}
 
-    #price1 {
-      text-align: right;
-    }
+.subtotal p {
+  flex-basis: 50%;
+}
 
-    .precioIVA {
-      display: flex;
-      border-bottom: black;
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
-    }
+#price1 {
+  text-align: right;
+}
 
-    .precioIVA p {
-      flex-basis: 50%;
-    }
+.precioIVA {
+  display: flex;
+  border-bottom: black;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
 
-    #price2 {
-      text-align: right;
-    }
+.precioIVA p {
+  flex-basis: 50%;
+}
 
-    .totalIVA {
-      display: flex;
-    }
+#price2 {
+  text-align: right;
+}
 
-    .totalIVA p {
-      flex-basis: 50%;
-      font-weight: bolder;
-    }
+.totalIVA {
+  display: flex;
+}
 
-    #price3 {
-      text-align: right;
-    }
+.totalIVA p {
+  flex-basis: 50%;
+  font-weight: bolder;
+}
 
-    .continuarCompra {
-      background-color: black;
-      color: white;
-      margin-top: 30px;
-      padding: 10px;
-      border: none;
-      font-weight: bold;
-      text-align: center;
-      margin-left: 430px;
-      margin-bottom: 20px;
-    }
+#price3 {
+  text-align: right;
+}
 
-    .continuarCompra:hover {
-      background-color: grey;
-    }
+.continuarCompra {
+  background-color: black;
+  color: white;
+  margin-top: 30px;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 430px;
+  margin-bottom: 20px;
+}
 
-    .puntos {
-      text-align: center;
-      padding-bottom: 20px;
-    }
+.continuarCompra:hover {
+  background-color: grey;
+}
+
+.puntos {
+  text-align: center;
+  padding-bottom: 20px;
+}
