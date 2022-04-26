@@ -12,6 +12,8 @@
         
         <div class="container">
 
+            
+
             <!--logo y nombre de empresa (izquirda arriba)-->
             <div class="busqueda">
 
@@ -33,12 +35,14 @@
                 </p>
                 
                 <div class="container" >
-                    <form>
+                    <form id="formularioBuscarLibro" action="perfilLibro.html" method="post">
                         <input name="libroBuscar" id="libroBuscar" type="text" placeholder="Digite lo que desea buscar.."/>  
         
-                        <button id="botonBuscar" onclick="cargarLibro()">Buscar</button>
+                        <!--<button  id="botonBuscar"  onclick="obtenerDatos()">Buscar</button>-->
+                        <input type="submit" value="Buscar">
                         
                     </form>
+
                     <a href="carritoCompras.html">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -153,13 +157,11 @@
         </div>
 
         <script>
-            function cargarLibro() {
-              var direccion = window.location.search;
-              var variables = new URLSearchParams(direccion);
-              console.log(variables)
-              var nombre = variables.get("nombre");
-        
-              var datos = {
+            var formulario= document.getElementById("formularioBuscarLibro")
+            function manejarSubmit(e){
+                let nombre = document.getElementsByName("libroBuscar")[0].value
+                console.log(nombre)
+                var datos = {
                 nombreLibro: nombre
               }
               console.log("datos")
@@ -190,8 +192,19 @@
                     document.getElementById("imagen")= json.imagen
                     document.getElementById("tablaEstudiantes").insertAdjacentHTML("beforeend", linea);
                   }
-                ) 
+                )
+                e.preventDefault()
             }
+            formulario.addEventListener("submit",manejarSubmit)
+            function cargarLibro() { 
+              var direccion = window.location.search;
+              var variables = new URLSearchParams(direccion);
+              //alert(variables)
+              var nombre = variables.get("nombre");
+                
+             
+            }
+            //cargarLibro()
           </script>
 
     </body>

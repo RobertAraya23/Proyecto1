@@ -22,6 +22,6 @@ router.post('/buscar', function(req, res) {
         function(result) {
             res.json(result);
         }
-        )
+    );
 });
 module.exports = router;

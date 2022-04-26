@@ -14,14 +14,4 @@ router.get('/obtenerUsuarios', function(req, res) {
         }
     );
 });
-
-router.post('/buscar', function(req, res) {
-    var idUsuario = req.body.idUsuario;
-    autorModel.findById(idUsuario).exec()
-        .then(
-        function(result) {
-            res.json(result);
-        }
-        )
-});
 module.exports = router;

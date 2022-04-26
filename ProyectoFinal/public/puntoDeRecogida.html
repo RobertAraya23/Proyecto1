@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Punto de Recogida</title>
+        <link rel="stylesheet" type="text/css" href="puntoDeRecogida.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <!--logo y nombre de empresa (izquirda arriba)-->
+            <div class="busqueda">
+    
+                <img class="img_logo" src="logoNeo.jpeg">
+    
+            </div>
+            <div class="logo titulo">
+    
+                <h1>El bazar de <span> las Sorpresas</span> </h1>
+            </div>
+    
+    
+    
+            <!--busqueda, carrito, menu (derecha arriba)-->
+            <div class="links">
+                <p>
+                    <a href="home.html">bienvenido al bazar de las sorpresas</a>
+                    <i class="arrow right"></i>
+                    <a href="registro.html">registrarse</a>
+                    <i class="arrow right"></i>
+                    <a href="inicioSecion.html">Iniciar sesion</a>
+                </p>
+                
+                <div class="container" >
+                    
+                    <input type="text" placeholder="Digite lo que desea buscar..">  
+                    <a href="resultadoBusqueda.html">
+                        <button>Buscar</button>
+                    </a>
+    
+                    <a href="carritoCompras.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="6" cy="19" r="2" />
+                            <circle cx="17" cy="19" r="2" />
+                            <path d="M17 17h-11v-14h-2" />
+                            <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                            <path d="M15 6h6m-3 -3v6" />
+                        </svg>
+                    </a>
+                    <form>
+                        <select name="contador">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </form>
+    
+                    <a href="editarPerfil.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                          </svg>
+                    </a>
+    
+                   
+    
+    
+                    
+    
+    
+                </div>
+    
+                <div class="menu">
+                    <p>
+                        <a href="catalogolibros.html">Catalogo libros</a>
+                        <a href="landingPageProducto.html">Nuestra empresa</a>
+                        <a href="landingPageEquipo.html">Neon Team</a>
+                        
+                    </p>
+                </div>
+    
+    
+            </div>
+    
+    
+        </div>
+        <div class="linea_encabezado"></div>
+        <!--END HEADER-->
+
+        <div class="container2">
+            <div class="puntoRecogida">
+                <p>En caso de querer recoger su orden en alguno de nuestros puntos de entrega por favor llene la siguente informacion 
+                </p>
+                <p>Escoga su provincia</p>
+                <select>
+                    <option>San Jose</option>
+                    <option>Heredia</option>
+                    <option>Cartago</option>
+                    <option>Alajuela</option>
+                    <option>Puntarenas</option>
+                    <option>Guanacaste</option>
+                    <option>Limon</option>
+                </select>
+                <p>Escoga su canton</p>
+                <select>
+                    <option>Cantones</option>
+                </select>
+                <p>Escoga su distrito</p>
+                <select>
+                    <option>Distritos</option>
+                </select>
+                <P>Ingrese su direccion exacta</P>
+                <textarea rows="10" cols=""></textarea>
+            </div>
+            <div class="puntoEnvio">
+                <p>En caso de querer un servicio express para su order por favor llenar la siguente informacion</p>
+                <p>Escoga su provincia</p>
+                <select>
+                    <option>San Jose</option>
+                    <option>Heredia</option>
+                    <option>Cartago</option>
+                    <option>Alajuela</option>
+                    <option>Puntarenas</option>
+                    <option>Guanacaste</option>
+                    <option>Limon</option>
+                </select>
+                <p>Escoga su canton</p>
+                <select>
+                    <option>Cantones</option>
+                </select>
+                <p>Escoga su distrito</p>
+                <select>
+                    <option>Distritos</option>
+                </select>
+                <P>Ingrese su direccion exacta</P>
+                <textarea rows="10" cols=""></textarea>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.205491503568!2d-84.05436138549659!3d9.999877892851227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e5a38bfbd2e1%3A0xc8693d8b1a205e2f!2sC.%20Emilia%2C%20Heredia!5e0!3m2!1sen!2scr!4v1649021954007!5m2!1sen!2scr" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="boton">
+                <a href="pagoLibros.html"><button class="confirmar">Confirmar</button></a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -15,13 +15,4 @@ router.get('/obtenerTodos', (req, res ) => {
   })
 })
 
-router.post('/buscar', function(req, res) {
-  var idUsuario = req.body.idUsuario;
-  puntajeModel.findById(idUsuario).exec()
-    .then(
-      function(result) {
-        res.json(result);
-      }
-    )
-});
 module.exports = router;
