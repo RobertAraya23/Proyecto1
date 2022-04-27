@@ -160,7 +160,7 @@
 
   .container3{
       display: flex;
-      background-image: url("img/fon2.jpg");
+      background-image: url("img/fondo.jpg");
   }
 
   .infoColaborador{
@@ -180,7 +180,7 @@
     flex-wrap: wrap; 
     text-align: center;
     padding-left:100px ;
-    background-image: url("img/fon2.jpg");
+    background-image: url("img/fondo.jpg");
   }
 
   h2{

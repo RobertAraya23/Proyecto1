@@ -2,19 +2,23 @@
 
 
 <head>
-    <link rel="stylesheet" href="editOrdenes.css">
-    <title>Editar ordenes</title>
+    <link rel="stylesheet" href="editPerfilLibro.css">
+    <title>Editar perfil libro</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
 </head>
 
 
-<body>
+<body onload="cargarTabla()">
 
     <div class="container">
 
         <!--logo y nombre de empresa (izquirda arriba)-->
         <div class="busqueda">
 
-            <img class="img_logo" src="img/logoNeo.jpg">
+            <img class="img_logo" src="img/logoNeo.png">
 
         </div>
         <div class="logo titulo">
@@ -27,57 +31,47 @@
         <!--busqueda, carrito, menu (derecha arriba)-->
         <div class="links">
             <p>
-                <a href="home.html">Bienvenido al Bazar de las Sorpresas</a>
+                <a href="home.html">Bienvenido al bazar de las sorpresas</a>
                 <i class="arrow right"></i>
                 <a href="registro.html">Registrarse</a>
                 <i class="arrow right"></i>
                 <a href="inicioSecion.html">Iniciar sesión</a>
             </p>
-
-            <div class="container">
-
-                <input type="text" placeholder="Digite lo que desea buscar..">
+            
+            <div class="container" >
+                
+                <input type="text" placeholder="Digite lo que desea buscar..">  
                 <a href="resultadoBusqueda.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="10" cy="10" r="7" />
-                        <line x1="21" y1="21" x2="15" y2="15" />
-                    </svg>
+                    <button>Buscar</button>
                 </a>
 
                 <a href="carritoCompras.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart carrito"
-                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="6" cy="19" r="2" />
                         <circle cx="17" cy="19" r="2" />
                         <path d="M17 17h-11v-14h-2" />
-                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                        <path d="M15 6h6m-3 -3v6" />
                     </svg>
                 </a>
 
                 <a href="editarPerfil.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="12" cy="7" r="4" />
                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                    </svg>
+                      </svg>
                 </a>
-
 
             </div>
 
             <div class="menu">
                 <p>
-                    <a class="color1" href="catalogolibros.html">Catálogo libros</a>
-                    <a class="color1" href="landingPageProducto.html">Nuestra empresa</a>
-                    <a class="color1" href="landingPageEquipo.html">Neon Team</a>
-
+                    <a href="catalogolibros.html">Catálogo libros</a>
+                    <a href="landingPageProducto.html">Nuestra empresa</a>
+                    <a href="landingPageEquipo.html">Neon Team</a>
+                    
                 </p>
             </div>
 
@@ -87,54 +81,200 @@
 
     </div>
     <div class="linea_encabezado"></div>
-    <!--cuerpo de la pagina-->
-    <div class="espacio">
-        <p>
-            <a class="color" href="home.html">Inicio</a>
-            <i class="arrow right"></i>
-            <a class="color" href="catalogolibros.html">Libros </a>
+    <!--END HEADER-->
+<!--cuerpo de la pagina-->
+    
 
-        </p>
+<div class="subEncabezado">
+    <h1>Catalogo de libros</h1>
+</div>
+
+
+<div class="searchBar">
+    <h1>Busqueda por nombre:</h1>
+    <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por nombre">
+</div>
+
+<div class="backgroundAbajo">
+<div class="tabla">
+    <table border="1" id="tablaLibro" >
+            <tr>
+            <td>Nombre              </td>
+            <td>Disponible</td>
+            <td>Fecha de publicacion</td>
+            <td>Formato</td>
+            <td>Genero</td>
+            <td>Precio</td>
+            <td>Reseña</td>
+            <td>Imagen</td>
+            <td>Ism</td>
+            <td>Editorial</td>
+            <td>Premios en honor</td>
+            <td>id autor</td>
+            </tr>
+        </table>
+        <br/>
+
+        <div class="subEncabezado">
+            <h1>Insertar libros</h1>
+        </div>
+
+
+        <form class="formularioIncertar"> 
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="boolean" id="disponibilidad" placeholder="Disponibilidad" />
+        <input type="text" id="fechaDePublicacion" placeholder="Fecha de publicacion" />
+        <input type="text" id="formato" placeholder="Formato" />
+        <input type="text" id="genero" placeholder="Genero" />
+        <input type="number" id="precio" placeholder="Precio" />
+        <input type="text" id="resenna" placeholder="Resenna" />
+        <input type="text" id="imagen" placeholder="Imagen" />
+        <input type="text" id="ism" placeholder="Codigo ism" />
+        <input type="text" id="editorial" placeholder="Editorial" />
+        <input type="text" id="premiosEnHonor" placeholder="Premios" />
+        <input type="text" id="idAutor" placeholder="Id Autor" />
+        
+        <button type="button"  onclick="insertarLibro()">Enviar</button>
+        </form>
     </div>
-
-    <h1 class="libros">EL FIN DEL MIEDO</h1>
-
-    <div class="container2">
-        <div class="capa2 libros">
-            <img src="img/21.jpg">
-        </div>
-        <div class="capa3 espacio">
-            <p>Autor: Gloria Romana</p>
-            <p>Editorial: Esfera de los libros</p>
-            <p>Fecha de publicacion: 2018</p>
-            <p>Formato: Pasta suave</p>
-            <p>Genero: Sin ficcion</p>
-            <p>Precio: ₡18,500</p>
-            <a href="carritoCompras.html">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-shopping-cart-plus" width="28" height="28" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </a>
+</div>
 
 
 
-        </div>
-        <div class="capa2 espacio">
-            <p>Disponibilidad inmediata</p>
-            <p>Codigo: 2736</p>
+    <script>
 
-        </div>
+    function tableSearch(){
+        let input, filter, table, tr, td, txtValue;
+        console.log("This is working")
+        //inicializando variables
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tablaLibro");
+        tr = table.getElementsByTagName("tr")
 
-    </div>
+        for(let i = 0; i<tr.length; i++){
+            td=tr[i].getElementsByTagName("td")[0];
+            if(td){
+                txtValue= td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                }
+                else{
+                    tr[i].style.display = "none"
+                }
+            }
+
+        }
+    }
 
 
+function cargarTabla() {
+            fetch("http://localhost:8080/libros/")
+            .then(
+                function(response){
+                return response.json();
+                }
+            )
+            .then (
+                function(json) {
+                for(var cont = 0;json.length > cont; cont++) {
+                    
+                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
+                    document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+                }
+                }
+            ) 
+            }
+        
+        function insertarLibro() {
+            var datos = {
+            nombre: document.getElementById("nombre").value,
+            disponibilidad: document.getElementById("disponibilidad").value,
+            fechaDePublicacion: document.getElementById("fechaDePublicacion").value,
+            formato: document.getElementById("formato").value,
+            genero: document.getElementById("genero").value,
+            precio: document.getElementById("precio").value,
+            resenna: document.getElementById("resenna").value,
+            imagen: document.getElementById("imagen").value,
+            ism: document.getElementById("ism").value,
+            editorial: document.getElementById("editorial").value,
+            premiosEnHonor: document.getElementById("premiosEnHonor").value,
+            idAutor: document.getElementById("idAutor").value
+            }
+            
+            console.log(datos)
+
+            fetch("http://localhost:8080/libros/insertar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+                function(json){
+              var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
+                document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+            }
+            )
+        }
+
+        var precio = document.getElementById("precio")
+        var tituloLibro = document.getElementById("titulo")
+        var nombreAutor = document.getElementById("autor")
+        var numeroISM = document.getElementById("ism")
+        var editorial = document.getElementById("editorial")
+        var reseña = document.getElementById("reseña")
+        var fecha = document.getElementById("fecha")
+
+        function validar(){
+
+            
+                if( tituloLibro.value == ""){
+                    alert("Error: Ingrese un titulo para el libro")
+                    
+                    return false
+                } 
+
+                if(nombreAutor.value =="" || nombreAutor.value.includes("!") || nombreAutor.value.includes("#") || nombreAutor.value.includes("$") || nombreAutor.value.includes("%") || nombreAutor.value.includes("&") || nombreAutor.value.includes("/") || nombreAutor.value.includes("(") || nombreAutor.value.includes(")")|| nombreAutor.value.includes("=")|| nombreAutor.value.includes("?")|| nombreAutor.value.includes("¿")){
+                    alert("Error: Ingrese un nombre de autor válido, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
+                
+                    return false
+                }
+
+            if(numeroISM.value == "" || numeroISM.value < 0 ){
+            alert("Error: Ingrese un numero de ISM valido, recuerde que este no puede ser un número negativo")
+
+            return false} 
+
+            if( editorial.value == ""){
+                alert("Error: Ingrese un nombre de editorial")
+                return false
+            } 
+
+            if( reseña.value == ""){
+                alert("Error: Ingrese una reseña para el libro")
+
+                return false
+            } 
+            if( fecha.value == ""){
+                alert("Error: Ingrese una fecha de publicación")
+                return false
+            }
+            
+            if(precio.value == "" || precio.value < 0 ){
+            alert(" Error: Ingrese un precio valido para poder enviar el formulario")
+            return false} 
+            
+            alert("Los datos ingresados se han guardado exitosamente")
+            
+
+
+        }
+
+    </script>
 </body>
+
 
 </html>
