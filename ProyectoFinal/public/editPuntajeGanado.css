@@ -55,9 +55,9 @@ div{
 }
 .carrito{
   width: 50px;
-  padding-left: 20px ;
-  padding-right: 20px;
 }
+ 
+ 
 .menu{
   margin-top: 30px;
   border: 2px solid black;
@@ -79,6 +79,9 @@ a{
 .color1{
   color: var(--cafe);
   margin-left: 10px;
+}
+.color2{
+  color:var(--cafe);
 }
 h1{
   color: var(--cafe);
@@ -121,11 +124,13 @@ span{
   padding-left: 5px;
   padding-top: 20px;
   display: flex;
+  color:#ffffff;
 }
 .titulo_perfil1{
   padding-left: 5px;
   padding-top: 5px;
   display: flex;
+  color:#ffffff;
 }
 .box {
   border: 3px solid black;
@@ -154,6 +159,12 @@ span{
   display: table-cell;
   margin: 0;
   padding: 0 1rem;
+}
+.parrafo2 > a{
+  color:var(--cafe);
+}
+.parrafo > a{
+  color:var(--cafe);
 }
 .box_direcciones {
   border: 3px solid black;
