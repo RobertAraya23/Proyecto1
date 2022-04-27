@@ -99,17 +99,21 @@
             <p>Si ya creó una cuenta, inicie sesión digitando su dirección de correo electrónico y contraseña.</p>
     
         <form onsubmit="validar()">
-        <div>
-            <p>Email</p>
-            <input type="text" placeholder="Escriba aqui su email" id="email">
-        </div>
-        <div>
-            <p>Contraseña</p>
-            <input type="password" placeholder="Escriba aqui su contraseña" id="contrasenaCliente">
-        </div>
-            <button class="botonInicio">INICIAR SESION</button>
-                <button class="botonInicio" onclick="document.location='reportesYPuntos.html'">INICIAR SESION ADMIN</button>
-        </div>
+            <div>
+                <p>Email</p>
+                <input type="email" name="correo" placeholder="Escriba aqui su email" >
+            </div>
+            <div>
+                <p>Contraseña</p>
+                <input type="password" name="contrasenna" placeholder="Escriba aqui su contraseña" >
+            </div>
+            <div>
+                <p>Confirmar Contraseña</p>
+                <input type="password" name="confirmarConstrasenna" placeholder="Escriba aqui su contraseña" >
+            </div>
+                <button class="botonInicio">INICIAR SESION</button>
+                    <button class="botonInicio" onclick="document.location='reportesYPuntos.html'">INICIAR SESION ADMIN</button>
+            </div>
         </form>
         <div class="nuevoCliente">
             
@@ -149,11 +153,10 @@
     
                     return false
                 }
-    
-    
-    
             }
         </script>
+
+
         
     </div>
         
