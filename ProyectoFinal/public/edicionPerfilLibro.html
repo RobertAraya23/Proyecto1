@@ -87,7 +87,22 @@
     
 
 <div class="subEncabezado">
+    
     <h1>Catalogo de libros</h1>
+    
+
+    <div class="linea_encabezado"></div>
+    
+    
+
+    <a href="ordenesHechas.html">Ver pedidos</a><br>
+    <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+    <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+    <a href="reportesYPuntos.html">Reportes</a><br>
+    <a href="editOrdenes.html">Editar ordenes </a><br>
+    <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+    <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
+    <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
 </div>
 
 
@@ -196,9 +211,7 @@ function cargarTabla() {
         function insertarLibro() {
 
 
-           validar()
-            
-
+        
 
             var datos = {
             nombre: document.getElementById("nombre").value,
@@ -233,7 +246,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.disponibilidad+"</td><td>"+json.fechaDePublicacion+"</td><td>"+json.formato+"</td><td>"+json.genero+"</td><td>"+json.precio+"</td><td>"+json.resenna+"</td><td>"+json.imagen+"</td><td>"+json.ism+"</td><td>"+json.editorial+"</td><td>"+json.premiosEnHonor+"</td><td>"+json.idAutor+"</td></tr>";
+                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.disponibilidad+"</td><td>"+json.fechaDePublicacion+"</td><td>"+json.formato+"</td><td>"+json.genero+"</td><td>"+json.precio+"</td><td>"+json.resenna+"</td><td>"+json.imagen+"</td><td>"+json.ism+"</td><td>"+json.editorial+"</td><td>"+json.premiosEnHonor+"</td><td>"+json.idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
                
                 console.log(linea);
 
