@@ -27,7 +27,7 @@
         <!--busqueda, carrito, menu (derecha arriba)-->
         <div class="logo">
             <p>
-                <a href="home.html">Bienvenido al Bazar de las Sorpresas</a>
+                <a href="home.html">¡Bienvenido al Bazar de las Sorpresas!</a>
                 <i class="arrow right"></i>
                 <a href="registro.html">Registrarse</a>
                 <i class="arrow right"></i>
@@ -93,18 +93,18 @@
     <div class="datosCuentaNueva">
         <h2>DATOS PERSONALES</h2>
 
-    <form onsubmit="validar()">
+    <form onsubmit="insertarDatosUsuario()">
         <div>
             <p>Nombre</p>
-            <input type="text" placeholder="Nombre" id="nombre" name="nombre" required/>
+            <input type="text" placeholder="Escriba aqui" id="nombre">
         </div>
         <div>
             <p>Apellidos</p>
-            <input type="text" placeholder="Apellidos" id="apellido" name="apellidos" required/>
+            <input type="text" placeholder="Escriba aqui" id="apellido">
         </div>
         <div>
             <p>Fecha de nacimiento</p>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required/> 
+            <input type="date" id="fechaNacimiento"> 
         </div>
         <button class="registrarse">REGISTRARSE</button>
 
@@ -112,95 +112,43 @@
     <div class="datosInicioSesion">
         <h2>INICIO DE SESION</h2>
         <P>Correo electronico</P>
-        <input type="text" placeholder="Correo Electronico" id="email"/>
+        <input type="text" placeholder="Escriba aqui" id="email">
         <P>Contraseña (debe contener de 9 a 12 caracteres, mayúsculas, minúsculas, números y caracteres especiales)</P>
-        <input type="password" placeholder="Password" id="password"/>
+        <input type="password" placeholder="Escriba aqui" id="password">
         <P>Confirmar contraseña</P>
-        <input type="password" placeholder="Confirm Password" id="passwordConfirmacion"/>
+        <input type="password" placeholder="Escriba aqui" id="passwordConfirmacion">
     </form>
  
     <script>
         var nombre = document.getElementById("nombre")
-        var regexNombre = /^[a-zA-Z ]{2,30}$/
         var apellido = document.getElementById("apellido")
         var fechaNacimiento = document.getElementById("fechaNacimiento")
         var email = document.getElementById("email")
         var password = document.getElementById("password")
         var passwordConf = document.getElementById("passwordConfirmacion")
+        var regexNombre = /^[a-zA-Z ]{2,30}$/
         var validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         var validRegexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]).{9,12}$/
 
 
-
-        function validar(){
-            if (nombre.value == ""){
-                alert("Error: Rellene el espacio de nombre.")
-
-                return false
-                
-            }
-
-            if (!nombre.value.match(regexNombre)){
-                alert("Error: Ingrese un nombre válido.")
-
-                return false
-            }
-            //------------------//
-
-            if (apellido.value == ""){
-                alert("Error: Rellene el espacio de apellido.")
-
-                return false
-                
-            }
-
-            if (!apellido.value.match(regexNombre)){
-                alert("Error: Ingrese un apellido válido.")
-
-                return false
-            }
-
-            //------------------//
-
-            if (email.value == ""){
-                alert("Error: Rellene el espacio de correo")
-
-                return false
-            }
-
-            if(!email.value.match(validRegexEmail)){
-                alert("Error: Ingrese un correo válido")
-
-                return false 
-            }
-            
-            //------------------//
-
-            if (password.value == ""){
-                alert("Error: Rellene el espacio de contraseña.")
-
-                return false
-            }
-
-            if (!password.value.match(validRegexPassword)){
-                alert("Error: La contraseña debe llevar al menos un número, un caracter en mayúscula, un caracter en minúscula, y un caracter especial.")
-
-                return false
-            }
-
-            if (passwordConf.value == ""){
-                alert("Error: Rellene el espacio de confirmar contraseña.")
-
-                return false
-            }
-
-            if (!passwordConf.value.match(password.value)){
-                alert("Error: Las contraseñas no coinciden.")
-
-                return false
-            }
+        function insertarDatosUsuario(){
+            var datosUsuario = {
+            nombre: document.getElementById("nombre").value,
+            apellido: document.getElementById("apellido").value,
+            fechaNacimiento: document.getElementById("fechaNacimiento").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            puntaje: 0
         }
 
+        console.log(datosUsuario)
+
+        fetch("http://localhost:5000/datosUsuario/insertarDatosUsuario"), {
+        method: 'POST',
+        body: JSON.stringify(datosUsuario),
+        headers: {'Content-Type': 'application/json'}
+        }
+    }
 
     </script>
 
