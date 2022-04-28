@@ -25,18 +25,16 @@ router.post('/buscar', function(req, res) {
 
 router.post('/actualizar', function(req, res) {
   var nombre = req.body.nombre;
-  var precio = req.body.precio;
-  var disponibilidad = req.body.disponibilidad;
-  var fechaDePublicacion = req.body.fechaDePublicacion;
-  var formato = req.body.formato;
-  var genero = req.body.genero;
-  var resenna = req.body.resenna;
-  var ism = req.body.ism;
-  var editorial = req.body.editorial;
-  var premiosEnHonor = req.body.premiosEnHonor;
+  var librosPublicados = req.body.librosPublicados;
+  var premiosGanados = req.body.premiosGanados;
+  var paisNacimiento = req.body.paisNacimiento;
+  var fechaNacimiento = req.body.formato;
+  var generoDelAutor = req.body.generoDelAutor;
+  var fechaDeDefuncion = req.body.fechaDeDefuncion;
+  
 
   // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-  autor.findOneAndUpdate({nombre: nombre},{$set:{precio:precio, disponibilidad:disponibilidad, fechaDePublicacion:fechaDePublicacion, formato:formato, genero:genero, resenna:resenna, ism:ism, editorial:editorial, premiosEnHonor:premiosEnHonor}}, {useFindAndModify: false, new: true}, function (err, doc) {
+  autor.findOneAndUpdate({nombre: nombre},{$set:{librosPublicados:librosPublicados, premiosGanados:premiosGanados, paisNacimiento:paisNacimiento, fechaNacimiento:fechaNacimiento, generoDelAutor:generoDelAutor, fechaDeDefuncion:fechaDeDefuncion}}, {useFindAndModify: false, new: true}, function (err, doc) {
     res.json(doc);
   });
 });
@@ -46,17 +44,12 @@ router.post('/insertar', function(req, res) {
 
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
-    disponibilidad: req.body.disponibilidad,
-    fechaDePublicacion: req.body.fechaDePublicacion,
-    formato: req.body.formato,
-    genero: req.body.genero,
-    precio: req.body.precio,
-    resenna: req.body.resenna,
-    imagen: req.body.imagen,
-    ism: req.body.ism,
-    editorial: req.body.editorial,
-    premiosEnHonor: req.body.premiosEnHonor,
-    idAutor: req.body.idAutor
+    librosPublicados: req.body.librosPublicados,
+    premiosGanados: req.body.premiosGanados,
+    paisNacimiento: req.body.paisNacimiento,
+    fechaNacimiento: req.body.fechaNacimiento,
+    generoDelAutor: req.body.generoDelAutor,
+    fechaDeDefuncion: req.body.fechaDeDefuncion
 
   });
 

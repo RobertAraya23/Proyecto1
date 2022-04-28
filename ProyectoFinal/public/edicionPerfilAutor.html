@@ -88,12 +88,6 @@
 
 <div class="subEncabezado">
     
-    <h1>Catalogo de Autores</h1>
-    
-
-    <div class="linea_encabezado"></div>
-    
-    
 
     <a href="ordenesHechas.html">Ver pedidos</a><br>
     <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
@@ -103,6 +97,14 @@
     <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
     <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
     <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
+
+    
+
+    <div class="linea_encabezado"></div>
+    
+    <h1>Catalogo de Autores</h1>
+
+   
 </div>
 
 
@@ -117,17 +119,13 @@
             <tr>
                 <td>Nombre</td>
                 <td>Libros publicados</td>
-                <td>Fecha de publicacion</td>
-                <td>Formato</td>
-                <td>Genero</td>
-                <td>Precio</td>
-                <td>Reseña</td>
-                <td>Imagen</td>
-                <td>Ism</td>
-                <td>Editorial</td>
-                <td>Premios en honor</td>
-                <td>id autor</td>
-                <td>Actualizar</td>
+                <td>Premios ganados</td>
+                <td>Pais nacimiento</td>
+                <td>Fecha nacimiento</td>
+                <td>genero del autor</td>
+                <td>fecha de defunción</td>
+                <td>Actulizar campo</td>
+                
             </tr>
         </table>
         <br/>
@@ -139,19 +137,14 @@
 
         <form class="formularioIncertar"> 
         <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="boolean" id="disponibilidad" placeholder="Disponibilidad" />
-        <input type="text" id="fechaDePublicacion" placeholder="Fecha de publicacion" />
-        <input type="text" id="formato" placeholder="Formato" />
-        <input type="text" id="genero" placeholder="Genero" />
-        <input type="number" id="precio" placeholder="Precio" />
-        <input type="text" id="resenna" placeholder="Resenna" />
-        <input type="text" id="imagen" placeholder="Imagen" />
-        <input type="text" id="ism" placeholder="Codigo ism" />
-        <input type="text" id="editorial" placeholder="Editorial" />
-        <input type="text" id="premiosEnHonor" placeholder="Premios" />
-        <input type="text" id="idAutor" placeholder="Id Autor" />
+        <input type="text" id="librosPublicados" placeholder="librosPublicados" />
+        <input type="text" id="premiosGanados" placeholder="premiosGanados" />
+        <input type="text" id="paisNacimiento" placeholder="paisNacimiento" />
+        <input type="text" id="fechaNacimiento" placeholder="fechaNacimiento" />
+        <input type="text" id="generoDelAutor" placeholder="generoDelAutor" />
+        <input type="text" id="fechaDeDefuncion" placeholder="fechaDeDefuncion" />
         
-        <button type="button"  onclick="insertarLibro()">Inserta Libro</button>
+        <button type="button"  onclick="insertarAutor()">Inserta Libro</button>
         </form>
     </div>
 </div>
@@ -200,7 +193,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0; json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].librosPublicados+"</td><td>"+json[cont].premiosGanados+"</td><td>"+json[cont].paisNacimiento+"</td><td>"+json[cont].fechaNacimiento+"</td><td>"+json[cont].generoDelAutor+"</td><td>"+json[cont].fechaDeDefuncion+"</td><td><a href='actualizarAutor.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
                    
                     document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
                 }
@@ -208,31 +201,27 @@ function cargarTabla() {
             ) 
             }
         
-        function insertarLibro() {
+        function insertarAutor() {
 
 
         
 
             var datos = {
             nombre: document.getElementById("nombre").value,
-            disponibilidad: document.getElementById("disponibilidad").value,
-            fechaDePublicacion: document.getElementById("fechaDePublicacion").value,
-            formato: document.getElementById("formato").value,
-            genero: document.getElementById("genero").value,
-            precio: document.getElementById("precio").value,
-            resenna: document.getElementById("resenna").value,
-            imagen: document.getElementById("imagen").value,
-            ism: document.getElementById("ism").value,
-            editorial: document.getElementById("editorial").value,
-            premiosEnHonor: document.getElementById("premiosEnHonor").value,
-            idAutor: document.getElementById("idAutor").value
+            librosPublicados: document.getElementById("librosPublicados").value,
+            premiosGanados: document.getElementById("premiosGanados").value,
+            paisNacimiento: document.getElementById("paisNacimiento").value,
+            fechaNacimiento: document.getElementById("fechaNacimiento").value,
+            generoDelAutor: document.getElementById("generoDelAutor").value,
+            fechaDeDefuncion: document.getElementById("fechaDeDefuncion").value
+            
             }
             
 
 
             console.log(datos)
 
-            fetch("http://localhost:8080/libros/insertar", {
+            fetch("http://localhost:8080/autores/insertar", {
             method: 'POST',
             body: JSON.stringify(datos),
             headers: {'Content-Type': 'application/json'}
@@ -246,7 +235,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.disponibilidad+"</td><td>"+json.fechaDePublicacion+"</td><td>"+json.formato+"</td><td>"+json.genero+"</td><td>"+json.precio+"</td><td>"+json.resenna+"</td><td>"+json.imagen+"</td><td>"+json.ism+"</td><td>"+json.editorial+"</td><td>"+json.premiosEnHonor+"</td><td>"+json.idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.librosPublicados+"</td><td>"+json.premiosGanados+"</td><td>"+json.paisNacimiento+"</td><td>"+json.fechaNacimiento+"</td><td>"+json.generoDelAutor+"</td><td>"+json.fechaDeDefuncion+"</td><td><a href='actualizarAutor.html?id="+json._id+"'>Actializar</a></td></tr>";
                
                 console.log(linea);
 
