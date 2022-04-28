@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.use('/libros', require('./api/libross.js'));
-app.use('/perfilLibro', require('./api/libros.js'));
+app.use('/perfilLibroo', require('./api/libros.js'));
 app.use('/editarPerfil', require('./api/editars.js'));
 app.get('/api/users',function(req,res){
   serials.getUser(req, res, function(err, data) {
