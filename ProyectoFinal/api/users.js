@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
 var inicioSesionModel = require('../schemas/user.js');
 
-router.post('/register',(req, res)=>{
+router.post('/register', function (req, res){
     const {username, password} = req.body
   
     const user = new User({username, password});
@@ -20,7 +20,7 @@ router.post('/register',(req, res)=>{
       }
     });
   });
-router.post('/authenticate',(req, res)=>{
+router.post('/authenticate', function (req, res){
     const{username, password} =req.body;
   
     User.findOne({username}, (err, user)=>{

@@ -96,15 +96,15 @@
     <form onsubmit="validar()">
         <div>
             <p>Nombre</p>
-            <input type="text" placeholder="Escriba aqui" id="nombre">
+            <input type="text" placeholder="Nombre" id="nombre" name="nombre" required/>
         </div>
         <div>
             <p>Apellidos</p>
-            <input type="text" placeholder="Escriba aqui" id="apellido">
+            <input type="text" placeholder="Apellidos" id="apellido" name="apellidos" required/>
         </div>
         <div>
             <p>Fecha de nacimiento</p>
-            <input type="date" id="fechaNacimiento"> 
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required/> 
         </div>
         <button class="registrarse">REGISTRARSE</button>
 
@@ -112,11 +112,11 @@
     <div class="datosInicioSesion">
         <h2>INICIO DE SESION</h2>
         <P>Correo electronico</P>
-        <input type="text" placeholder="Escriba aqui" id="email">
+        <input type="text" placeholder="Correo Electronico" id="email"/>
         <P>Contraseña (debe contener de 9 a 12 caracteres, mayúsculas, minúsculas, números y caracteres especiales)</P>
-        <input type="password" placeholder="Escriba aqui" id="password">
+        <input type="password" placeholder="Password" id="password"/>
         <P>Confirmar contraseña</P>
-        <input type="password" placeholder="Escriba aqui" id="passwordConfirmacion">
+        <input type="password" placeholder="Confirm Password" id="passwordConfirmacion"/>
     </form>
  
     <script>
