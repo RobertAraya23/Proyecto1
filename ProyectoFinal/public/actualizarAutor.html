@@ -1,0 +1,109 @@
+
+<html>
+
+    <head>
+        
+    </head>
+
+
+<body onload="cargarTabla()">
+    
+
+
+
+    <form class="formularioIncertar"> 
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="text" id="librosPublicados" placeholder="librosPublicados" />
+        <input type="text" id="premiosGanados" placeholder="premiosGanados" />
+        <input type="text" id="paisNacimiento" placeholder="paisNacimiento" />
+        <input type="text" id="fechaNacimiento" placeholder="fechaNacimiento" />
+        <input type="text" id="generoDelAutor" placeholder="generoDelAutor" />
+        <input type="text" id="fechaDeDefuncion" placeholder="fechaDeDefuncion" />
+        
+
+        <button type="button"  onclick="actualizarAutor()">Actualizar Libro</button>
+        </form>
+    
+    <script>
+
+
+function actualizarAutor(){
+    var datos = {
+            nombre: document.getElementById("nombre").value,
+            librosPublicados: document.getElementById("librosPublicados").value,
+            premiosGanados: document.getElementById("premiosGanados").value,
+            paisNacimiento: document.getElementById("paisNacimiento").value,
+            fechaNacimiento: document.getElementById("fechaNacimiento").value,
+            generoDelAutor: document.getElementById("generoDelAutor").value,
+            fechaDeDefuncion: document.getElementById("fechaDeDefuncion").value
+          
+            }
+
+
+            
+
+            fetch("http://localhost:8080/autores/actualizar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+
+                function(json){
+
+                    alert("el libro ha sido actualizado")
+                    
+            }
+        )
+     }
+
+
+
+
+function cargarTabla() {
+        var direccion = window.location.search;
+        var variables = new URLSearchParams(direccion);
+        var id = variables.get("id");
+
+        var datos = {
+          idUsuario: id
+        }
+        
+        fetch("http://localhost:8080/autores/buscar", {
+          method: 'POST',
+          body: JSON.stringify(datos),
+          headers: {'Content-Type': 'application/json'}
+        })
+          .then(
+            function(response){
+              return response.json();
+            }
+          )
+          .then (
+            function(json) {
+
+              document.getElementById("nombre").value = json.nombre;
+              document.getElementById("librosPublicados").value = json.librosPublicados;
+              document.getElementById("premiosGanados").value = json.premiosGanados;
+              document.getElementById("paisNacimiento").value = json.paisNacimiento;
+              document.getElementById("fechaNacimiento").value = json.fechaNacimiento;
+              document.getElementById("generoDelAutor").value = json.generoDelAutor;
+              document.getElementById("fechaDeDefuncion").value = json.fechaDeDefuncion;
+            
+    
+            }
+          ) 
+      }
+    </script>
+
+
+</body>
+
+  
+
+
+</html>
+

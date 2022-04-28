@@ -87,7 +87,22 @@
     
 
 <div class="subEncabezado">
+    
     <h1>Catalogo de libros</h1>
+    
+
+    <div class="linea_encabezado"></div>
+    
+    
+
+    <a href="ordenesHechas.html">Ver pedidos</a><br>
+    <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+    <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+    <a href="reportesYPuntos.html">Reportes</a><br>
+    <a href="editOrdenes.html">Editar ordenes </a><br>
+    <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+    <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
+    <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
 </div>
 
 
@@ -112,6 +127,7 @@
                 <td>Editorial</td>
                 <td>Premios en honor</td>
                 <td>id autor</td>
+                <td>Actualizar</td>
             </tr>
         </table>
         <br/>
@@ -135,9 +151,7 @@
         <input type="text" id="premiosEnHonor" placeholder="Premios" />
         <input type="text" id="idAutor" placeholder="Id Autor" />
         
-        <button type="button"  onclick="insertarLibro()">Enviar</button>
-        <button type="button"  onclick="insertarLibro()">Editar</button>
-        <button type="button"  onclick="insertarLibro()">Eliminar</button>
+        <button type="button"  onclick="insertarLibro()">Inserta Libro</button>
         </form>
     </div>
 </div>
@@ -147,9 +161,8 @@
     <script>
 
 
-function actualizar(){
-    
-}
+
+
 
     function tableSearch(){
         let input, filter, table, tr, td, txtValue;
@@ -187,7 +200,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0; json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
+                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
                    
                     document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
                 }
@@ -196,6 +209,10 @@ function cargarTabla() {
             }
         
         function insertarLibro() {
+
+
+        
+
             var datos = {
             nombre: document.getElementById("nombre").value,
             disponibilidad: document.getElementById("disponibilidad").value,
@@ -212,6 +229,7 @@ function cargarTabla() {
             }
             
 
+
             console.log(datos)
 
             fetch("http://localhost:8080/libros/insertar", {
@@ -227,10 +245,12 @@ function cargarTabla() {
                 function(json){
 
                     console.log("llegamos");
-                var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
+
+                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.disponibilidad+"</td><td>"+json.fechaDePublicacion+"</td><td>"+json.formato+"</td><td>"+json.genero+"</td><td>"+json.precio+"</td><td>"+json.resenna+"</td><td>"+json.imagen+"</td><td>"+json.ism+"</td><td>"+json.editorial+"</td><td>"+json.premiosEnHonor+"</td><td>"+json.idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
                
                 console.log(linea);
-             document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+
+                document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
             }
             )
         }

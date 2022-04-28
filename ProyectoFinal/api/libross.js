@@ -25,15 +25,25 @@ router.post('/buscar', function(req, res) {
 
 router.post('/actualizar', function(req, res) {
   var nombre = req.body.nombre;
-  var edad = req.body.edad;
+  var precio = req.body.precio;
+  var disponibilidad = req.body.disponibilidad;
+  var fechaDePublicacion = req.body.fechaDePublicacion;
+  var formato = req.body.formato;
+  var genero = req.body.genero;
+  var resenna = req.body.resenna;
+  var ism = req.body.ism;
+  var editorial = req.body.editorial;
+  var premiosEnHonor = req.body.premiosEnHonor;
+
   // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-  libro.findOneAndUpdate({nombre: nombre}, {$set:{edad:edad}}, {useFindAndModify: false, new: true}, function (err, doc) {
+  libro.findOneAndUpdate({nombre: nombre},{$set:{precio:precio, disponibilidad:disponibilidad, fechaDePublicacion:fechaDePublicacion, formato:formato, genero:genero, resenna:resenna, ism:ism, editorial:editorial, premiosEnHonor:premiosEnHonor}}, {useFindAndModify: false, new: true}, function (err, doc) {
     res.json(doc);
   });
 });
 
 router.post('/insertar', function(req, res) {
   var libroNuevo = new libro({
+
     _id: new mongoose.Types.ObjectId(),
     nombre: req.body.nombre,
     disponibilidad: req.body.disponibilidad,
@@ -47,6 +57,7 @@ router.post('/insertar', function(req, res) {
     editorial: req.body.editorial,
     premiosEnHonor: req.body.premiosEnHonor,
     idAutor: req.body.idAutor
+
   });
 
   libroNuevo.save()
