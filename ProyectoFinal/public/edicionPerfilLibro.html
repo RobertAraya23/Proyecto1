@@ -101,8 +101,10 @@
     <a href="reportesYPuntos.html">Reportes</a><br>
     <a href="editOrdenes.html">Editar ordenes </a><br>
     <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
-    <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
-    <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
+    <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
+    <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
+    <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
+    <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br>
 </div>
 
 
@@ -127,13 +129,13 @@
                 <td>Editorial</td>
                 <td>Premios en honor</td>
                 <td>id autor</td>
-                <td>Actualizar</td>
+                <td>Actualizar libro</td>
             </tr>
         </table>
         <br/>
 
         <div class="subEncabezado">
-            <h1>Insertar libros</h1>
+            <h1>Insertar libro</h1>
         </div>
 
 
@@ -200,7 +202,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0; json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                    
                     document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
                 }
@@ -246,7 +248,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.disponibilidad+"</td><td>"+json.fechaDePublicacion+"</td><td>"+json.formato+"</td><td>"+json.genero+"</td><td>"+json.precio+"</td><td>"+json.resenna+"</td><td>"+json.imagen+"</td><td>"+json.ism+"</td><td>"+json.editorial+"</td><td>"+json.premiosEnHonor+"</td><td>"+json.idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.disponibilidad+"</td><td>"+json.fechaDePublicacion+"</td><td>"+json.formato+"</td><td>"+json.genero+"</td><td>"+json.precio+"</td><td>"+json.resenna+"</td><td>"+json.imagen+"</td><td>"+json.ism+"</td><td>"+json.editorial+"</td><td>"+json.premiosEnHonor+"</td><td>"+json.idAutor+"</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                
                 console.log(linea);
 

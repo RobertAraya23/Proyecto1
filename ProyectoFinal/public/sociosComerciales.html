@@ -97,8 +97,10 @@
     <a href="reportesYPuntos.html">Reportes</a><br>
     <a href="editOrdenes.html">Editar ordenes </a><br>
     <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
-    <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
-    <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
+    <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
+    <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
+    <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
+    <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br>
 </div>
 
 
@@ -116,7 +118,7 @@
                 <td>teléfono</td>
                 <td>correo Electrónico</td>
                 <td>inicio Relaciones</td>
-                <td>Actualizar información</td>
+                <td>Actualizar socio comercial</td>
                 
             </tr>
         </table>
@@ -183,7 +185,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0; json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].direccion+"</td><td>"+json[cont].telefono+"</td><td>"+json[cont].correoElectronico+"</td><td>"+json[cont].inicioRelaciones+"<td><a href='actualizarSocioComercial.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].direccion+"</td><td>"+json[cont].telefono+"</td><td>"+json[cont].correoElectronico+"</td><td>"+json[cont].inicioRelaciones+"<td><a href='actualizarSocioComercial.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                    
                     document.getElementById("tablaSocios").insertAdjacentHTML("beforeend", linea);
                 }
@@ -222,7 +224,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.direccion+"</td><td>"+json.telefono+"</td><td>"+json.correoElectronico+"</td><td>"+json.inicioRelaciones+"<td><a href='actualizarLibro.html?id="+json._id+"'>Actializar</a></td></tr>";
+                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.direccion+"</td><td>"+json.telefono+"</td><td>"+json.correoElectronico+"</td><td>"+json.inicioRelaciones+"<td><a href='actualizarLibro.html?id="+json._id+"'>Actualizar</a></td></tr>";
                
                 console.log(linea);
 

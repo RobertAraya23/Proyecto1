@@ -101,8 +101,10 @@
     <a href="reportesYPuntos.html">Reportes</a><br>
     <a href="editOrdenes.html">Editar ordenes </a><br>
     <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
-    <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
-    <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
+    <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
+    <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
+    <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
+    <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br>
 </div>
 
 
@@ -127,7 +129,7 @@
         <br/>
 
         <div class="subEncabezado">
-            <h1>Insertar libros</h1>
+            <h1>Insertar punto de entrega</h1>
         </div>
 
 
@@ -188,7 +190,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0; json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].provincia+"</td><td>"+json[cont].canton+"</td><td>"+json[cont].Distrito+"</td><td>"+json[cont].lat+"</td><td>"+json[cont].long+"</td><td>"+json[cont].Direccion+"</td><td><a href='actualizarPuntosDeEntrega.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                    var linea = "<tr><td>"+json[cont].provincia+"</td><td>"+json[cont].canton+"</td><td>"+json[cont].Distrito+"</td><td>"+json[cont].lat+"</td><td>"+json[cont].long+"</td><td>"+json[cont].Direccion+"</td><td><a href='actualizarPuntosDeEntrega.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                    
                     document.getElementById("tablaPuntoDeEntrega").insertAdjacentHTML("beforeend", linea);
                 }
@@ -229,7 +231,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                    var linea = "<tr><td>"+json.provincia+"</td><td>"+json.canton+"</td><td>"+json.Distrito+"</td><td>"+json.lat+"</td><td>"+json.long+"</td><td>"+json.Direccion+"</td><td><a href='actualizarPuntosDeEntrega.html?id="+json._id+"'>Actializar</a></td></tr>";
+                    var linea = "<tr><td>"+json.provincia+"</td><td>"+json.canton+"</td><td>"+json.Distrito+"</td><td>"+json.lat+"</td><td>"+json.long+"</td><td>"+json.Direccion+"</td><td><a href='actualizarPuntosDeEntrega.html?id="+json._id+"'>Actualizar</a></td></tr>";
                
                 console.log(linea);
 
