@@ -8,7 +8,7 @@
     </head>
 
 
-    <body>
+    <body onload="cargarTabla()" >
         
         <div class="container">
 
@@ -82,7 +82,11 @@
         <div class="container2">
 
             <div class="portada">
-                <img src="img/quijote.jpg" id="imagen" class="img_libro">
+
+                <!--Imagen de la PORTADA del libro-->
+
+                <div id="imagenPortada">  </div>
+
             <div class="container3">
                 
                 <div class="box" id="cantidadLibros">
@@ -104,6 +108,7 @@
             </div>
         </div>
 
+        <!--Información del PERFIL libro-->
         <div class="info_libro">
 
             <div>
@@ -127,79 +132,61 @@
             <p>Disponibilidad: <span id="disponibilidad"></span></p>
             <p>Formato: <span id="formato"></span></p>
             <p>Genero del Autor: <span id="genero"></span></p>
-        
-            <div class>
-                    <p>Calificar libro</p>
-                    <form>
-                        <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                            --><label for="radio1">★</label><!--
-                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                            --><label for="radio2">★</label><!--
-                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                            --><label for="radio3">★</label><!--
-                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                            --><label for="radio4">★</label><!--
-                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                            --><label for="radio5">★</label>
-                          </p>
-                    </form>
-                </div>
-            </div>
         </div>
 
+        <div class>
+            <p>Calificar libro</p>
+            <form>
+                <p class="clasificacion">
+                    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                    --><label for="radio1">★</label><!--
+                    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                    --><label for="radio2">★</label><!--
+                    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                    --><label for="radio3">★</label><!--
+                    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                    --><label for="radio4">★</label><!--
+                    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                    --><label for="radio5">★</label>
+                  </p>
+            </form>
+        </div>
+    </div>
+
         <script>
-            var formulario= document.getElementById("formularioBuscarLibro")
-            function manejarSubmit(e){
-                let nombre = document.getElementsByName("libroBuscar")[0].value
-                console.log(nombre)
-                var datos = {
-                nombreLibro: nombre
-              }
-              console.log("datos")
-        
-              fetch("http://localhost:8080/libros/buscar", {
-                method: 'POST',
-                body: JSON.stringify(datos),
-                headers: {'Content-Type': 'application/json'}
-              })
-                .then(
-                  function(response){
-                    return response.json();
-                  }
-                )
-                .then (
-                  function(json) {
-                    document.getElementById("titulo")= json.nombre
-                    document.getElementById("ism")= json.ism
-                    document.getElementById("editorial")= json.editorial
-                    document.getElementById("reseña")= json.resenna
-                    document.getElementById("premios")= json.premiosEnHonor
-                    document.getElementById("precio")= json.precio
-                    document.getElementById("disponibilidad")= json.disponibilidad
-                    document.getElementById("fechaPublicacion")= json.fechaPublicacion
-                    document.getElementById("Formato")= json.formato
-                    document.getElementById("nombreAutor")= json.idAutor
-                    document.getElementById("genero")= json.genero
-                    document.getElementById("imagen")= json.imagen
-                    document.getElementById("tablaEstudiantes").insertAdjacentHTML("beforeend", linea);
-                  }
-                )
-                e.preventDefault()
+
+    function cargarTabla() {
+            var direccion = window.location.search;
+            var variables = new URLSearchParams(direccion);
+            var id = variables.get("id");
+
+            var datos = {
+            idUsuario: id
             }
-            formulario.addEventListener("submit",manejarSubmit)
-            function cargarLibro() { 
-              var direccion = window.location.search;
-              var variables = new URLSearchParams(direccion);
-              //alert(variables)
-              var nombre = variables.get("nombre");
-                
-             
-            }
-            //cargarLibro()
-          </script>
-          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-          
+            
+            fetch("http://localhost:8080/libros/buscar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            })
+            .then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+                function (data) {
+                   
+                        var fila = "<img class=img_libro src='img/"+data.imagen+"'>";
+
+
+                        document.getElementById("imagenPortada").insertAdjacentHTML("beforeend", fila);
+                    
+                }
+            );
+            
+        }
+        </script>
+
 
     </body>
 

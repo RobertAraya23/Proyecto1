@@ -79,7 +79,7 @@
 <!--cuerpo de la pagina-->
 
 
-<div class="contenedor" id="imagenes"></div>
+<div class="contenedor" id="imagenes">  </div>
 
   
     <footer >
@@ -101,7 +101,7 @@
             ).then(
                 function (data) {
                     for (var i = 0; i < 16; i++) {
-                        var fila = "<div class='capa'><div class='imagen'><img src='img/"+data[i].imagen+"'></div><p ><h2><a  href='perfilLibro.html=id'><p class='texto'>"+data[i].nombre+"</p></a></h2></p><p class='texto'>₡"+data[i].precio+"</p></div>";
+                        var fila = "<div class='capa'><div class='imagen'><img src='img/"+data[i].imagen+"'></div><p ><h2><a href='perfilLibro.html?id="+data[i]._id+"'><p class='texto'>"+data[i].nombre+"</p></a></h2></p><p class='texto'>₡"+data[i].precio+"</p></div>";
 
 
                         document.getElementById("imagenes").insertAdjacentHTML("beforeend", fila);
