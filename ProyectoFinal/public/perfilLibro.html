@@ -111,28 +111,7 @@
         <!--Información del PERFIL libro-->
         <div class="info_libro">
 
-            <div>
-                <h1 id="titulo">Don quijote de la mancha</h1>
-                <h3>Autor: <a href="perfilAutor.html" id="nombreAutor">Miguel de cervantes saavedra</a></h3>
-                <h3>Código ISM: <span id="ism">9788441426764</span> </h3>
-                <h3>Editorial: <span id="editorial"></span></h3>
-                <h3>Reseña:</h3>
-                <p id="reseña">Este libro trata de un tal Alonso Quijano que es un hidalgo pobre de la Mancha, que de tanto leer novelas de caballería acaba volviéndose loco y creyendo ser un caballero andante, llamándose Don Quijote de la Mancha.</p> 
-            </div>
-            <div >
-
-                <h2>Premios en su honor:</h2>
-                <p id="premios">Premio Miguel de Cervantes, Premio Cervantes Gastronómico, Trofeo Cervantes </p>
-
-            </div>
-
-            <p>Fecha de publicación: <span id="fechaPublicacion"> 2011 </span> </p>
-            <p>Precio: <span id="precio"> ₡18,800 </span></p>
-
-            <p>Disponibilidad: <span id="disponibilidad"></span></p>
-            <p>Formato: <span id="formato"></span></p>
-            <p>Genero del Autor: <span id="genero"></span></p>
-        </div>
+            <div id="infoLibro"></div>
 
         <div class>
             <p>Calificar libro</p>
@@ -176,10 +155,13 @@
             ).then(
                 function (data) {
                    
-                        var fila = "<img class=img_libro src='img/"+data.imagen+"'>";
+                        var portadaLibro = "<img class=img_libro src='img/"+data.imagen+"'>";
 
+                        var informacionLibro = "<h1 id='titulo'>"+data.nombre+"</h1><h3>Autor:<a href='perfilAutor.html?id="+data.idAutor+"'>"+data.idAutor.nombre+"</a></h3><h3>Código ISM: <span id='ism'>"+data.ism+"</span></h3><h3>Editorial: <span id='editorial'>"+data.editorial+"</span></h3><h3>Reseña:</h3><p id='reseña'>"+data.resenna+"</p></div><div><h2>Premios en su honor:</h2><p id='premios'>"+data.premiosEnHonor+"</p></div><p>Fecha de publicación: <span id='fechaPublicacion'> "+data.fechaDePublicacion+"</span></p><p>Precio: <span id='precio'> ₡"+data.precio+"</span></p><p>Disponibilidad:<span id='disponibilidad'>"+data.disponibilidad+"</span></p><p>Formato: <span id='formato'>"+data.formato+"</span></p><p>Genero del Autor: <span id='genero'>"+data.genero+"</span></p>";
 
-                        document.getElementById("imagenPortada").insertAdjacentHTML("beforeend", fila);
+                        document.getElementById("imagenPortada").insertAdjacentHTML("beforeend", portadaLibro);
+                        document.getElementById("infoLibro").insertAdjacentHTML("beforeend", informacionLibro);
+
                     
                 }
             );

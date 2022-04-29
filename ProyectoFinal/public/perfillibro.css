@@ -306,3 +306,18 @@ h2{
 p{
   font-family: Arial, Helvetica, sans-serif;
 }
+
+img{
+  object-fit:cover;
+  width: 50%;
+  height: 80%;
+  border: black solid 3px;
+}
+
+.info_libro span{
+  color: white;
+}
+
+.info_libro a{
+  color: var(--naranja)
+}
