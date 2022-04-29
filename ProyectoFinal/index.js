@@ -24,14 +24,14 @@ app.use(bodyParser.urlencoded({
 app.use('/libros', require('./api/libross.js'));
 app.use('/perfilLibroo', require('./api/libros.js'));
 app.use('/editarPerfil', require('./api/editars.js'));
-<<<<<<< HEAD
 app.use('/datosUsuario', require('./api/datosUsuarios'));
-=======
 
 app.use('/autores', require('./api/autores.js'));
+app.use('/socioComercial', require('./api/sociosComerciales.js'));
 
 
->>>>>>> main
+
+
 app.get('/api/users',function(req,res){
   serials.getUser(req, res, function(err, data) {
       res.send(data);

@@ -14,5 +14,4 @@ var usuarioSchema = new mongoose.Schema({
   
   
 //se hace una variable que haga una coneccion con moongose y se exporta para conectar con moongose
-const usuarioModel = mongoose.model("Usuarios",usuarioSchema)
-module.exports = usuarioModel
+module.exports = mongoose.model('libro', libroSchema, 'libros');
