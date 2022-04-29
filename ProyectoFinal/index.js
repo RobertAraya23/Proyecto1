@@ -28,6 +28,8 @@ app.use('/datosUsuario', require('./api/datosUsuarios'));
 
 app.use('/autores', require('./api/autores.js'));
 app.use('/socioComercial', require('./api/sociosComerciales.js'));
+app.use('/puntosDeEntrega', require('./api/puntosDeEntrega.js'));
+
 
 
 
