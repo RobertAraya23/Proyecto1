@@ -1,769 +1,117 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="catalogoLibros.css">
-        <title>Catalogo de Libros</title>
-    </head>
-    <body>
-        <div class="container">
+<head>
+    <link rel="stylesheet" href="home.css">
+    <title>Home | El Bazar de las Sorpresas</title>
+</head>
+<body>
+    <div class="container">
 
-            <!--logo y nombre de empresa (izquirda arriba)-->
-            <div class="busqueda">
-    
-                <img class="img_logo" src="img/logoNeo.png">
-    
-            </div>
-            <div class="logo titulo">
-    
-                <h1>El bazar de <span> las Sorpresas</span> </h1>
-            </div>
-    
+        <!--logo y nombre de empresa (izquirda arriba)-->
+        <div class="busqueda">
 
-    
-            <!--busqueda, carrito, menu (derecha arriba)-->
-            <div class="links">
-                <p>
-                    <a href="home.html">Bienvenido al bazar de las sorpresas</a>
-                    <i class="arrow right"></i>
-                    <a href="registro.html">Registrarse</a>
-                    <i class="arrow right"></i>
-                    <a href="inicioSecion.html">Iniciar sesión</a>
-                </p>
-                
-                <div class="container" >
-                    
-                    <form id="formularioBuscarLibro" action="perfilLibro.html" method="get">
-                        <input name="libroBuscar" id="libroBuscar" type="text" placeholder="Digite lo que desea buscar.."/>  
-        
-                        <!--<button  id="botonBuscar"  onclick="obtenerDatos()">Buscar</button>-->
-                        <input type="submit" value="Buscar">
-                        
-                    </form>
+            <img class="img_logo" src="img/logoNeo.png">
 
-                    <script>
-                        function obtenerDatos(){
-                            var libroBuscar = document.getElementById("libroBuscar").value
-                            alert(libroBuscar) 
-                        }
-                    </script>
-
-                    <a href="carritoCompras.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <circle cx="6" cy="19" r="2" />
-                            <circle cx="17" cy="19" r="2" />
-                            <path d="M17 17h-11v-14h-2" />
-                            <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                            <path d="M15 6h6m-3 -3v6" />
-                        </svg>
-                    </a>
-                   
-    
-    
-                    <a href="editarPerfil.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <circle cx="12" cy="7" r="4" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                          </svg>
-                    </a>
-    
-                
-                </div>
-    
-                <div class="menu">
-                    <p>
-                        <a href="catalogolibros.html">Catálogo libros</a>
-                        <a href="landingPageProducto.html">Nuestra empresa</a>
-                        <a href="landingPageEquipo.html">Neon Team</a>
-                        
-                    </p>
-                </div>
- 
-            </div>
-    
-     <!--Comentario-->
-     <!--Comentario Sol-->
-    
-    <!--Robert-->
         </div>
-        <div class="linea_encabezado"></div>
-    
-        <!--END HEADER-->
-        
-        <div class="container3">
-            <h1 class="titulo2">Catalogo de Libros</h1>
-            <div class="libros">
-                <img src="img/13reasonswhy.jpg" class="imagenes">
+        <div class="logo titulo">
 
+            <h1>El bazar de <span> las Sorpresas</span> </h1>
+        </div>
 
-                <a href="perfilLibro.html"><p class="texto">
-                    13 Resons Why
-                </p> </a>
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>                   
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-            <div class="libros">
-                <img src="img/laAcademia.jpg" class="imagenes">
-
-
-                 <a href="perfilLibro.html"><p class="texto">
-                    La academia
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-                    
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter1.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y la piedra filosofal
-                </p> </a>                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter2.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y la camara de los secretos
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter3.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y el prisionero de azkaban
-                </p> </a>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter4.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y el caliz de fuego
-                </p> </a>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter5.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y la order del fenix
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter6.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y el misterio del principe
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/harryPotter7.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Harry potter y las reliquias de la muerte
-                </p> </a>
-
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-            <div class="libros">
-                <img src="img/losJuegosdelHambre.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Los juegos del hambre
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-            <div class="libros">
-                <img src="img/enLlamas.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    En Llamas
-                </p> </a>
-
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/sinsajo.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Sinsajo
-                </p> </a>
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/after.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    After
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/losPilaresDeLaTierra.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Los Pilares de la tierra
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/orgulloyPrejuicio.jpg" class="imagenes">
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Orgullo y prejuicio
-                </p> </a>
-
-
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
-
-            <div class="libros">
-                <img src="img/dracula.jpg" class="imagenes">
-
-
-                <a href="perfilLibro.html"><p class="texto">
-                    Dracula
-                </p> </a>
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="6" y1="18" x2="6" y2="15" />
-                    <line x1="10" y1="18" x2="10" y2="12" />
-                    <line x1="14" y1="18" x2="14" y2="9" />
-                    <line x1="18" y1="18" x2="18" y2="6" />
-                </svg>
-                <form>
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                      --><label for="radio1">★</label><!--
-                      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                      --><label for="radio2">★</label><!--
-                      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                      --><label for="radio3">★</label><!--
-                      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                      --><label for="radio4">★</label><!--
-                      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                      --><label for="radio5">★</label>
-                    </p>
-                </form>
-    
-                <p class="texto">₡8.500</p>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEC170" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                </svg>
-            </div>
+        <!--busqueda, carrito, menu (derecha arriba)-->
+        <div class="links">
+            <p>
+                <a href="home.html">Bienvenido al Bazar de las Sorpresas</a>
+                <i class="arrow right"></i>
+                <a href="registro.html">Registrarse</a>
+                <i class="arrow right"></i>
+                <a href="inicioSecion.html">Iniciar sesión</a>
+            </p>
             
+            <div class="container" >
+                
+                <input type="text" placeholder="Digite lo que desea buscar..">  
+                <a href="resultadoBusqueda.html">
+                    <button class="boton">Buscar</button>
+                </a>
+
+                <a href="carritoCompras.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                        <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                </a>
+              
+                <a href="editarPerfil.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                </a>
+
+
+                
+
+
+            </div>
+
+            <div class="menu">
+                <p>
+                    <a href="catalogolibros.html">Catálogo libros</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="landingPageProducto.html">Nuestra empresa</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="landingPageEquipo.html">Neon Team</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    
+                </p>
+            </div>
+
+
         </div>
-    </body>
+
+
+    </div>
+    <div class="linea_encabezado"></div>
+<!--cuerpo de la pagina-->
+
+
+<div class="contenedor" id="imagenes">  </div>
+
+  
+    <footer >
+        <img class="publicidad" src="img/publicidad3.jpg">
+    </footer>
+
+   
+</div>
+
+<script>
+    function leerimagenes() {
+        fetch("http://localhost:8080/libros/")
+            .then(
+                function (response) {
+                    return response.json();
+                }
+
+
+            ).then(
+                function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var fila = "<div class='capa'><div class='imagen'><img src='img/"+data[i].imagen+"'></div><p ><h2><a href='perfilLibro.html?id="+data[i]._id+"'><p class='texto'>"+data[i].nombre+"</p></a></h2></p><p class='texto'>₡"+data[i].precio+"</p></div>";
+
+
+                        document.getElementById("imagenes").insertAdjacentHTML("beforeend", fila);
+                    }
+                }
+            );
+    }
+    leerimagenes();
+</script>
+</body>
+
 </html>
+
