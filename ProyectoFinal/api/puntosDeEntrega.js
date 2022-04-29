@@ -24,32 +24,36 @@ router.post('/buscar', function(req, res) {
 });
 
 router.post('/actualizar', function(req, res) {
-  var nombre = req.body.nombre;
-  var direccion = req.body.direccion;
-  var telefono = req.body.telefono;
-  var correoElectronico = req.body.correoElectronico;
-  var inicioRelaciones = req.body.inicioRelaciones;
+  var provincia = req.body.provincia;
+  var canton = req.body.canton;
+  var Distrito = req.body.Distrito;
+  var lat = req.body.lat;
+  var long = req.body.long;
+  var Direccion = req.body.Direccion;
+
+
   
 
   // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-  puntoDeEntrega.findOneAndUpdate({nombre: nombre},{$set:{direccion:direccion, telefono:telefono, correoElectronico:correoElectronico, inicioRelaciones:inicioRelaciones}}, {useFindAndModify: false, new: true}, function (err, doc) {
+  puntoDeEntrega.findOneAndUpdate({lat: lat},{$set:{provincia:provincia, canton:canton, Distrito:Distrito, long:long, Direccion:Direccion }}, {useFindAndModify: false, new: true}, function (err, doc) {
     res.json(doc);
   });
 });
 
 router.post('/insertar', function(req, res) {
-  var socioComercialNuevo = new puntoDeEntrega({
+  var puntoDeEntregaNuevo = new puntoDeEntrega({
 
     _id: new mongoose.Types.ObjectId(),
-    nombre: req.body.nombre,
-    direccion: req.body.direccion,
-    telefono: req.body.telefono,
-    correoElectronico: req.body.correoElectronico,
-    inicioRelaciones: req.body.inicioRelaciones
+    provincia: req.body.provincia,
+    canton: req.body.canton,
+    Distrito: req.body.Distrito,
+    lat: req.body.lat,
+    long: req.body.long,
+    Direccion: req.body.Direccion
 
   });
 
-  socioComercialNuevo.save()
+  puntoDeEntregaNuevo.save()
     .then(
       function(result) {
         res.json(result);

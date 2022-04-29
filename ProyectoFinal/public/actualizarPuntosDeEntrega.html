@@ -1,0 +1,102 @@
+<html>
+
+    <head>
+        
+    </head>
+
+
+<body onload="cargarTabla()">
+    
+
+
+
+    <form class="formularioIncertar"> 
+        <input type="text" id="provincia" placeholder="provincia" />
+        <input type="text" id="canton" placeholder="canton" />
+        <input type="text" id="Distrito" placeholder="Distrito" />
+        <input type="text" id="lat" placeholder="lat" />
+        <input type="text" id="long" placeholder="long" />
+        <input type="text" id="Direccion" placeholder="Direccion" />
+        
+
+        <button type="button"  onclick="actualizarLibro()">Actualizar Libro</button>
+        </form>
+    
+    <script>
+
+
+function actualizarLibro(){
+    var datos = {
+                provincia: document.getElementById("provincia").value,
+                canton: document.getElementById("canton").value,
+                Distrito: document.getElementById("Distrito").value,
+                lat: document.getElementById("lat").value,
+                long: document.getElementById("long").value,
+                Direccion: document.getElementById("Direccion").value
+            }
+
+
+            
+
+            fetch("http://localhost:8080/puntoDeEntrega/actualizar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+
+                function(json){
+
+                    alert("el libro ha sido actualizado")
+                    
+            }
+        )
+     }
+
+
+
+
+function cargarTabla() {
+        var direccion = window.location.search;
+        var variables = new URLSearchParams(direccion);
+        var id = variables.get("id");
+
+        var datos = {
+          idUsuario: id
+        }
+        
+        fetch("http://localhost:8080/puntosDeEntrega/buscar", {
+          method: 'POST',
+          body: JSON.stringify(datos),
+          headers: {'Content-Type': 'application/json'}
+        })
+          .then(
+            function(response){
+              return response.json();
+            }
+          )
+          .then (
+            function(json) {
+
+              document.getElementById("provincia").value = json.provincia;
+              document.getElementById("canton").value = json.canton;
+              document.getElementById("Distrito").value = json.Distrito;
+              document.getElementById("lat").value = json.lat;
+              document.getElementById("long").value = json.long;
+              document.getElementById("Direccion").value = json.Direccion; 
+            }
+          ) 
+      }
+    </script>
+
+
+</body>
+
+  
+
+
+</html>
+
