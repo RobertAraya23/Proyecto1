@@ -1,0 +1,52 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+}
+.capa{
+    flex-basis: 25%;
+    border: 1px solid black;
+    
+}
+a{
+
+    width: 150px;
+   text-align: center;
+   margin-top: 80px;
+   background-color: orangered;
+   border-radius:35px;
+   text-decoration: none;
+   margin-left: 50px;
+   border: 1px solid black;
+}
+div{
+    box-sizing: border-box;
+    
+}
+.imagen{
+    padding-top: 20px;
+    text-align: center;
+   
+}
+.boton{
+    width: 100px;
+    text-align: center;
+    
+    background-color: blue;
+    border-radius:35px;
+    text-decoration: none;
+    margin-left: 105px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+}
+.titulo{
+    text-align: center;
+    padding-top: 20px;
+}
+.links{
+    text-align: center;
+}
+
+.texto{
+    text-align: center;
+}

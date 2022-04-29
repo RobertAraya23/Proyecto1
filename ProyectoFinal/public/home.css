@@ -118,7 +118,9 @@ span{
   filter: grayscale(100);
 }
 .texto{
-  color: white;
+  color: black;
+  text-align: center;
+  padding-left: 30px;
 }
 #form {
   width: 250px;
@@ -158,4 +160,42 @@ input[type="radio"]:checked ~ label {
 
 .container1 a{
   color: black;
+}
+
+
+/*Codigo Nuevo*/
+
+.contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5B2924;
+}
+.capa{
+  flex-basis: 25%;
+border-bottom: black solid 2px;  
+}
+
+
+div{
+  box-sizing: border-box;
+  
+}
+.imagen{
+  padding-top: 20px;
+  text-align: center;
+}
+
+img{
+  object-fit:cover;
+  width: 50%;
+  height: 65%;
+  border: black solid 3px;
+}
+
+.titulo{
+  text-align: center;
+  padding-top: 20px;
+}
+.links{
+  text-align: center;
 }
