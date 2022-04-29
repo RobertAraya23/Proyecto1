@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sociosComerciales.css">
+    <link rel="stylesheet" href="editPerfilAutor.css">
 </head>
 
-<body>
+<body onload="cargarTabla()">
+
     <div class="container">
 
         <!--logo y nombre de empresa (izquirda arriba)-->
@@ -25,94 +26,268 @@
 
 
         <!--busqueda, carrito, menu (derecha arriba)-->
-        <div class="logo">
+        <div class="links">
             <p>
-                <a href="home.html">Bienvenido al Bazar de las Sorpresas</a>
+                <a href="home.html">Bienvenido al bazar de las sorpresas</a>
                 <i class="arrow right"></i>
                 <a href="registro.html">Registrarse</a>
                 <i class="arrow right"></i>
                 <a href="inicioSecion.html">Iniciar sesión</a>
             </p>
-
-            <div class="container">
-
-                <input type="text" placeholder="Digite lo que desea buscar..">
+            
+            <div class="container" >
+                
+                <input type="text" placeholder="Digite lo que desea buscar..">  
                 <a href="resultadoBusqueda.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="10" cy="10" r="7" />
-                        <line x1="21" y1="21" x2="15" y2="15" />
-                    </svg>
+                    <button>Buscar</button>
                 </a>
 
                 <a href="carritoCompras.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart carrito"
-                        width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="6" cy="19" r="2" />
                         <circle cx="17" cy="19" r="2" />
                         <path d="M17 17h-11v-14h-2" />
-                        <path d="M6 5l14 1l-1 7h-13" />
+                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                        <path d="M15 6h6m-3 -3v6" />
                     </svg>
                 </a>
 
                 <a href="editarPerfil.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="12" cy="7" r="4" />
                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                    </svg>
+                      </svg>
                 </a>
 
             </div>
 
             <div class="menu">
                 <p>
-                    <a class="color1" href="catalogolibros.html">Catálogo libros</a>
-                    <a class="color1" href="landingPageProducto.html">Nuestra empresa</a>
-                    <a class="color1" href="landingPageEquipo.html">Neon Team</a>
-
+                    <a href="catalogolibros.html">Catálogo libros</a>
+                    <a href="landingPageProducto.html">Nuestra empresa</a>
+                    <a href="landingPageEquipo.html">Neon Team</a>
+                    
                 </p>
             </div>
 
 
         </div>
 
+
     </div>
+    <div class="linea_encabezado"></div>
+    <!--END HEADER-->
+<!--cuerpo de la pagina-->
+    
+
+<div class="subEncabezado">
+    
+    <h1>Catalogo de socios comerciales</h1>
+    
 
     <div class="linea_encabezado"></div>
+    
+    
 
-    <div class="container color2">
-        <div class="logo">
-            <h2 class="titulo1">Socios Comerciales</h2>
+    <a href="editOrdenes.html">Ver pedidos</a><br>
+    <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+    <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+    <a href="reportesYPuntos.html">Reportes</a><br>
+    <a href="editOrdenes.html">Editar ordenes </a><br>
+    <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+    <a href="edicionPerfilLibro.html">Edicion de libros </a><br>
+    <a href="edicionPerfilAutor.html">Edicion de perfil de Autores</a><br>
+</div>
 
-            <div class="espacio">
-                <input type="text" placeholder="Nombre">
-            </div>
-            <div class="espacio">
-                <input type="text" placeholder="Código">
-            </div>
-            <div class="espacio">
-                <input type="text" placeholder="Dirección">
-            </div>
-            <div class="espacio">
-                <input type="tel" placeholder="teléfono">
-            </div>
-            <div class="espacio">
-                <input type="email" placeholder="Email">
-            </div>
-            <button class="espacio">Agregar</button>
+
+<div class="searchBar">
+    <h1>Busqueda por nombre:</h1>
+    <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por nombre">
+</div>
+
+<div class="backgroundAbajo">
+<div class="tabla">
+    <table border="1" id="tablaSocios" >
+            <tr>
+                <td>Nombre</td>
+                <td>dirección</td>
+                <td>teléfono</td>
+                <td>correo Electrónico</td>
+                <td>inicio Relaciones</td>
+                <td>Actualizar información</td>
+                
+            </tr>
+        </table>
+        <br/>
+
+        <div class="subEncabezado">
+            <h1>Insertar socio comercial</h1>
         </div>
-        <div class="titulo">
-            <img class="imagen" src="img/25.jpg" >
-        </div>
+
+
+        <form class="formularioIncertar"> 
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="text" id="direccion" placeholder="direccion" />
+        <input type="text" id="telefono" placeholder="telefono" />
+        <input type="text" id="correoElectronico" placeholder="correoElectronico" />
+        <input type="text" id="inicioRelaciones" placeholder="inicioRelaciones" />
+        
+        <button type="button"  onclick="insertarSocioComercial()">Inserta Libro</button>
+        </form>
     </div>
+</div>
 
+
+
+    <script>
+
+
+
+
+
+    function tableSearch(){
+        let input, filter, table, tr, td, txtValue;
+        console.log("This is working")
+        //inicializando variables
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tablaSocios");
+        tr = table.getElementsByTagName("tr")
+
+        for(let i = 0; i<tr.length; i++){
+            td=tr[i].getElementsByTagName("td")[0];
+            if(td){
+                txtValue= td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                }
+                else{
+                    tr[i].style.display = "none"
+                }
+            }
+
+        }
+    }
+
+
+function cargarTabla() {
+            fetch("http://localhost:8080/socioComercial/")
+            .then(
+                function(response){
+                return response.json();
+                }
+            )
+            .then (
+                function(json) {
+                for(var cont = 0; json.length > cont; cont++) {
+                    
+                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].direccion+"</td><td>"+json[cont].telefono+"</td><td>"+json[cont].correoElectronico+"</td><td>"+json[cont].inicioRelaciones+"<td><a href='actualizarSocioComercial.html?id="+json[cont]._id+"'>Actializar</a></td></tr>";
+                   
+                    document.getElementById("tablaSocios").insertAdjacentHTML("beforeend", linea);
+                }
+                }
+            ) 
+            }
+        
+        function insertarSocioComercial() {
+
+
+        
+
+            var datos = {
+            nombre: document.getElementById("nombre").value,
+            direccion: document.getElementById("direccion").value,
+            telefono: document.getElementById("telefono").value,
+            correoElectronico: document.getElementById("correoElectronico").value,
+            inicioRelaciones: document.getElementById("inicioRelaciones").value
+          
+            }
+            
+
+            console.log(datos)
+
+            fetch("http://localhost:8080/socioComercial/insertar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+
+                function(json){
+
+                    console.log("llegamos");
+
+                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.direccion+"</td><td>"+json.telefono+"</td><td>"+json.correoElectronico+"</td><td>"+json.inicioRelaciones+"<td><a href='actualizarLibro.html?id="+json._id+"'>Actializar</a></td></tr>";
+               
+                console.log(linea);
+
+                document.getElementById("tablaSocios").insertAdjacentHTML("beforeend", linea);
+            }
+            )
+        }
+
+
+            //validaciones
+        var precio = document.getElementById("precio")
+        var tituloLibro = document.getElementById("titulo")
+        var nombreAutor = document.getElementById("autor")
+        var numeroISM = document.getElementById("ism")
+        var editorial = document.getElementById("editorial")
+        var reseña = document.getElementById("reseña")
+        var fecha = document.getElementById("fecha")
+
+        function validar(){
+
+            
+                if( tituloLibro.value == ""){
+                    alert("Error: Ingrese un titulo para el libro")
+                    
+                    return false
+                } 
+
+                if(nombreAutor.value =="" || nombreAutor.value.includes("!") || nombreAutor.value.includes("#") || nombreAutor.value.includes("$") || nombreAutor.value.includes("%") || nombreAutor.value.includes("&") || nombreAutor.value.includes("/") || nombreAutor.value.includes("(") || nombreAutor.value.includes(")")|| nombreAutor.value.includes("=")|| nombreAutor.value.includes("?")|| nombreAutor.value.includes("¿")){
+                    alert("Error: Ingrese un nombre de autor válido, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
+                
+                    return false
+                }
+
+            if(numeroISM.value == "" || numeroISM.value < 0 ){
+            alert("Error: Ingrese un numero de ISM valido, recuerde que este no puede ser un número negativo")
+
+            return false} 
+
+            if( editorial.value == ""){
+                alert("Error: Ingrese un nombre de editorial")
+                return false
+            } 
+
+            if( reseña.value == ""){
+                alert("Error: Ingrese una reseña para el libro")
+
+                return false
+            } 
+            if( fecha.value == ""){
+                alert("Error: Ingrese una fecha de publicación")
+                return false
+            }
+            
+            if(precio.value == "" || precio.value < 0 ){
+            alert(" Error: Ingrese un precio valido para poder enviar el formulario")
+            return false} 
+            
+            alert("Los datos ingresados se han guardado exitosamente")
+            
+
+
+        }
+
+    </script>
 </body>
+
 
 </html>

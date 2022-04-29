@@ -106,3 +106,26 @@
     height: 30rem;
     margin-bottom: 10px;
   }
+
+  .formularioIncertar{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  
+  }
+  
+  .subEncabezado{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--cafe);
+    color: white;
+  }
+  
+  .subEncabezado h1{
+  color: white;
+  }
+  
+  .searchBar{
+    padding: 50px;
+    text-align: center;
+  }
