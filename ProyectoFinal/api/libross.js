@@ -23,6 +23,19 @@ router.post('/buscar', function(req, res) {
     );
 });
 
+
+//FUNCION PARA BUSCAR POR NOMBRE DE LIBRO
+router.post('/buscarNombre', function(req, res) {
+  var nombre = req.body.nombre;
+  libro.findOne(nombre).exec()
+    .then(
+      function(result) {
+        res.json(result);
+      }
+    );
+});
+
+
 router.post('/actualizar', function(req, res) {
   var nombre = req.body.nombre;
   var precio = req.body.precio;

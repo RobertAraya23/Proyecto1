@@ -75,13 +75,13 @@ function actualizarLibro(){
 function cargarTabla() {
         var direccion = window.location.search;
         var variables = new URLSearchParams(direccion);
-        var id = variables.get("id");
+        var id = variables.get("nombre");
 
         var datos = {
           idUsuario: id
         }
         
-        fetch("http://localhost:8080/libros/buscar", {
+        fetch("http://localhost:8080/libros/buscarNombre", {
           method: 'POST',
           body: JSON.stringify(datos),
           headers: {'Content-Type': 'application/json'}
