@@ -1,0 +1,108 @@
+<html>
+
+    <head>
+        
+    </head>
+
+
+<body onload="cargarTabla()">
+    
+
+
+
+    <form class="formularioIncertar"> 
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="text" id="apellido" placeholder="apellido" />
+        <input type="text" id="fechaDeNacimiento" placeholder="fechaDeNacimiento" />
+        <input type="text" id="correoElectronico" placeholder="correoElectronico" />
+        <input type="text" id="contrasenna" placeholder="contrasenna" />
+        <input type="number" id="puntaje" placeholder="puntaje" />
+       
+        
+
+        <button type="button"  onclick="actualizarUsuario()">Actualizar Usuario</button>
+        </form>
+    
+    <script>
+
+
+function actualizarLibro(){
+    var datos = {
+            nombre: document.getElementById("nombre").value,
+            apellido: document.getElementById("apellido").value,
+            fechaDeNacimiento: document.getElementById("fechaDeNacimiento").value,
+            correoElectronico: document.getElementById("correoElectronico").value,
+            contrasenna: document.getElementById("contrasenna").value,
+            puntaje: document.getElementById("puntaje").value
+           
+            }
+
+
+            
+
+            fetch("http://localhost:8080/editarUsuario/actualizar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+
+                function(json){
+
+                    alert("el libro ha sido actualizado")
+                    
+            }
+        )
+     }
+
+
+
+
+function cargarTabla() {
+        var direccion = window.location.search;
+        var variables = new URLSearchParams(direccion);
+        var id = variables.get("id");
+
+        var datos = {
+          idUsuario: id
+        }
+        
+        fetch("http://localhost:8080/editarUsuario/buscar", {
+          method: 'POST',
+          body: JSON.stringify(datos),
+          headers: {'Content-Type': 'application/json'}
+        })
+          .then(
+            function(response){
+              return response.json();
+            }
+          )
+          .then (
+            function(json) {
+
+              document.getElementById("nombre").value = json.nombre;
+              document.getElementById("apellido").value = json.apellido;
+              document.getElementById("fechaDeNacimiento").value = json.fechaDeNacimiento;
+              document.getElementById("correoElectronico").value = json.correoElectronico;
+              document.getElementById("contrasenna").value = json.contrasenna;
+              document.getElementById("puntaje").value = json.puntaje;
+              
+
+            
+        
+            
+            }
+          ) 
+      }
+    </script>
+
+
+</body>
+
+  
+
+
+</html>
