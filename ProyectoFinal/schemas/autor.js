@@ -9,7 +9,8 @@ premiosGanados:String,
 paisNacimiento:String,
 fechaNacimiento:String,
 generoDelAutor:String,
-fechaDeDefuncion:String
+fechaDeDefuncion:String,
+imagen:String
 
 });
 //se hace una variable que haga una coneccion con moongose y se exporta para conectar con moongose

@@ -93,65 +93,61 @@
     
     <div class="container2">
 
-        <div class="img_Autor">
-            
-            <h1>Miguel de Cervantes Saavedra</h1>
-            <img src="img/cervantes.jpg" class="cervantes">
-            
-        </div>
+        <div class="img_Autor" id="portadaDelAutor">  </div>
 
         <div class="info_libro">
+    
+            <div id="librosPublicados">  </div>
+    
+            <div class="contenedorPremios" id="premiosAutor">  </div>
 
-            <div>
-                <h1>Libros publicados:</h1>
-                <ol>
-                    <li>La Numancia</li>
-                    <li>El trato de Argel</li>
-                    <li>La Galatea</li>
-                    <li>El Ingenioso Hidalgo don Quijote de la Mancha</li>
-                    <li>Novelas Ejemplares</li>
-                    <li>Novela del Casamiento Engañoso</li>
-                    <li>La Gitanilla</li>
-                    <li>El amante liberal</li>
-                    <li>La española inglesa</li>
-                    <li>Riconete y Cortadillo</li>
-                    <li>Licenciado Vidriera</li>
-                    <li>La fuerza de la la sangre</li>
-                    <li>El celoso extremeño</li>
-                    <li>La ilustre fregona</li>
-                    <li>La de los perros Cipón y Berganza</li>
-                    <li>Novela de la Señora Cornelia</li>
-                    <li>Novela de las Dos Doncellas</li>
-                    <li>Viaje del Parnaso</li>
-                    <li>Ocho comedias y ocho entremeses nuevos, nunca representados</li>
-                    <li>Los trabajos de Persiles y Segismunda, historia septentrional</li>
-                    
-                </ol>
-            </div>
-
-            <div class="contenedorPremios">
-
-                <h1>Premios que llevan su nombre:</h1>
-
-                <ul>
-                    <li>Premio Miguel de Cervantes: premio más importante de Literatura en lengua española.</li>
-                    <li>Premio Cervantes Chico: dedicado a la literatura infantil y juvenil.</li>
-                    <li>Premio Cervantes Gastronómico: dedicado a personas del mundo de la cocina.</li>
-                    <li>Trofeo Cervantes: torneo amistoso de fútbol que se celebra en Alcalá de Henares.</li>   
-                </ul>
-
-            </div>
-
-            <p>País nacimineto: España</p>
-            <p>Fecha de nacimiento: 29 septiembre 1547</p>
-            <p>Genero del autor: Masculino</p>
-            <p>Fecha de defunción: 22 de Abril 1616</p>
-            
-            </div>
-
+            <div id="infoAutor">  </div>
+    
         </div>
         
     </div>
+    <script>
+
+        function cargarTabla() {
+                var direccion = window.location.search;
+                var variables = new URLSearchParams(direccion);
+                var id = variables.get("id");
+    
+                var datos = {
+                idUsuario: id
+                }
+                
+                fetch("http://localhost:8080/autor/buscar", {
+                method: 'POST',
+                body: JSON.stringify(datos),
+                headers: {'Content-Type': 'application/json'}
+                })
+                .then(
+                    function(response){
+                    return response.json();
+                    }
+                ).then(
+                    function (data) {
+                       
+                        var portadaAutor = "<h1>"+data.nombre+"</h1><img src='img/"+data.imagen+"'>";
+    
+                        var librosPublicado = "<h1>Libros publicados:</h1><ol><li>"+data.librosPublicados+"</li></ol>";
+    
+                        var premios = "<h1>Premios que llevan su nombre:</h1><ul><li>"+data.premiosGanados+"</li></ul>";
+    
+                        var infoAutors = "<p>País nacimineto: "+data.paisNacimiento+"</p><p>Fecha de nacimiento: "+data.fechaNacimiento+"</p><p>Genero del autor: "+data.generoDelAutor+"</p><p>Fecha de defunción: "+data.fechaDeDeFuncion+"</p>";
+            
+                        document.getElementById("portadaDelAutor").insertAdjacentHTML("beforeend", portadaAutor);
+                        document.getElementById("librosPublicados").insertAdjacentHTML("beforeend", librosPublicado);
+                        document.getElementById("premiosAutor").insertAdjacentHTML("beforeend", premios);
+                        document.getElementById("infoAutor").insertAdjacentHTML("beforeend", infoAutors);
+    
+                        
+                }
+            );
+                
+        }
+    </script>
 
 </body>
 
