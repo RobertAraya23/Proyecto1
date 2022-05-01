@@ -260,40 +260,32 @@
         function validar() {
 
 
-            if (tituloLibro.value == "") {
+            if (nombre.value == "") {
                 alert("Error: Ingrese un titulo para el libro")
 
                 return false
             }
 
-            if (nombreAutor.value == "" || nombreAutor.value.includes("!") || nombreAutor.value.includes("#") || nombreAutor.value.includes("$") || nombreAutor.value.includes("%") || nombreAutor.value.includes("&") || nombreAutor.value.includes("/") || nombreAutor.value.includes("(") || nombreAutor.value.includes(")") || nombreAutor.value.includes("=") || nombreAutor.value.includes("?") || nombreAutor.value.includes("¿")) {
-                alert("Error: Ingrese un nombre de autor válido, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
+
+            if (fechaDeNacimiento.value == "" || fechaDeNacimiento.value < 0) {
+                alert("Error: Ingrese fecha de nacimiento ")
 
                 return false
             }
 
-            if (numeroISM.value == "" || numeroISM.value < 0) {
-                alert("Error: Ingrese un numero de ISM valido, recuerde que este no puede ser un número negativo")
-
+            if (correoElectronico.value == "") {
+                alert("Error: Ingrese un correo")
                 return false
             }
 
-            if (editorial.value == "") {
-                alert("Error: Ingrese un nombre de editorial")
-                return false
-            }
-
-            if (reseña.value == "") {
-                alert("Error: Ingrese una reseña para el libro")
+            if (contrasenna.value == "") {
+                alert("Error: Ingrese una contraseña")
 
                 return false
             }
-            if (fecha.value == "") {
-                alert("Error: Ingrese una fecha de publicación")
-                return false
-            }
+          
 
-            if (precio.value == "" || precio.value < 0) {
+            if (puntaje.value == "" || puntaje.value < 0) {
                 alert(" Error: Ingrese un precio valido para poder enviar el formulario")
                 return false
             }
