@@ -93,7 +93,7 @@
     <div class="datosCuentaNueva">
         <h2>DATOS PERSONALES</h2>
 
-    <form onsubmit="insertarDatosUsuario()">
+    <form>
         <div>
             <p>Nombre</p>
             <input type="text" placeholder="Escriba aqui" id="nombre">
@@ -106,7 +106,7 @@
             <p>Fecha de nacimiento</p>
             <input type="date" id="fechaNacimiento"> 
         </div>
-        <button class="registrarse">REGISTRARSE</button>
+        <button class="registrarse" type="button" onclick="insertarDatosUsuario()">REGISTRARSE</button>
 
     </div>
     <div class="datosInicioSesion">
@@ -118,7 +118,7 @@
         <P>Confirmar contraseña</P>
         <input type="password" placeholder="Escriba aqui" id="passwordConfirmacion">
     </form>
- 
+        
     <script>
         var nombre = document.getElementById("nombre")
         var apellido = document.getElementById("apellido")
@@ -135,19 +135,23 @@
             var datosUsuario = {
             nombre: document.getElementById("nombre").value,
             apellido: document.getElementById("apellido").value,
-            fechaNacimiento: document.getElementById("fechaNacimiento").value,
-            email: document.getElementById("email").value,
-            password: document.getElementById("password").value,
+            fechaDeNacimiento: document.getElementById("fechaNacimiento").value,
+            correoElectronico: document.getElementById("email").value,
+            contrasenna: document.getElementById("password").value,
             puntaje: 0
-        }
+            }
 
         console.log(datosUsuario)
 
-        fetch("http://localhost:5000/datosUsuario/insertarDatosUsuario"), {
+        fetch("http://localhost:8080/datosUsuario/insertarDatosUsuario", {
         method: 'POST',
         body: JSON.stringify(datosUsuario),
         headers: {'Content-Type': 'application/json'}
-        }
+        }).then(
+                function(response){
+                return response.json();
+                }
+            )
     }
 
     </script>

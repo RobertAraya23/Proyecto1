@@ -1,7 +1,8 @@
 var express = require('express');
-var router = express.Router();
+const { is } = require('express/lib/request');
 var mongoose = require('mongoose');
-
+const { restart } = require('nodemon');
+var router = express.Router();
 var datosUsuario = require('../schemas/datosUsuario.js');
 
 router.get("/", function(req, res) {
@@ -13,6 +14,7 @@ router.get("/", function(req, res) {
 
 router.post('/insertarDatosUsuario', function(req, res) {
     var datosUsuarioNuevo = new datosUsuario({
+      
       _id: new mongoose.Types.ObjectId(),
       nombre: req.body.nombre,
       apellido: req.body.apellido,
@@ -27,7 +29,7 @@ router.post('/insertarDatosUsuario', function(req, res) {
         function(result) {
           res.json(result);
         }
-      );
+      )
   });
   
 module.exports = router;
