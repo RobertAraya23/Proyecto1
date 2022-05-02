@@ -13,7 +13,7 @@
 
 
 
-<body>
+<body onload = "cargarTabla()">
     
 
 
@@ -109,40 +109,38 @@
     <script>
 
         function cargarTabla() {
-                var direccion = window.location.search;
-                var variables = new URLSearchParams(direccion);
-                var id = variables.get("id");
-    
-                var datos = {
-                idUsuario: id
-                }
-                
-                fetch("http://localhost:8080/autor/buscar", {
-                method: 'POST',
-                body: JSON.stringify(datos),
-                headers: {'Content-Type': 'application/json'}
-                })
-                .then(
-                    function(response){
-                    return response.json();
-                    }
-                ).then(
-                    function (data) {
-                       
-                        var portadaAutor = "<h1>"+data.nombre+"</h1><img src='img/"+data.imagen+"'>";
-    
-                        var librosPublicado = "<h1>Libros publicados:</h1><ol><li>"+data.librosPublicados+"</li></ol>";
-    
-                        var premios = "<h1>Premios que llevan su nombre:</h1><ul><li>"+data.premiosGanados+"</li></ul>";
-    
-                        var infoAutors = "<p>País nacimineto: "+data.paisNacimiento+"</p><p>Fecha de nacimiento: "+data.fechaNacimiento+"</p><p>Genero del autor: "+data.generoDelAutor+"</p><p>Fecha de defunción: "+data.fechaDeDeFuncion+"</p>";
+            var direccion = window.location.search;
+            var variables = new URLSearchParams(direccion);
+            var id = variables.get("id");
+
+            var datos = {
+            idUsuario: id
+            }
             
-                        document.getElementById("portadaDelAutor").insertAdjacentHTML("beforeend", portadaAutor);
-                        document.getElementById("librosPublicados").insertAdjacentHTML("beforeend", librosPublicado);
-                        document.getElementById("premiosAutor").insertAdjacentHTML("beforeend", premios);
-                        document.getElementById("infoAutor").insertAdjacentHTML("beforeend", infoAutors);
-    
-                        
+            fetch("http://localhost:8080/autores/buscar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            })
+            .then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+                function (data) {
+                       
+                    var portadaAutor = "<h1>"+data.nombre+"</h1><img src='img/"+data.imagen+"'>";
+
+                    var librosPublicado = "<h1>Libros publicados:</h1><ol><li>"+data.librosPublicados+"</li></ol>";
+
+                    var premios = "<h1>Premios que llevan su nombre:</h1><ul><li>"+data.premiosGanados+"</li></ul>";
+
+                    var infoAutors = "<p>País nacimineto: "+data.paisNacimiento+"</p><p>Fecha de nacimiento: "+data.fechaNacimiento+"</p><p>Genero del autor: "+data.generoDelAutor+"</p><p>Fecha de defunción: "+data.fechaDeDefuncion+"</p>";
+        
+                    document.getElementById("portadaDelAutor").insertAdjacentHTML("beforeend", portadaAutor);
+                    document.getElementById("librosPublicados").insertAdjacentHTML("beforeend", librosPublicado);
+                    document.getElementById("premiosAutor").insertAdjacentHTML("beforeend", premios);
+                    document.getElementById("infoAutor").insertAdjacentHTML("beforeend", infoAutors);
                 }
             );
                 
