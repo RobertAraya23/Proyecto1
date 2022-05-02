@@ -35,6 +35,7 @@ app.use('/editarUsuario', require('./api/editarUsuarios.js'));
 
 
 
+app.use('/autores', require('./api/autores.js'));
 app.get('/api/users',function(req,res){
   serials.getUser(req, res, function(err, data) {
       res.send(data);

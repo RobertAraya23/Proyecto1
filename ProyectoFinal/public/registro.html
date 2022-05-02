@@ -130,7 +130,6 @@
         var validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         var validRegexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]).{9,12}$/
 
-
         function insertarDatosUsuario(){
             var datosUsuario = {
             nombre: document.getElementById("nombre").value,
@@ -139,6 +138,73 @@
             correoElectronico: document.getElementById("email").value,
             contrasenna: document.getElementById("password").value,
             puntaje: 0
+            }
+
+            if (nombre.value == ""){
+                alert("Error: Rellene el espacio de nombre.")
+
+                return false
+                
+            }
+
+            if (!nombre.value.match(regexNombre)){
+                alert("Error: Ingrese un nombre válido.")
+
+                return false
+            }
+            //------------------//
+
+            if (apellido.value == ""){
+                alert("Error: Rellene el espacio de apellido.")
+
+                return false
+                
+            }
+
+            if (!apellido.value.match(regexNombre)){
+                alert("Error: Ingrese un apellido válido.")
+
+                return false
+            }
+
+            //------------------//
+
+            if (email.value == ""){
+                alert("Error: Rellene el espacio de correo")
+
+                return false
+            }
+
+            if(!email.value.match(validRegexEmail)){
+                alert("Error: Ingrese un correo válido")
+
+                return false 
+            }
+            
+            //------------------//
+
+            if (password.value == ""){
+                alert("Error: Rellene el espacio de contraseña.")
+
+                return false
+            }
+
+            if (!password.value.match(validRegexPassword)){
+                alert("Error: La contraseña debe llevar al menos un número, un caracter en mayúscula, un caracter en minúscula, y un caracter especial.")
+
+                return false
+            }
+
+            if (passwordConf.value == ""){
+                alert("Error: Rellene el espacio de confirmar contraseña.")
+
+                return false
+            }
+
+            if (!passwordConf.value.match(password.value)){
+                alert("Error: Las contraseñas no coinciden.")
+
+                return false
             }
 
         console.log(datosUsuario)
@@ -151,6 +217,10 @@
                 function(response){
                 return response.json();
                 }
+            ). then(
+                alert("Usuario registrado satisfactoriamente. Por favor inicie sesion.")
+            ). then(
+                window.location.href = "inicioSecion.html"
             )
     }
 
