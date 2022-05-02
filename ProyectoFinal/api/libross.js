@@ -27,7 +27,7 @@ router.post('/buscar', function(req, res) {
 //FUNCION PARA BUSCAR POR NOMBRE DE LIBRO
 router.post('/buscarNombre', function(req, res) {
   var nombre = req.body.nombre;
-  libro.findOne(nombre).exec()
+  libro.find({ nombre:{'$regex' : nombre, '$options' : 'i'}}).exec()
     .then(
       function(result) {
         res.json(result);

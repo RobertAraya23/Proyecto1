@@ -79,7 +79,7 @@
 <!--cuerpo de la pagina-->
 
 
-<div class="contenedor" id="imagenes">  </div>
+<div class="contenedor" id="libro">  </div>
 
   
     <footer >
@@ -90,9 +90,21 @@
 </div>
 
 <script>
-    function leerimagenes() {
-        fetch("http://localhost:8080/libros/")
-            .then(
+    function cargarPerfiles() {
+
+        var direccion = window.location.search;
+        var variables = new URLSearchParams(direccion);
+        var nombre = variables.get("nombre");
+
+        var datos = {
+          nombre: nombre
+        }
+
+        fetch("http://localhost:8080/libros/buscarNombre", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
                 function (response) {
                     return response.json();
                 }
@@ -105,12 +117,12 @@
                         var fila = "<div class='capa'><div class='imagen'><img src='img/"+data[i].imagen+"'></div><p ><h2><a href='perfilLibro.html?id="+data[i]._id+"'><p class='texto'>"+data[i].nombre+"</p></a></h2></p><p class='texto'>₡"+data[i].precio+"</p></div>";
 
 
-                        document.getElementById("imagenes").insertAdjacentHTML("beforeend", fila);
+                        document.getElementById("libro").insertAdjacentHTML("beforeend", fila);
                     }
                 }
             );
     }
-    leerimagenes();
+    cargarPerfiles();
 </script>
 </body>
 
