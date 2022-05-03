@@ -93,7 +93,7 @@
     
     <div class="container2">
 
-        <div class="img_Autor" id="portadaDelAutor">  </div>
+        <div class="img_Autor" id="portadaDelAutor"></div>
 
         <div class="info_libro">
     
@@ -138,7 +138,9 @@
                     var infoAutors = "<p>País nacimineto: "+data.paisNacimiento+"</p><p>Fecha de nacimiento: "+data.fechaNacimiento+"</p><p>Genero del autor: "+data.generoDelAutor+"</p><p>Fecha de defunción: "+data.fechaDeDefuncion+"</p>";
         
                     document.getElementById("portadaDelAutor").insertAdjacentHTML("beforeend", portadaAutor);
+
                     document.getElementById("librosPublicados").insertAdjacentHTML("beforeend", librosPublicado);
+
                     document.getElementById("premiosAutor").insertAdjacentHTML("beforeend", premios);
                     document.getElementById("infoAutor").insertAdjacentHTML("beforeend", infoAutors);
                 }
