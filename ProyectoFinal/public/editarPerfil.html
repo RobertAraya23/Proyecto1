@@ -123,25 +123,31 @@
                         <p class="parrafo">
                             <form>
                                <label for="chooose"> <a href="#"> Nombre del cliente</a></label><br>
-                                <input id="choose" name="i_like" required>
+                                <input id="nombre" name="i_like" required>
+                                <button onclick="actualizarDatosUsuario()">Enviar</button>
+                                <br>
+                                <br>
+                                <label for="chooose"> <a href="#"> Apellido del cliente</a></label><br>
+                                <input id="apellido" name="i_like" required>
+                                <button>Enviar</button>
+                                <br>
+                                <br>
+                                <label for="chooose"> <a href="#"> Fecha de fecha de nacimiento</a></label><br>
+                                <input id="fechaDeNacimiento" type="date" required>
                                 <button>Enviar</button>
                                 <br>
                                 <br>
                                 <label for="chooose"> <a href="#"> Correo del cliente</a></label><br>   
-                                <input id="choose" name="i_like" required>
+                                <input id="correoElectronico" name="i_like" required>
                                 <button>Enviar</button>                      
                                 <br>
                                 <br>
-                                <label for="chooose"> <a href="#"> Numero de cedula</a></label> <br>
-                                <input id="choose" name="i_like" required>
+                                <label for="chooose"> <a href="#"> Contrasena</a></label> <br>
+                                <input id="contrasenna" name="i_like" required>
                                 <button>Enviar</button>
                                 <br>
                                 <br>
-                                <label for="chooose"> <a href="#"> Numero de telefono</a></label><br>
-                                <input id="choose" name="i_like" required>
-                                <button>Enviar</button>
-                                <br>
-                                <br>
+            
                                 <a href="#"> Cambiar contraseña | Editar </a><br>
                             </form>
                         </p>
@@ -162,6 +168,7 @@
                             <button>Enviar</button>                      
                             <br>
                             <br>
+                            
                             <label for="chooose"> <a href="#"> Numero de cedula</a></label> <br>
                             <input id="choose" name="i_like" required>
                             <button>Enviar</button>
@@ -190,6 +197,35 @@
             
         </div>
     </div>
+    <script>
+    
+    function actualizarDatosUsuario(){
+    var datos = {
+            nombre: document.getElementById("nombre").value,
+            apellido: document.getElementById("apellido").value,
+            fechaDeNacimiento: document.getElementById("fechaDeNacimiento").value,
+            correoElectronico: document.getElementById("correoElectronico").value,
+            contrasenna: document.getElementById("contrasenna").value
+            }
+
+            fetch("http://localhost:8080/datosUsuario/actualizar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+
+                function(json){
+
+                    alert("el libro ha sido actualizado")
+                    
+            }
+        )
+     }
+    </script>
 </body>
 
 

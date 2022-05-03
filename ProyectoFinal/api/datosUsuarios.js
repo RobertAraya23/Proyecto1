@@ -32,4 +32,15 @@ router.post('/insertarDatosUsuario', function(req, res) {
       )
   });
   
+  router.post('/actualizar', function(req, res) {
+    var nombre = req.body.nombre;
+    var apellido = req.body.apellido;
+    var fechaDeNacimiento = req.body.fechaDeNacimiento;
+    var correoElectronico = req.body.correoElectronico;
+    var contrasenna = req.body.contrasenna;
+    // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
+    datosUsuario.findOneAndUpdate({nombre: nombre},{$set:{apellido:apellido, fechaDeNacimiento:fechaDeNacimiento, correoElectronico:correoElectronico, contrasenna:contrasenna}}, {useFindAndModify: false, new: true}, function (err, doc) {
+      res.json(doc);
+    });
+  });
 module.exports = router;
