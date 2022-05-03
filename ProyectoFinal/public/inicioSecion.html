@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,24 @@
     <link rel="stylesheet" href="iniciar_sesion_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <div class="container">
 
         <!--logo y nombre de empresa (izquirda arriba)-->
         <div class="busqueda">
-    
+
             <img class="img_logo" src="img/logoNeo.png">
-    
+
         </div>
         <div class="logo titulo">
-    
+
             <h1><span class="logo1">El Bazar de</span> <span class="logo2"> las Sorpresas</span> </h1>
         </div>
-    
-    
-    
+
+
+
         <!--busqueda, carrito, menu (derecha arriba)-->
         <div class="logo">
             <p>
@@ -34,9 +36,9 @@
                 <i class="arrow right"></i>
                 <a href="inicioSecion.html">Iniciar sesión</a>
             </p>
-    
+
             <div class="container">
-    
+
                 <input type="text" placeholder="Digite lo que desea buscar..">
                 <a href="resultadoBusqueda.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="28"
@@ -47,7 +49,7 @@
                         <line x1="21" y1="21" x2="15" y2="15" />
                     </svg>
                 </a>
-    
+
                 <a href="carritoCompras.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart carrito"
                         width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
@@ -59,7 +61,7 @@
                         <path d="M6 5l14 1l-1 7h-13" />
                     </svg>
                 </a>
-    
+
                 <a href="editarPerfil.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="28"
                         height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
@@ -69,23 +71,23 @@
                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                     </svg>
                 </a>
-    
+
             </div>
-    
+
             <div class="menu">
                 <p>
                     <a class="color1" href="catalogolibros.html">Catálogo libros</a>
                     <a class="color1" href="landingPageProducto.html">Nuestra empresa</a>
                     <a class="color1" href="landingPageEquipo.html">Neon Team</a>
-    
+
                 </p>
             </div>
-    
-    
+
+
         </div>
-    
+
     </div>
-    
+
     <div class="linea_encabezado"></div>
 
     <!--FIN DE ENCABEZADO-->
@@ -97,68 +99,70 @@
         <div class="datosInicioSesion">
             <h2>CLIENTES REGISTRADOS</h2>
             <p>Si ya creó una cuenta, inicie sesión digitando su dirección de correo electrónico y contraseña.</p>
-    
-        <form onsubmit="validar()">
-            <div>
-                <p>Email</p>
-                <input type="email" name="correo" placeholder="Escriba aqui su email" >
-            </div>
-            <div>
-                <p>Contraseña</p>
-                <input type="password" name="contrasenna" placeholder="Escriba aqui su contraseña" >
-            </div>
-        
-                <button class="botonInicio">INICIAR SESION</button>
-                    <button class="botonInicio" onclick="document.location='reportesYPuntos.html'">INICIAR SESION ADMIN</button>
-            </div>
-        </form>
+
+            <form name="login">
+                <table width="100" border="0">
+                    <tr>
+
+                        <th scope="row">
+                            <h2>Usuario</h2>
+                            <input name="usuario" type="text" class="Input" value="" size="10" />
+                        </th>
+
+
+                    </tr>
+                    <tr>
+                        <th height="20" scope="row">
+                            <h2>Clave</h2>
+                            <input name="password" type="password" class="Input" value="" size="10" />
+                            <input value="Entrar" target="_parent" onclick="Login()" type="button" class="stilo" />
+                        </th>
+                             
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="reset" name="Borrar" id="Borrar" value="Reset" class="stilo" />
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
         <div class="nuevoCliente">
-            
+
             <a href="registro.html"><button onclick="document.location='registrarse.html'">CREAR CUENTA</button></a>
         </div>
 
 
-        
-        
-    
-        <script>
-            var email = document.getElementById("email");
-            var password = document.getElementById("contrasenaCliente");
-            var validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            var validRegexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]).{9,12}$/
-    
-            function validar(){
-                if (email.value == ""){
-                    alert("Error: Ingrese un correo valido")
-    
-                    return false
-                }
-    
-                if (!email.value.match(validRegexEmail)){
-                    alert("Error: Ingrese un correo valido")
-    
-                    return false 
-                }
-    
-                //--------------------------------------------------------------------------//
-    
-                if (password.value == ""){
-                    alert("Error: Rellene el espacio de contraseña.")
-    
-                    return false
-                }
-    
-                if (!password.value.match(validRegexPassword)){
-                    alert("Error: La contraseña debe llevar al menos un número, un caracter en mayúscula, un caracter en minúscula, y un caracter especial.")
-    
-                    return false
-                }
-            }
-        </script>
-
-
-        
     </div>
-        
-    </body>
-    </html>
+
+    <script language="JavaScript">
+        function Login() {
+            var done = 0;
+            var usuario = document.login.usuario.value;
+            var password = document.login.password.value;
+            if (usuario == "USUARIO1" && password == "CONTRASEÑA1") {
+                window.location = "home.HTML";
+            }
+            if (usuario == "USUARIO2" && password == "CONTRASEÑA2") {
+                window.location = "home.HTML";
+            }
+            if (usuario == "" && password == "") {
+                alert('complete los espacios vacios');
+            }
+        } 
+    </script>
+    </center>
+    <script language="Javascript">
+        !--Begin
+        document.oncontextmenu = function () { return false }
+        // End -->
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
