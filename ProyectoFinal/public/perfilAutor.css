@@ -208,3 +208,7 @@ li{
 h3{
   color: var(--naranja)
 }
+img{
+  width: 50%;
+  height: 80%;
+}
