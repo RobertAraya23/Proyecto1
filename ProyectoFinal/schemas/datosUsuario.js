@@ -9,6 +9,8 @@ var datosUsuarioSchema = new mongoose.Schema({
     contrasenna: String,
     puntaje: Number
 });
+
 //se hace una variable que haga una coneccion con moongose y se exporta para conectar con moongose
 
 module.exports = mongoose.model('DatosUsuario', datosUsuarioSchema, 'datosUsuarios');
+

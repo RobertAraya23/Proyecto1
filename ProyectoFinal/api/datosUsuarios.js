@@ -31,6 +31,16 @@ router.post('/insertarDatosUsuario', function(req, res) {
         }
       )
   });
+
+  router.post('/buscarCorreo', function(req, res) {
+    var Correo = req.body.nombre;
+    libro.find({"Correo":Correo}).exec()
+      .then(
+        function(result) {
+          res.json(result);
+        }
+      );
+  });
   
   router.post('/actualizar', function(req, res) {
     var nombre = req.body.nombre;
