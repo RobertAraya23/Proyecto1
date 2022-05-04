@@ -39,16 +39,9 @@
 
             <div class="container">
 
-                <input type="text" placeholder="Digite lo que desea buscar..">
-                <a href="resultadoBusqueda.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="28"
-                        height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="10" cy="10" r="7" />
-                        <line x1="21" y1="21" x2="15" y2="15" />
-                    </svg>
-                </a>
+                <input type="text" id="resultadoBusqueda" placeholder="Digite lo que desea buscar..">  
+                
+                <button id="busqueda" type="button" onclick="location.href = 'resultadoDeBusqueda.html?nombre='+getElementById('resultadoBusqueda').value">Buscar</button>
 
                 <a href="carritoCompras.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart carrito"
@@ -150,6 +143,14 @@
                 alert('complete los espacios vacios');
             }
         } 
+        function buscar(){
+    
+            var search = { busqueda : document.getElementById("resultadoBusqueda").value}
+            console.log(search)
+
+
+            document.getElementById("content").innerHTML='<object type="type/html" data="home.html" ></object>';
+        }
     </script>
     </center>
     <script language="Javascript">
@@ -157,10 +158,7 @@
         document.oncontextmenu = function () { return false }
         // End -->
     </script>
-
-
-
-
+    
 
 
 </body>
