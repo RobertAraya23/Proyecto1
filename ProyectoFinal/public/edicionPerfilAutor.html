@@ -15,6 +15,7 @@
 
 <body onload="cargarTabla()">
 
+    
     <div class="container">
 
         <!--logo y nombre de empresa (izquirda arriba)-->
@@ -40,30 +41,47 @@
                 <a href="inicioSecion.html">Iniciar sesión</a>
             </p>
             
-            <div class="container" >
+            <div >
                 
-                <input type="text" id="resultadoBusqueda" placeholder="Digite lo que desea buscar..">  
+
+
+                <!--BUSQUEDA-->
+
                 
-                <button id="busqueda" type="button" onclick="location.href = 'resultadoDeBusqueda.html?nombre='+getElementById('resultadoBusqueda').value">Buscar</button>
+                <input class="barraBusqueda" type="text" id="resultadoBusqueda" placeholder="Digite lo que desea buscar.....................">  
+                <div>
+                    <button class="button" id="busquedaAutor" type="button" onclick="location.href = 'resultadoDeBusquedaAutor.html?nombreAutor='+getElementById('resultadoBusqueda').value">Buscar por autor</button>
 
-                <a href="carritoCompras.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <circle cx="6" cy="19" r="2" />
-                        <circle cx="17" cy="19" r="2" />
-                        <path d="M17 17h-11v-14h-2" />
-                        <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                        <path d="M15 6h6m-3 -3v6" />
-                    </svg>
-                </a>
+                    <button class="button" id="busqueda" type="button" onclick="location.href = 'resultadoDeBusqueda.html?nombre='+getElementById('resultadoBusqueda').value">Buscar por nombre</button>
 
-                <a href="editarPerfil.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <circle cx="12" cy="7" r="4" />
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                      </svg>
-                </a>
+                    <button class="button" id="busquedaGenero" type="button" onclick="location.href = 'resultadoDeBusquedaGenero.html?genero='+getElementById('resultadoBusqueda').value">Buscar por genero</button>
+                
+                    <a href="carritoCompras.html">
+                        <svg class="iconos" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="6" cy="19" r="2" />
+                            <circle cx="17" cy="19" r="2" />
+                            <path d="M17 17h-11v-14h-2" />
+                            <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                            <path d="M15 6h6m-3 -3v6" />
+                        </svg>
+                    </a>
+    
+                    <a href="editarPerfil.html">
+                        <svg class="iconos" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                          </svg>
+                    </a>
+                
+                </div>
+                
+
+
+
+
+                
 
             </div>
 
