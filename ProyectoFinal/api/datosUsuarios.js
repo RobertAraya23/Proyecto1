@@ -32,9 +32,11 @@ router.post('/insertarDatosUsuario', function(req, res) {
       )
   });
 
-  router.post('/buscarCorreo', function(req, res) {
-    var Correo = req.body.nombre;
-    libro.find({"Correo":Correo}).exec()
+  router.post('/inicioSesion', function(req, res) {
+    var correoElectronico = req.body.correoElectronico;
+    var contrasenna = req.body.contrasenna;
+
+    datosUsuario.find({"correoElectronico": correoElectronico, "contrasenna": contrasenna}).exec()
       .then(
         function(result) {
           res.json(result);

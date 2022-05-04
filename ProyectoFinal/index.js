@@ -25,7 +25,6 @@ app.use('/libros', require('./api/libross.js'));
 app.use('/perfilLibroo', require('./api/libros.js'));
 app.use('/editarPerfil', require('./api/editars.js'));
 app.use('/datosUsuario', require('./api/datosUsuarios'));
-
 app.use('/autores', require('./api/autores.js'));
 app.use('/socioComercial', require('./api/sociosComerciales.js'));
 app.use('/puntosDeEntrega', require('./api/puntosDeEntrega.js'));

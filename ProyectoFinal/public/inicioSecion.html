@@ -115,7 +115,7 @@
 
                         <th scope="row">
                             <h2>Usuario</h2>
-                            <input name="usuario" type="text" class="Input" value="" size="10" />
+                            <input id="correoElectronico" type="text">
                         </th>
 
 
@@ -123,12 +123,8 @@
                     <tr>
                         <th height="20" scope="row">
                             <h2>Clave</h2>
-                            <input name="password" type="password" class="Input" value="" size="10" />
-                            <input value="Entrar" target="_parent" onclick="Login()" type="button" class="stilo" />
-                        </th>
-                             
-                    </tr>
-                    <tr>
+                            <input id="contrasena" type="password">
+                            <button type="button" onclick="verificarUsuario()">Entrar</button>
                         <th scope="row"><input type="reset" name="Borrar" id="Borrar" value="Reset" class="stilo" />
                         </th>
                     </tr>
@@ -173,6 +169,38 @@
         !--Begin
         document.oncontextmenu = function () { return false }
         // End -->
+    <script>
+
+    function verificarUsuario(){
+        var validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+        var correoElectronico = document.getElementById("correoElectronico").value;
+        var contrasenna = document.getElementById("contrasena").value
+
+        fetch("http://localhost:8080/datosUsuario", {
+        })
+          .then(
+            function(response){
+              return response.json();
+            }) .then(
+                function(data){
+                    var correoVerificando = data[0].correoElectronico
+                    var contrasenaVerificando = data[0].contrasenna
+
+                    console.log(correoVerificando)
+                    console.log(contrasenaVerificando)
+                    
+                    if (correoVerificando == correoElectronico && contrasenaVerificando == contrasenna){
+                        alert('¡Sesion iniciada con exito!')
+                        window.location.href = "home.html"
+                    } else {
+                        alert('Datos invalidos. Por favor verifique la informacion')
+                        return false
+                    }
+                }
+            )
+        }
+        
     </script>
     
 
