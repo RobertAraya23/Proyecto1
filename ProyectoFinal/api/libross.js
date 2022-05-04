@@ -95,6 +95,7 @@ router.post('/insertar', function(req, res) {
     ism: req.body.ism,
     editorial: req.body.editorial,
     premiosEnHonor: req.body.premiosEnHonor,
+    nombreAutor: req.body.nombreAutor,
     idAutor: req.body.idAutor
 
   });

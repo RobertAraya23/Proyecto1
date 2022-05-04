@@ -71,7 +71,7 @@ function actualizarLibro(){
 
             
 
-            fetch("http://localhost:8080/puntoDeEntrega/actualizar", {
+            fetch("http://localhost:8080/puntosDeEntrega/actualizar", {
             method: 'POST',
             body: JSON.stringify(datos),
             headers: {'Content-Type': 'application/json'}
@@ -119,7 +119,7 @@ function cargarTabla() {
               document.getElementById("Distrito").value = json.Distrito;
               document.getElementById("lat").value = json.lat;
               document.getElementById("long").value = json.long;
-              document.getElementById("Direccion").value = json.Direccion; 
+              document.getElementById("Direccion").value = json.Direccion
             }
           ) 
       }
