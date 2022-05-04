@@ -125,6 +125,7 @@
                             <h2>Clave</h2>
                             <input id="contrasena" type="password">
                             <button type="button" onclick="verificarUsuario()">Entrar</button>
+                            <button type="button" onclick="verificarUsuarioAdministrador()">Entrar como Administrador</button>
                         <th scope="row"><input type="reset" name="Borrar" id="Borrar" value="Reset" class="stilo" />
                         </th>
                     </tr>
@@ -140,35 +141,6 @@
 
     </div>
 
-    <script language="JavaScript">
-        function Login() {
-            var done = 0;
-            var usuario = document.login.usuario.value;
-            var password = document.login.password.value;
-            if (usuario == "USUARIO1" && password == "CONTRASEÑA1") {
-                window.location = "home.HTML";
-            }
-            if (usuario == "USUARIO2" && password == "CONTRASEÑA2") {
-                window.location = "home.HTML";
-            }
-            if (usuario == "" && password == "") {
-                alert('complete los espacios vacios');
-            }
-        } 
-        function buscar(){
-    
-            var search = { busqueda : document.getElementById("resultadoBusqueda").value}
-            console.log(search)
-
-
-            document.getElementById("content").innerHTML='<object type="type/html" data="home.html" ></object>';
-        }
-    </script>
-    </center>
-    <script language="Javascript">
-        !--Begin
-        document.oncontextmenu = function () { return false }
-        // End -->
     <script>
 
     function verificarUsuario(){
@@ -193,6 +165,36 @@
                     if (correoVerificando == correoElectronico && contrasenaVerificando == contrasenna){
                         alert('¡Sesion iniciada con exito!')
                         window.location.href = "home.html"
+                    } else {
+                        alert('Datos invalidos. Por favor verifique la informacion')
+                        return false
+                    }
+                }
+            )
+        }
+
+        function verificarUsuarioAdministrador(){
+        var validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+        var correoElectronico = document.getElementById("correoElectronico").value;
+        var contrasenna = document.getElementById("contrasena").value
+
+        fetch("http://localhost:8080/datosUsuario", {
+        })
+          .then(
+            function(response){
+              return response.json();
+            }) .then(
+                function(data){
+                    var correoVerificando = data[0].correoElectronico
+                    var contrasenaVerificando = data[0].contrasenna
+
+                    console.log(correoVerificando)
+                    console.log(contrasenaVerificando)
+                    
+                    if (correoVerificando == correoElectronico && contrasenaVerificando == contrasenna){
+                        alert('¡Sesion iniciada con exito!')
+                        window.location.href = "reportesYPuntos.html"
                     } else {
                         alert('Datos invalidos. Por favor verifique la informacion')
                         return false
