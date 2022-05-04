@@ -37,7 +37,7 @@ span{
   color: var(--naranja);
 }
 a{
-  padding-left: 10px;
+  
   color: var(--naranja);
 }
 .menu a {
@@ -188,7 +188,7 @@ button:hover{
 }
 
 input {
-    padding-right: 300px;
+    padding-right: 100px;
   }
 /* -----------------END HEADER STYLE----------------------- */
 
@@ -230,9 +230,7 @@ input {
     
 }
 
-input {
-  padding-right: 300px;
-}
+
 
 .datosCuentaNueva button {
   padding: 10px;

@@ -21,7 +21,8 @@
 
 .carrito{
   width: 50px;
- 
+  padding-left: 20px ;
+padding-right: 30px;
 }
 
 .menu{
@@ -36,7 +37,7 @@ span{
   color: var(--naranja);
 }
 a{
- 
+  padding-left: 10px;
   color: var(--naranja);
 }
 .menu a {
@@ -103,10 +104,10 @@ flex-basis: 20%;
   -webkit-transform: rotate(-45deg);
 }
 .logo{
-    flex-basis: 30%;
+    flex-basis: 40%;
 }
 .links{
-    flex-basis: 50%;
+    flex-basis: 40%;
 }
 .titulo{
     padding-top: 60px;
@@ -143,6 +144,10 @@ p{
 #tituloInicioSesion{
     padding-left: 400px;
     color: #5B2924;
+}
+
+p {
+    padding-right: 10px;
 }
 
 .inicioSesion {
@@ -183,31 +188,35 @@ button:hover{
 }
 
 input {
-    padding-right: 100px;
+    padding-right: 300px;
   }
 
 /* -----------------END HEADER STYLE----------------------- */
 
 
 #tituloInicioSesion{
-   
+    padding-left: 400px;
     color: #5B2924;
 }
 
-
+p {
+    padding-right: 10px;
+}
 
 .inicioSesion {
     display: flex;
     border-radius: 1px;
     border-style: solid;
     border-color: black;
-   
+    margin-left: 400px;
+    margin-right: 400px;
     background-color: #5B2924;
 }
 
 .datosInicioSesion {
     flex-basis: 50%;
-   
+    padding-top: 30px;
+    padding-left: 30px;
     padding-bottom: 20px;
     color: white;
 } 
@@ -231,7 +240,6 @@ button:hover{
     background-color: gray;
 }
 
-
-.stilo{
-  margin-top: 10px;
-}
+input {
+    padding-right: 300px;
+  }
