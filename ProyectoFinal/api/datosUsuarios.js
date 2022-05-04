@@ -55,4 +55,15 @@ router.post('/insertarDatosUsuario', function(req, res) {
       res.json(doc);
     });
   });
+  
+  router.post('/buscar', function(req, res) {
+    var idUsuario = req.body.idUsuario;
+    datosUsuario.findById(idUsuario).exec()
+      .then(
+        function(result) {
+          res.json(result);
+        }
+      );
+  });
+
 module.exports = router;

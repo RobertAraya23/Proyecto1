@@ -64,7 +64,7 @@
 
     <div class="backgroundAbajo">
         <div class="tabla">
-            <table style = "margin: 0 auto;"border="1" id="tablaEditarUsuario">
+            <table style = "margin: 0 auto;"border="1" id="tablaDatosUsuario">
                 <tr>
                     <td>Nombre</td>
                     <td>Apellido</td>
@@ -92,7 +92,7 @@
                 <input type="number" id="puntaje" placeholder="puntaje" />
 
 
-                <button type="button" onclick="insertarLibro()">Inserta Usuario</button>
+                <button type="button" onclick="insertarDatosUsuario()">Inserta Usuario</button>
             </form>
         </div>
     </div>
@@ -109,7 +109,7 @@
             //inicializando variables
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
-            table = document.getElementById("tablaEditarUsuario");
+            table = document.getElementById("tablaDatosUsuario");
             tr = table.getElementsByTagName("tr")
 
             for (let i = 0; i < tr.length; i++) {
@@ -129,7 +129,7 @@
 
 
         function cargarTabla() {
-            fetch("http://localhost:8080/editarUsuario/")
+            fetch("http://localhost:8080/datosUsuario/")
                 .then(
                     function (response) {
                         return response.json();
@@ -141,13 +141,13 @@
 
                             var linea = "<tr><td>" + json[cont].nombre + "</td><td>" + json[cont].apellido + "</td><td>" + json[cont].fechaDeNacimiento + "</td><td>" + json[cont].correoElectronico + "</td><td>" + json[cont].contrasenna + "</td><td>" + json[cont].puntaje + "</td><td><a href='actualizarEditarUsuario.html?id=" + json[cont]._id + "'>Actualizar</a></td></tr>";
 
-                            document.getElementById("tablaEditarUsuario").insertAdjacentHTML("beforeend", linea);
+                            document.getElementById("tablaDatosUsuario").insertAdjacentHTML("beforeend", linea);
                         }
                     }
                 )
         }
 
-        function insertarLibro() {
+        function insertarDatosUsuario() {
 
 
 
@@ -166,7 +166,7 @@
 
             console.log(datos)
 
-            fetch("http://localhost:8080/editarUsuario/insertar", {
+            fetch("http://localhost:8080/datosUsuario/insertarDatosUsuario", {
                 method: 'POST',
                 body: JSON.stringify(datos),
                 headers: { 'Content-Type': 'application/json' }
@@ -184,7 +184,7 @@
 
                     console.log(linea);
 
-                    document.getElementById("tablaEditarUsuario").insertAdjacentHTML("beforeend", linea);
+                    document.getElementById("tablaDatosUsuario").insertAdjacentHTML("beforeend", linea);
                 }
             )
         }
