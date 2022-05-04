@@ -95,13 +95,13 @@
         var direccion = window.location.search;
         var variables = new URLSearchParams(direccion);
 
-        var nombre = variables.get("nombre");
-        console.log(nombre)
+        var nombreAutor = variables.get("nombreAutor");
+        
         var datos = {
-          nombre: nombre
+          nombreAutor: nombreAutor
         }
 
-        fetch("http://localhost:8080/libros/buscarNombre", {
+        fetch("http://localhost:8080/libros/buscarAutor", {
             method: 'POST',
             body: JSON.stringify(datos),
             headers: {'Content-Type': 'application/json'}

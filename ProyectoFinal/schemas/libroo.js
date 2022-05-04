@@ -13,7 +13,8 @@ var libroSchema = mongoose.Schema({
   ism: String,
   editorial: String,
   premiosEnHonor: String,
-  idAutor: String
+  idAutor: String,
+  nombreAutor : String
 });
 
 module.exports = mongoose.model('libro', libroSchema, 'libros');

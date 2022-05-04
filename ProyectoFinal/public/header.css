@@ -1,0 +1,109 @@
+    :root {
+        --cafe: #5B2924;
+        --amarillo: #EEC170;
+        --claro: #F2EADC;
+        --naranja: #FF9F1C;
+        --pastel: #F2D2B3;
+    }
+    .boton{
+        margin-left: 10px;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: var(--pastel);  
+    }
+    .container2{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: var(--cafe);  
+    }
+    div{
+        box-sizing: border-box;
+    }
+    .img_logo{
+        width: 200px;
+        padding-left: 20px;
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+    .busqueda{
+        flex-basis: 20%;
+    }
+    /* codigo para flechas de links del encabezado */
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    .logo{
+        flex-basis: 40%;
+    }
+    .links{
+        flex-basis: 40%;
+    }
+    .titulo{
+        padding-top: 60px;
+    }
+    .carrito{
+        width: 50px;
+        padding-left: 20px ;
+        padding-right: 20px;
+    }
+    .menu{
+        margin-top: 30px;
+        border: 2px solid black;
+        text-align: center; 
+    }
+    .menu a {
+        text-decoration: none;
+        color: var(--cafe);
+    }
+    .linea_encabezado{
+        text-decoration: underline;
+        border-bottom: 2px solid black;
+        width: 100%;
+    }
+    a{
+        background-color: var(--pastel);
+        color: var(--naranja);
+        text-decoration: none;
+    }
+    .color1{
+        color: var(--cafe);
+        margin-left: 10px;
+    }
+    h1{
+        color: var(--cafe);
+    }
+    span{
+        color: var(--naranja);
+    }
+
+    .button {
+        
+        background-color:#5B2924;
+        border: solid black 2px;
+        font-size: 13px;
+        color: #FFFFFF;
+        text-align: center;
+        cursor: pointer;
+        margin: 5px;
+        margin-left: -1px;
+    }
+    
+    .barraBusqueda{
+        padding-left: 200px;
+        text-align: left;
+    }
+
+    .iconos{
+        margin: none;
+        padding: none;
+    }
+ 

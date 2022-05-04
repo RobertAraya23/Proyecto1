@@ -27,6 +27,7 @@ router.post('/buscar', function(req, res) {
 //FUNCION PARA BUSCAR POR NOMBRE DE LIBRO
 router.post('/buscarNombre', function(req, res) {
   var nombre = req.body.nombre;
+  
   libro.find({ nombre:{'$regex' : nombre, '$options' : 'i'}}).exec()
     .then(
       function(result) {
@@ -34,6 +35,31 @@ router.post('/buscarNombre', function(req, res) {
       }
     );
 });
+
+
+router.post('/buscarGenero', function(req, res) {
+  var genero = req.body.genero;
+  
+  libro.find({ genero:{'$regex' : genero, '$options' : 'i'}}).exec()
+    .then(
+      function(result) {
+        res.json(result);
+      }
+    );
+});
+
+
+router.post('/buscarAutor', function(req, res) {
+  var nombreAutor = req.body.nombreAutor;
+  
+  libro.find({ nombreAutor:{'$regex' : nombreAutor, '$options' : 'i'}}).exec()
+    .then(
+      function(result) {
+        res.json(result);
+      }
+    );
+});
+
 
 
 router.post('/actualizar', function(req, res) {
