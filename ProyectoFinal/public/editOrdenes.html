@@ -57,18 +57,19 @@
 
 
 <div class="searchBar">
-    <h1>Busqueda por nombre:</h1>
+    <h1>Busqueda por ID usuario:</h1>
     <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por nombre">
 </div>
 
 <div class="backgroundAbajo">
 <div class="tabla">
-    <table border="1" id="tablaOrdenes" >
+    <table style="margin: 0 auto;" border="1" id="tablaOrdenes" >
             <tr>
-            <td>ID del Usuario</td>
-            <td>ID del Libro a comprar</td>
-            <td>ID de la informacion de Pago</td>
+            <td>ID del usuario</td>
+            <td>ID del libro a comprar</td>
+            <td>ID de la informacion de pago</td>
             <td>Cantidad de libros comprados</td>
+            <td>Actualizar orden</td>
             </tr>
         </table>
         <br/>
@@ -79,11 +80,10 @@
 
 
         <form class="formularioIncertar"> 
-        <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="text" id="disponibilidad" placeholder="Disponibilidad" />
-        <input type="text" id="fechaDePublicacion" placeholder="Fecha de publicacion" />
-        <input type="text" id="formato" placeholder="Formato" />
-        <input type="text" id="genero" placeholder="Genero" />
+        <input type="text" id="idUsuario" placeholder="ID del usuario" />
+        <input type="text" id="idLibro" placeholder="ID del libro" />
+        <input type="text" id="idPago" placeholder="ID del pago" />
+        <input type="text" id="cantidadLibros" placeholder="Cantidad de libros" />
        
         
         <button type="button"  onclick="insertarLibro()">Enviar</button>
@@ -101,7 +101,7 @@
         //inicializando variables
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
-        table = document.getElementById("tablaLibro");
+        table = document.getElementById("tablaOrdenes");
         tr = table.getElementsByTagName("tr")
 
         for(let i = 0; i<tr.length; i++){
@@ -131,7 +131,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0;json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].idUsuario+"</td><td>"+json[cont].idLibro+"</td><td>"+json[cont].idPago+"</td><td>"+json[cont].cantidadLibros+"</td>";
+                    var linea = "<tr><td>"+json[cont].idUsuario+"</td><td>"+json[cont].idLibro+"</td><td>"+json[cont].idPago+"</td><td>"+json[cont].cantidadLibros+"</td><td><a href='actualizarOrden.html?id=" + json[cont]._id + "'>Actualizar</a></td></tr>";
                     document.getElementById("tablaOrdenes").insertAdjacentHTML("beforeend", linea);
                 }
                 }
@@ -140,23 +140,15 @@ function cargarTabla() {
         
         function insertarLibro() {
             var datos = {
-            nombre: document.getElementById("nombre").value,
-            disponibilidad: document.getElementById("disponibilidad").value,
-            fechaDePublicacion: document.getElementById("fechaDePublicacion").value,
-            formato: document.getElementById("formato").value,
-            genero: document.getElementById("genero").value,
-            precio: document.getElementById("precio").value,
-            resenna: document.getElementById("resenna").value,
-            imagen: document.getElementById("imagen").value,
-            ism: document.getElementById("ism").value,
-            editorial: document.getElementById("editorial").value,
-            premiosEnHonor: document.getElementById("premiosEnHonor").value,
-            idAutor: document.getElementById("idAutor").value
+            idUsuario: document.getElementById("idUsuario").value,
+            idLibro: document.getElementById("idLibro").value,
+            idPago: document.getElementById("idPago").value,
+            cantidadLibros: document.getElementById("cantidadLibros").value,
             }
             
             console.log(datos)
 
-            fetch("http://localhost:8080/libros/insertar", {
+            fetch("http://localhost:8080/orden/insertar", {
             method: 'POST',
             body: JSON.stringify(datos),
             headers: {'Content-Type': 'application/json'}
@@ -166,8 +158,12 @@ function cargarTabla() {
                 }
             ).then(
                 function(json){
-              var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
-                document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+
+                    var linea = "<tr><td>"+json.idUsuario+"</td><td>"+json.idLibro+"</td><td>"+json.idPago+"</td><td>"+json.cantidadLibros+"</td><td><a href='actualizarOrden.html?id="+json._id+"'>Actualizar</a></td></tr>";
+
+                    console.log(linea);
+
+                document.getElementById("tablaOrdenes").insertAdjacentHTML("beforeend", linea);
             }
             )
         }
