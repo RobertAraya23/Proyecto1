@@ -66,6 +66,8 @@
         <input type="text" id="editorial" placeholder="Editorial" />
         <input type="text" id="premiosEnHonor" placeholder="Premios" />
         <input type="text" id="idAutor" placeholder="Id Autor" />
+        <input type="text" id="descuento" placeholder="descuento" />
+
         
 
         <button type="button"  onclick="actualizarLibro()">Actualizar Libro</button>
@@ -87,7 +89,8 @@ function actualizarLibro(){
             ism: document.getElementById("ism").value,
             editorial: document.getElementById("editorial").value,
             premiosEnHonor: document.getElementById("premiosEnHonor").value,
-            idAutor: document.getElementById("idAutor").value
+            idAutor: document.getElementById("idAutor").value,
+            descuento: document.getElementById("descuento").value,
             }
 
 
@@ -148,6 +151,8 @@ function cargarTabla() {
               document.getElementById("editorial").value = json.editorial;
               document.getElementById("premiosEnHonor").value = json.premiosEnHonor;
               document.getElementById("idAutor").value = json.idAutor;
+              document.getElementById("descuento").value = json.descuento;
+
 
             
         

@@ -73,9 +73,11 @@ router.post('/actualizar', function(req, res) {
   var ism = req.body.ism;
   var editorial = req.body.editorial;
   var premiosEnHonor = req.body.premiosEnHonor;
+  var descuento = req.body.descuento
+
 
   // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-  libro.findOneAndUpdate({nombre: nombre},{$set:{precio:precio, disponibilidad:disponibilidad, fechaDePublicacion:fechaDePublicacion, formato:formato, genero:genero, resenna:resenna, ism:ism, editorial:editorial, premiosEnHonor:premiosEnHonor}}, {useFindAndModify: false, new: true}, function (err, doc) {
+  libro.findOneAndUpdate({nombre: nombre},{$set:{precio:precio, disponibilidad:disponibilidad, fechaDePublicacion:fechaDePublicacion, formato:formato, genero:genero, resenna:resenna, ism:ism, editorial:editorial, premiosEnHonor:premiosEnHonor, descuento:descuento }}, {useFindAndModify: false, new: true}, function (err, doc) {
     res.json(doc);
   });
 });
@@ -96,7 +98,9 @@ router.post('/insertar', function(req, res) {
     editorial: req.body.editorial,
     premiosEnHonor: req.body.premiosEnHonor,
     nombreAutor: req.body.nombreAutor,
-    idAutor: req.body.idAutor
+    idAutor: req.body.idAutor,
+    descuento: req.body.descuento
+
 
   });
 
