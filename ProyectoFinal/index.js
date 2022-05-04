@@ -29,6 +29,7 @@ app.use('/autores', require('./api/autores.js'));
 app.use('/socioComercial', require('./api/sociosComerciales.js'));
 app.use('/puntosDeEntrega', require('./api/puntosDeEntrega.js'));
 app.use('/editarUsuario', require('./api/editarUsuarios.js'));
+app.use('/orden', require('./api/ordenes.js'));
 
 
 

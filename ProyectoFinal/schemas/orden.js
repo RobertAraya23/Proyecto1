@@ -1,8 +1,11 @@
 var mongoose = require('mongoose');
 
-var ordenSchema = new mongoose.Schema({
-  
+var ordenSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
+  idUsuario: String,
+  idLibro: String,
+  idPago:String,
+  cantidadLibros: Number
 });
-//se hace una variable que haga una coneccion con moongose y se exporta para conectar con moongose
-const ordenModel = mongoose.model("Ordenes",ordenSchema)
-module.exports = ordenModel
+
+module.exports = mongoose.model('orden', ordenSchema, 'ordenes');

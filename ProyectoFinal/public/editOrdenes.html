@@ -51,7 +51,7 @@
     
 
 <div class="subEncabezado">
-    <h1>Catalogo de libros</h1>
+    <h1>Catalogo de ordenes</h1>
 </div>
 
 
@@ -62,42 +62,28 @@
 
 <div class="backgroundAbajo">
 <div class="tabla">
-    <table border="1" id="tablaLibro" >
+    <table border="1" id="tablaOrdenes" >
             <tr>
-            <td>Nombre              </td>
-            <td>Disponible</td>
-            <td>Fecha de publicacion</td>
-            <td>Formato</td>
-            <td>Genero</td>
-            <td>Precio</td>
-            <td>Reseña</td>
-            <td>Imagen</td>
-            <td>Ism</td>
-            <td>Editorial</td>
-            <td>Premios en honor</td>
-            <td>id autor</td>
+            <td>ID del Usuario</td>
+            <td>ID del Libro a comprar</td>
+            <td>ID de la informacion de Pago</td>
+            <td>Cantidad de libros comprados</td>
             </tr>
         </table>
         <br/>
 
         <div class="subEncabezado">
-            <h1>Insertar libros</h1>
+            <h1>Insertar orden</h1>
         </div>
 
 
         <form class="formularioIncertar"> 
         <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="boolean" id="disponibilidad" placeholder="Disponibilidad" />
+        <input type="text" id="disponibilidad" placeholder="Disponibilidad" />
         <input type="text" id="fechaDePublicacion" placeholder="Fecha de publicacion" />
         <input type="text" id="formato" placeholder="Formato" />
         <input type="text" id="genero" placeholder="Genero" />
-        <input type="number" id="precio" placeholder="Precio" />
-        <input type="text" id="resenna" placeholder="Resenna" />
-        <input type="text" id="imagen" placeholder="Imagen" />
-        <input type="text" id="ism" placeholder="Codigo ism" />
-        <input type="text" id="editorial" placeholder="Editorial" />
-        <input type="text" id="premiosEnHonor" placeholder="Premios" />
-        <input type="text" id="idAutor" placeholder="Id Autor" />
+       
         
         <button type="button"  onclick="insertarLibro()">Enviar</button>
         </form>
@@ -134,7 +120,7 @@
 
 
 function cargarTabla() {
-            fetch("http://localhost:8080/libros/")
+            fetch("http://localhost:8080/orden/")
             .then(
                 function(response){
                 return response.json();
@@ -144,8 +130,8 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0;json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].idAutor+"</td></tr>";
-                    document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+                    var linea = "<tr><td>"+json[cont].idUsuario+"</td><td>"+json[cont].idLibro+"</td><td>"+json[cont].idPago+"</td><td>"+json[cont].cantidadLibros+"</td>";
+                    document.getElementById("tablaOrdenes").insertAdjacentHTML("beforeend", linea);
                 }
                 }
             ) 
