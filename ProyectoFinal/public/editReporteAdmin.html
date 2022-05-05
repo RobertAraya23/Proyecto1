@@ -59,7 +59,7 @@
 
 <div class="subEncabezado">
     
-    <h1>Catalogo de libros</h1>
+    <h1>Catalogo de compras</h1>
     
     
 </div>
@@ -91,7 +91,7 @@
         <br/>
 
         <div class="subEncabezado">
-            <h1>Insertar libro</h1>
+            <h1>Insertar compra</h1>
         </div>
 
 
@@ -127,7 +127,7 @@
         tr = table.getElementsByTagName("tr")
 
         for(let i = 0; i<tr.length; i++){
-            td=tr[i].getElementsByTagName("td")[0];
+            td=tr[i].getElementsByTagName("td")[1];
             if(td){
                 txtValue= td.textContent || td.innerText;
                 if(txtValue.toUpperCase().indexOf(filter) > -1){

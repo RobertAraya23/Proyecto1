@@ -52,7 +52,7 @@ router.post('/insertar', function(req, res) {
     fechaCompra: req.body.fechaCompra,
     nombreLibro: req.body.nombreLibro,
     puntosGanados : req.body.puntosGanados,
-    puntosUsados : req.body.puntosUsadosx   
+    puntosUsados : req.body.puntosUsados   
     });
 
     reporteNuevo.save()
