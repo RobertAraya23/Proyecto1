@@ -9,5 +9,4 @@ var tarjetaSchema = new mongoose.Schema({
   
 });
 //se hace una variable que haga una coneccion con moongose y se exporta para conectar con moongose
-const tarjetaModel = mongoose.model("tarjetas",tarjetaSchema)
-module.exports = tarjetaModel
+module.exports = mongoose.model('tarjeta', tarjetaSchema, 'tarjetas');

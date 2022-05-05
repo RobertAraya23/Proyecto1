@@ -106,22 +106,23 @@
 
     </div>
 
-    <div class="searchBar">
-        <h1>Busqueda por Mes:</h1>
-        <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por Mes">
-    </div>
+    
+    <div class="container2">
+        <div>
+                <h2 class="titulo_perfil">Mi Perfil</h2>
+                <a href="editarPerfil.html">Mi cuenta</a><br>
+                <a href="pedidosUsuario.html">Mis pedidos</a><br>
+                <a href="tarjetas.html">Metodos de Pago </a><br>
+        </div>
 
     <div class="backgroundAbajo">
         <div class="tabla">
             <table style = "margin: 0 auto;"border="1" id="tablaDatosUsuario">
                 <tr>
-                    <td>Id Pedido</td>
-                    <td>Mes de la Compra</td>
-                    <td>Nombre del Libro</td>
-                    <td>Precio</td>
-                    <td>Fecha de la Compra </td>
-                    <td>Puntos Ganados </td>
-                    <td>Puntos Usados </td>
+                    <td>Nombre</td>
+                    <td>Numero de tarjeta</td>
+                    <td>Mes de expiracion</td>
+                    <td>Año expiracion</td>
                 </tr>
             </table>
             <br />
@@ -156,7 +157,7 @@
 
 
         function cargarTabla() {
-            fetch("http://localhost:8080/pedido/")
+            fetch("http://localhost:8080/tarjeta/")
                 .then(
                     function (response) {
                         return response.json();
@@ -166,7 +167,7 @@
                     function (json) {
                         for (var cont = 0; json.length > cont; cont++) {
 
-                            var linea = "<tr><td>" + json[cont]._id + "</td><td>" + json[cont].mesCompra + "</td><td>" + json[cont].nombreLibro + "</td><td>" + json[cont].precio + "</td><td>" + json[cont].fechaCompra + "</td><td>" + json[cont].puntosGanados + "</td><td>" + json[cont].puntosUsados + "</td></tr>";
+                            var linea = "<tr><td>" + json[cont].nombre + "</td><td>" + json[cont].numeroDeTarjeta + "</td><td>" + json[cont].mesDeExpiracion + "</td><td>" + json[cont].annoExpiracion + "</td></tr>";
 
                             document.getElementById("tablaDatosUsuario").insertAdjacentHTML("beforeend", linea);
                         }
