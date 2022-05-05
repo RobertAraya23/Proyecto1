@@ -245,4 +245,9 @@ table{
 
 td {
   font-size:  24px;
+  text-align: center;
+}
+
+.primeraLineaTabla{
+  color: #FF9F1C;
 }
