@@ -6,6 +6,11 @@
   --pastel: #F2D2B3;
 }
 
+td {
+  border-style : hidden!important;
+  font-size: large;
+ }
+
 /*Comentario*/
 .body{
   background-color: #F2D2B3;
@@ -19,9 +24,15 @@
   background-color: var(--pastel);  
 }
 .container2{
-  display: flex;
+  flex-basis: 20%;
   flex-wrap: wrap;
   background-color: var(--cafe);  
+  padding-left: 10px;
+}
+
+.container2 h2{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 div{
   box-sizing: border-box;
@@ -93,12 +104,11 @@ span{
   text-align:center; 
   padding:8px;
 }
-.container2{
-  width: 30%;
-  
-}
+
 .container3{
-  width: 70%;
+  flex-basis: 80%;
+  text-align: center;
+
 }
 .container4{
   width: 50%;
@@ -122,21 +132,7 @@ span{
   flex-direction: row;
   flex-wrap: wrap;
 }
-.titulo_perfil{
-  padding-left: 5px;
-  padding-top: 5px;
-  display: flex;
-}
-.titulo_perfil1{
-  padding-left: 5px;
-  padding-top: 5px;
-  display: flex;
-}
-.titulo_perfil2{
-  padding-left: 280px;
-  padding-top: 1px;
-  display: flex;
-}
+
 .box {
   border: 3px solid black;
   background-image: url(http://media1.pravnikns.rs/2017/12/001-subtle-light-pattern-background-texture-vol5.jpg);
@@ -203,4 +199,43 @@ input:invalid:required {
 
 input:valid {
   border: 2px solid black;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+.subEncabezado{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--cafe);
+  color: white;  
+  margin-bottom: 10px;
+}
+
+.h1Main {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+
+}
+
+.titulo_perfil{
+  padding-left: 5px;
+  padding-top: 5px;
+  display: flex;
+}
+.titulo_perfil1{
+  padding-left: 5px;
+  padding-top: 5px;
+}
+.titulo_perfil2{
+  padding-left: 280px;
+  padding-top: 1px;
+  display: flex;
+}
+
+.infoCliente {
+  margin-left: auto;
+  margin-right: auto;
 }

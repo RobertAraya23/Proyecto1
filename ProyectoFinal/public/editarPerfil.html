@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="header.css">
     <title>Editar perfil</title>
 </head>
-<body class="body">
+<body class="body" onload="cargarTabla()">
     
     <div class="container">
 
@@ -94,144 +94,58 @@
 
     <!--END HEADER--> 
 
-    <h2 class="titulo_abajo">Informacion de la Cuenta</h2>
+    <div class="subEncabezado">
+        <h1 class="h1Main">Informacion de la cuenta</h1>
+    </div>
     <!--Inicio despues del Header-->
     <!--Parte de la derecha (Mi Perfil)-->
-   <div class="grid-layout">
+   <div class="mainContainer">
         <div class="container2">
-            <h2 class="titulo_perfil">Mi Perfil</h2>
-            <div class="prueba">
-                <div class="box">
-                    <p class="parrafo">
-                        <a href="editarPerfil.html"> > Mi cuenta</a><br>
-                        <a href="ordenesHechas.html"> > Mis pedidos</a><br>
-                    </p>
+                <div>
+                        <h2 class="titulo_perfil">Mi Perfil</h2>
+                        <a href="editarPerfil.html">Mi cuenta</a><br>
+                        <a href="ordenesHechas.html">Mis pedidos</a><br>
+                        <a href="pagoLibros.html">Metodos de Pago </a><br>
                 </div>
+        </div>
+        <div class="container3">
+            <div >
+                <h2 class="titulo_perfil1">
+                    Informacion del Cliente
+                </h2>
+                <table border="1" class="infoCliente" id="tablaLibro" >
+                </table>
             </div>
-            <div class="linea_perfil">
-
-            </div>
-            <div class="box2">
-                <p class="parrafo2">
-                    <a href="pagoLibros.html"> > Metodos de Pago </a><br>
-                </p>
-            </div>
+        </div>
         </div>
         <!--Parte del centro de la pagina (Informacion del Contacto)-->
         <div class="container3">
             <div class="grid-layout2">
-                <div class="container4">
-                    <div>
-                        <h2 class="titulo_perfil1">
-                             Informacion del Contacto
-                        </h2>
-                    </div>
-                    <div class="box_contacto">
-                        <p class="parrafo">
-                            <form>
-                               <label for="chooose"> <a href="#"> Nombre del cliente</a></label><br>
-                                <input id="nombre" name="i_like" required>
-                                <button onclick="actualizarDatosUsuario()">Enviar</button>
-                                <br>
-                                <br>
-                                <label for="chooose"> <a href="#"> Apellido del cliente</a></label><br>
-                                <input id="apellido" name="i_like" required>
-                                <button>Enviar</button>
-                                <br>
-                                <br>
-                                <label for="chooose"> <a href="#"> Fecha de fecha de nacimiento</a></label><br>
-                                <input id="fechaDeNacimiento" type="date" required>
-                                <button>Enviar</button>
-                                <br>
-                                <br>
-                                <label for="chooose"> <a href="#"> Correo del cliente</a></label><br>   
-                                <input id="correoElectronico" name="i_like" required>
-                                <button>Enviar</button>                      
-                                <br>
-                                <br>
-                                <label for="chooose"> <a href="#"> Contrasena</a></label> <br>
-                                <input id="contrasenna" name="i_like" required>
-                                <button>Enviar</button>
-                                <br>
-                                <br>
-            
-                                <a href="#"> Cambiar contraseña | Editar </a><br>
-                            </form>
-                        </p>
-                    </div>
+
+
                 </div>
-                <!--Parte de la derecha de la pagina (Lista de Direcciones)-->
-                <div class="container4">
-                    <h2 class="titulo_perfil">Lista de Direcciones</h2>
-                    <div class="box_direcciones">
-                        <p class="parrafo">
-                            <label for="chooose"> <a href="#"> Nombre del cliente</a></label><br>
-                            <input id="choose" name="i_like" required>
-                            <button>Enviar</button>
-                            <br>
-                            <br>
-                            <label for="chooose"> <a href="#"> Correo del cliente</a></label><br>   
-                            <input id="choose" name="i_like" required>
-                            <button>Enviar</button>                      
-                            <br>
-                            <br>
-                            
-                            <label for="chooose"> <a href="#"> Numero de cedula</a></label> <br>
-                            <input id="choose" name="i_like" required>
-                            <button>Enviar</button>
-                            <br>
-                            <br>
-                            <label for="chooose"> <a href="#"> Numero de telefono</a></label><br>
-                            <input id="choose" name="i_like" required>
-                            <button>Enviar</button>
-                            <br>
-                            <br>
-                            <label for="chooose"><a href="#"> Direccion excata de lugar donde se realizara la entrega </a></label><br>
-                            <input id="choose" name="i_like" required>
-                            <button>Enviar</button>
-                            <br>
-                            <br>
-                            <label for="chooose"><a href="#"> Sucursal mas cercana donde se pueda recoger el pedido </a></label><br>
-                            <input id="choose" name="i_like" required>
-                            <button>Enviar</button>
-                            <br>
-                            <br>
-                            <a href="puntoRecogida.html"> Editar Direccion</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
     <script>
-    
-    function actualizarDatosUsuario(){
-    var datos = {
-            nombre: document.getElementById("nombre").value,
-            apellido: document.getElementById("apellido").value,
-            fechaDeNacimiento: document.getElementById("fechaDeNacimiento").value,
-            correoElectronico: document.getElementById("correoElectronico").value,
-            contrasenna: document.getElementById("contrasenna").value
-            }
 
-            fetch("http://localhost:8080/datosUsuario/actualizar", {
-            method: 'POST',
-            body: JSON.stringify(datos),
-            headers: {'Content-Type': 'application/json'}
-            }).then(
+function cargarTabla() {
+            fetch("http://localhost:8080/datosUsuario")
+            .then(
                 function(response){
                 return response.json();
                 }
-            ).then(
-
-                function(json){
-
-                    alert("el libro ha sido actualizado")
+            )
+            .then (
+                function(json) {
+                    datos = json[0]
                     
+                    var linea = "<tr><td>Nombre</td><td>"+datos.nombre+"</td></tr><tr><td>Apellido</td><td>"+datos.apellido+"</td></tr><tr><td>Fecha de nacimiento</td><td>"+datos.fechaDeNacimiento+"</td></tr><tr><td>Correo Electronico</td><td>"+datos.correoElectronico+"</td></tr><tr><td><a href='actualizarDatosUsuario.html?id="+datos._id+"'>Actualizar informacion</td></tr>";
+                   
+                    document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+                }
+            ) 
             }
-        )
-     }
+
      function buscar(){
     
         var search = { busqueda : document.getElementById("resultadoBusqueda").value}
