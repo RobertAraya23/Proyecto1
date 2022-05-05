@@ -102,10 +102,10 @@
 
         <form class="formularioIncertar"> 
         <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="boolean" id="disponibilidad" placeholder="Disponibilidad" />
+        <input type="text" id="disponibilidad" placeholder="disponibilidad" />
         <input type="text" id="fechaDePublicacion" placeholder="Fecha de publicacion" />
         <input type="text" id="formato" placeholder="Formato" />
-        <input type="text" id="genero" placeholder="Genero" />
+        <input type="text" id="genero" placeholder="Genero literario" />
         <input type="number" id="precio" placeholder="Precio" />
         <input type="text" id="resenna" placeholder="Resenna" />
         <input type="text" id="imagen" placeholder="Imagen" />
@@ -114,7 +114,7 @@
         <input type="text" id="premiosEnHonor" placeholder="Premios" />
         <input type="text" id="nombreAutor" placeholder="Nombre del autor" />
         <input type="text" id="idAutor" placeholder="Id Autor" />
-        <input type="text" id="descuento" placeholder="Descuento" />
+        <input type="number" id="descuento" placeholder="Descuento" />
         
         <button type="button"  onclick="insertarLibro()">Insertar Libro</button>
         </form>
@@ -175,7 +175,98 @@ function cargarTabla() {
         
         function insertarLibro() {
 
+            var tituloLibro = document.getElementById("nombre")
+            var disponibilidad = document.getElementById("disponibilidad")
+            var fecha = document.getElementById("fechaDePublicacion")
+            var formato = document.getElementById("formato")
+            var genero = document.getElementById("genero")
+            var precio = document.getElementById("precio")
+            var resenna = document.getElementById("resenna")
+            var imagen = document.getElementById("imagen")
+            var numeroISM = document.getElementById("ism")
+            var editorial = document.getElementById("editorial")
+            var nombreAutor = document.getElementById("nombreAutor")
+            var idAutor = document.getElementById("idAutor")
+            var descuento = document.getElementById("descuento")
+            var premios = document.getElementById("premiosEnHonor")
 
+            
+
+            if( tituloLibro.value == ""){
+                    alert("Error: Ingrese un titulo para el libro")
+                    
+                    return false
+                } 
+                if( disponibilidad.value == ""){
+                alert("Error: Ingrese una fecha de publicación")
+                return false
+            }
+
+                if( fecha.value == ""){
+                alert("Error: Ingrese una fecha de publicación")
+                return false
+            }
+
+            if( formato.value == ""){
+                alert("Error: Ingrese un formato de libro (pasta dura, blanda ets..)")
+                return false
+            }
+
+            if( genero.value == ""){
+                alert("Error: Ingrese un genero literario al libro ")
+                return false
+            }
+
+            if(precio.value == "" || precio.value < 0 ){
+            alert(" Error: Ingrese un precio valido para poder enviar el formulario")
+            return false} 
+
+            if( resenna.value == ""){
+                alert("Error: Ingrese una reseña para el libro")
+
+                return false
+            } 
+
+            if( imagen.value == ""){
+                alert("Error: Ingrese una imagen para el libro")
+
+                return false
+            } 
+
+            if(numeroISM.value == "" || numeroISM.value < 0 ){
+            alert("Error: Ingrese un numero de ISM valido, recuerde que este no puede ser un número negativo")
+
+            return false} 
+
+            if( editorial.value == ""){
+                alert("Error: Ingrese un nombre de editorial")
+                return false
+            } 
+
+            if( premios.value == ""){
+                alert("Error: Ingrese los premios del libro")
+                return false
+            } 
+
+
+
+                if(nombreAutor.value =="" || nombreAutor.value.includes("!") || nombreAutor.value.includes("#") || nombreAutor.value.includes("$") || nombreAutor.value.includes("%") || nombreAutor.value.includes("&") || nombreAutor.value.includes("/") || nombreAutor.value.includes("(") || nombreAutor.value.includes(")")|| nombreAutor.value.includes("=")|| nombreAutor.value.includes("?")|| nombreAutor.value.includes("¿")){
+                    alert("Error: Ingrese un nombre de autor válido, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
+                
+                    return false
+                }
+
+                if( idAutor.value == ""){
+                alert("Error: Ingrese el id del autor del libro")
+                return false
+            } 
+
+            if( descuento.value == ""){
+                alert("Error: Ingrese el descuento del libro, en caso de no tener descuento ingrece un 0")
+                return false
+            } 
+
+            alert("Los datos ingresados se han guardado exitosamente")
         
 
             var datos = {
@@ -221,61 +312,13 @@ function cargarTabla() {
             }
             )
         }
+        
 
 
             //validaciones
-        var precio = document.getElementById("precio")
-        var tituloLibro = document.getElementById("titulo")
-        var nombreAutor = document.getElementById("autor")
-        var numeroISM = document.getElementById("ism")
-        var editorial = document.getElementById("editorial")
-        var reseña = document.getElementById("reseña")
-        var fecha = document.getElementById("fecha")
+        
 
-        function validar(){
-
-            
-                if( tituloLibro.value == ""){
-                    alert("Error: Ingrese un titulo para el libro")
-                    
-                    return false
-                } 
-
-                if(nombreAutor.value =="" || nombreAutor.value.includes("!") || nombreAutor.value.includes("#") || nombreAutor.value.includes("$") || nombreAutor.value.includes("%") || nombreAutor.value.includes("&") || nombreAutor.value.includes("/") || nombreAutor.value.includes("(") || nombreAutor.value.includes(")")|| nombreAutor.value.includes("=")|| nombreAutor.value.includes("?")|| nombreAutor.value.includes("¿")){
-                    alert("Error: Ingrese un nombre de autor válido, recuerde que no puede usar (!,#,$,%,%,&,/,(,),=,?,¿) para el nombre")
-                
-                    return false
-                }
-
-            if(numeroISM.value == "" || numeroISM.value < 0 ){
-            alert("Error: Ingrese un numero de ISM valido, recuerde que este no puede ser un número negativo")
-
-            return false} 
-
-            if( editorial.value == ""){
-                alert("Error: Ingrese un nombre de editorial")
-                return false
-            } 
-
-            if( reseña.value == ""){
-                alert("Error: Ingrese una reseña para el libro")
-
-                return false
-            } 
-            if( fecha.value == ""){
-                alert("Error: Ingrese una fecha de publicación")
-                return false
-            }
-            
-            if(precio.value == "" || precio.value < 0 ){
-            alert(" Error: Ingrese un precio valido para poder enviar el formulario")
-            return false} 
-            
-            alert("Los datos ingresados se han guardado exitosamente")
-            
-
-
-        }
+        
         function buscar(){
     
             var search = { busqueda : document.getElementById("resultadoBusqueda").value}

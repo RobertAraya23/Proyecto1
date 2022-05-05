@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var libroSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   nombre: String,
-  disponibilidad: Boolean,
+  disponibilidad: String,
   fechaDePublicacion: String,
   formato: String,
   genero: String,
