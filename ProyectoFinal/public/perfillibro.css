@@ -297,8 +297,10 @@ h1{
   font-family: 'Montserrat', sans-serif;
 }
 h3{
+  color: var(--naranja);
   font-family: 'Montserrat', sans-serif;
 }
+
 h2{
   font-family: 'Montserrat', sans-serif;
 }
@@ -321,3 +323,4 @@ img{
 .info_libro a{
   color: var(--naranja)
 }
+

@@ -69,14 +69,16 @@
 <div class="tabla">
     <table border="1" id="tablaLibro" >
             <tr>
+                <td>ID autor</td>
                 <td>Nombre</td>
                 <td>Libros publicados</td>
                 <td>Premios ganados</td>
                 <td>Pais nacimiento</td>
                 <td>Fecha nacimiento</td>
-                <td>genero del autor</td>
-                <td>fecha de defunción</td>
-                <td>Actualizar Autor</td>
+                <td>Genero del autor</td>
+                <td>Fecha de defunción</td>
+                <td>Imagen</td>
+                <td>Actualizar autor</td>
                 
             </tr>
         </table>
@@ -95,6 +97,7 @@
         <input type="text" id="fechaNacimiento" placeholder="fechaNacimiento" />
         <input type="text" id="generoDelAutor" placeholder="generoDelAutor" />
         <input type="text" id="fechaDeDefuncion" placeholder="fechaDeDefuncion" />
+        <input type="text" id="imagen" placeholder="imagen" />
         
         <button type="button"  onclick="insertarAutor()">Insertar Autor</button>
         
@@ -146,7 +149,7 @@ function cargarTabla() {
                 function(json) {
                 for(var cont = 0; json.length > cont; cont++) {
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].librosPublicados+"</td><td>"+json[cont].premiosGanados+"</td><td>"+json[cont].paisNacimiento+"</td><td>"+json[cont].fechaNacimiento+"</td><td>"+json[cont].generoDelAutor+"</td><td>"+json[cont].fechaDeDefuncion+"</td><td><a href='actualizarAutor.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
+                    var linea = "<tr><td>"+json[cont]._id+"</td><td>"+json[cont].nombre+"</td><td>"+json[cont].librosPublicados+"</td><td>"+json[cont].premiosGanados+"</td><td>"+json[cont].paisNacimiento+"</td><td>"+json[cont].fechaNacimiento+"</td><td>"+json[cont].generoDelAutor+"</td><td>"+json[cont].fechaDeDefuncion+"</td><td>"+json[cont].imagen+"</td><td><a href='actualizarAutor.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                    
                     document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
                 }
@@ -166,7 +169,9 @@ function cargarTabla() {
             paisNacimiento: document.getElementById("paisNacimiento").value,
             fechaNacimiento: document.getElementById("fechaNacimiento").value,
             generoDelAutor: document.getElementById("generoDelAutor").value,
-            fechaDeDefuncion: document.getElementById("fechaDeDefuncion").value
+            fechaDeDefuncion: document.getElementById("fechaDeDefuncion").value,
+            imagen: document.getElementById("imagen").value
+
             
             }
             
@@ -188,7 +193,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                var linea = "<tr><td>"+json.nombre+"</td><td>"+json.librosPublicados+"</td><td>"+json.premiosGanados+"</td><td>"+json.paisNacimiento+"</td><td>"+json.fechaNacimiento+"</td><td>"+json.generoDelAutor+"</td><td>"+json.fechaDeDefuncion+"</td><td><a href='actualizarAutor.html?id="+json._id+"'>Actualizar</a></td></tr>";
+                var linea = "<tr><td>"+json._id+"</td><td>"+json.nombre+"</td><td>"+json.librosPublicados+"</td><td>"+json.premiosGanados+"</td><td>"+json.paisNacimiento+"</td><td>"+json.fechaNacimiento+"</td><td>"+json.generoDelAutor+"</td><td>"+json.fechaDeDefuncion+"</td><td>"+json.imagen+"</td><td><a href='actualizarAutor.html?id="+json._id+"'>Actualizar</a></td></tr>";
                
                 console.log(linea);
 

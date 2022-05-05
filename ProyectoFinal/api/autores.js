@@ -31,10 +31,11 @@ router.post('/actualizar', function(req, res) {
   var fechaNacimiento = req.body.formato;
   var generoDelAutor = req.body.generoDelAutor;
   var fechaDeDefuncion = req.body.fechaDeDefuncion;
+  var imagen = req.body.imagen;
   
 
   // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-  autor.findOneAndUpdate({nombre: nombre},{$set:{librosPublicados:librosPublicados, premiosGanados:premiosGanados, paisNacimiento:paisNacimiento, fechaNacimiento:fechaNacimiento, generoDelAutor:generoDelAutor, fechaDeDefuncion:fechaDeDefuncion}}, {useFindAndModify: false, new: true}, function (err, doc) {
+  autor.findOneAndUpdate({nombre: nombre},{$set:{librosPublicados:librosPublicados, premiosGanados:premiosGanados, paisNacimiento:paisNacimiento, fechaNacimiento:fechaNacimiento, generoDelAutor:generoDelAutor, fechaDeDefuncion:fechaDeDefuncion, imagen:imagen}}, {useFindAndModify: false, new: true}, function (err, doc) {
     res.json(doc);
   });
 });
@@ -49,7 +50,9 @@ router.post('/insertar', function(req, res) {
     paisNacimiento: req.body.paisNacimiento,
     fechaNacimiento: req.body.fechaNacimiento,
     generoDelAutor: req.body.generoDelAutor,
-    fechaDeDefuncion: req.body.fechaDeDefuncion
+    fechaDeDefuncion: req.body.fechaDeDefuncion,
+    imagen: req.body.imagen
+
 
   });
 

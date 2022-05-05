@@ -206,8 +206,12 @@ li{
   padding-bottom: 5px;
 }
 h3{
-  color: var(--naranja)
+  color: var(--naranja);
+  font-family: 'Montserrat', sans-serif;
 }
+
+
+
 img{
   width: 50%;
   height: 80%;

@@ -61,6 +61,8 @@
         <input type="text" id="fechaNacimiento" placeholder="fechaNacimiento" />
         <input type="text" id="generoDelAutor" placeholder="generoDelAutor" />
         <input type="text" id="fechaDeDefuncion" placeholder="fechaDeDefuncion" />
+        <input type="text" id="imagen" placeholder="imagen" />
+
         
 
         <button type="button"  onclick="actualizarAutor()">Actualizar Libro</button>
@@ -77,7 +79,9 @@ function actualizarAutor(){
             paisNacimiento: document.getElementById("paisNacimiento").value,
             fechaNacimiento: document.getElementById("fechaNacimiento").value,
             generoDelAutor: document.getElementById("generoDelAutor").value,
-            fechaDeDefuncion: document.getElementById("fechaDeDefuncion").value
+            fechaDeDefuncion: document.getElementById("fechaDeDefuncion").value,
+            imagen: document.getElementById("imagen").value
+
           
             }
 
@@ -134,7 +138,8 @@ function cargarTabla() {
               document.getElementById("fechaNacimiento").value = json.fechaNacimiento;
               document.getElementById("generoDelAutor").value = json.generoDelAutor;
               document.getElementById("fechaDeDefuncion").value = json.fechaDeDefuncion;
-            
+              document.getElementById("imagen").value = json.imagen;
+
     
             }
           ) 

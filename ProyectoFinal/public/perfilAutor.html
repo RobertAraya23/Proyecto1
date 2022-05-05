@@ -107,6 +107,8 @@
     
     <div class="container2">
 
+
+
         <div class="img_Autor" id="portadaDelAutor"></div>
 
         <div class="info_libro">
@@ -143,13 +145,13 @@
             ).then(
                 function (data) {
                        
-                    var portadaAutor = "<h1>"+data.nombre+ "<img class=img_Autor src='img/"+data.imagen+"'>";
+                    var portadaAutor = "<img class=img_Autor src='img/"+data.imagen+"'>";
 
-                    var librosPublicado = "<h1>Libros publicados:</h1><ol><li>"+data.librosPublicados+"</li></ol>";
+                    var librosPublicado = "<h1>"+data.nombre+"</h1><h1>Libros publicados:</h1><p>"+data.librosPublicados+"</p>";
 
-                    var premios = "<h1>Premios que llevan su nombre:</h1><ul><li>"+data.premiosGanados+"</li></ul>";
+                    var premios = "<h3>Premios que llevan su nombre:</h3><ul><li>"+data.premiosGanados+"</li></ul>";
 
-                    var infoAutors = "<p>País nacimineto: "+data.paisNacimiento+"</p><p>Fecha de nacimiento: "+data.fechaNacimiento+"</p><p>Genero del autor: "+data.generoDelAutor+"</p><p>Fecha de defunción: "+data.fechaDeDefuncion+"</p>";
+                    var infoAutors = "<h3>País nacimineto: </h3><p>"+data.paisNacimiento+"</p><h3>Fecha de nacimiento:</h3><p> "+data.fechaNacimiento+"</p><h3>Genero del autor:</h3><p> "+data.generoDelAutor+"</p><h3>Fecha de defunción:</h3><p> "+data.fechaDeDefuncion+"</p>";
         
                     document.getElementById("portadaDelAutor").insertAdjacentHTML("beforeend", portadaAutor);
 
