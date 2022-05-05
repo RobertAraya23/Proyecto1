@@ -11,18 +11,7 @@
   --pastel: #F2D2B3;
 }
 
-.container{
-  display: flex;
-  flex-wrap: wrap; 
-  background-color: var(--pastel);   
-}
 
-.container2{
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--cafe);  
-}
 
 .carrito{
   width: 50px;
@@ -198,6 +187,7 @@ p{
   padding-bottom: 30px;
   background-color: var(--cafe);
   color: white;
+  margin-bottom: 10px;
 }
 
 .subEncabezado h1{
@@ -223,4 +213,32 @@ body {
 }
 table{
   font-size: 14px;
+}
+
+.containerTarjetas{
+  display: flex;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap; 
+  background-color: var(--pastel);   
+}
+
+.container2{
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--cafe);  
+  flex-basis: 30%;
+  padding-left: 10px;
+}
+
+.container2 h2{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.container3 {
+  flex-basis: 80%;
 }
