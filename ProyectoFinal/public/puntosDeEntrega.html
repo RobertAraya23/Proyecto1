@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="editPerfilLibro.css">
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="headerAdmin.css">
     <title>Editar puntos de entrega</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
@@ -29,74 +29,22 @@
                 <h1>El bazar de <span> las Sorpresas</span> </h1>
             </div>
     
+            <div class="menuLinksAdmin" >
     
     
-            <!--busqueda, carrito, menu (derecha arriba)-->
-            <div class="links">
-                <p>
-                    <a href="home.html">Bienvenido al bazar de las sorpresas</a>
-                    <i class="arrow right"></i>
-                    <a href="registro.html">Registrarse</a>
-                    <i class="arrow right"></i>
-                    <a href="inicioSecion.html">Iniciar sesión</a>
-                </p>
-                
-                <div >
-                    
-    
-    
-                    <!--BUSQUEDA-->
-    
-                    
-                    <input class="barraBusqueda" type="text" id="resultadoBusqueda" placeholder="Digite lo que desea buscar.....................">  
-                    <div>
-                        <button class="button" id="busquedaAutor" type="button" onclick="location.href = 'resultadoDeBusquedaAutor.html?nombreAutor='+getElementById('resultadoBusqueda').value">Buscar por autor</button>
-    
-                        <button class="button" id="busqueda" type="button" onclick="location.href = 'resultadoDeBusqueda.html?nombre='+getElementById('resultadoBusqueda').value">Buscar por nombre</button>
-    
-                        <button class="button" id="busquedaGenero" type="button" onclick="location.href = 'resultadoDeBusquedaGenero.html?genero='+getElementById('resultadoBusqueda').value">Buscar por genero</button>
-                    
-                        <a href="carritoCompras.html">
-                            <svg class="iconos" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <circle cx="6" cy="19" r="2" />
-                                <circle cx="17" cy="19" r="2" />
-                                <path d="M17 17h-11v-14h-2" />
-                                <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                                <path d="M15 6h6m-3 -3v6" />
-                            </svg>
-                        </a>
-        
-                        <a href="editarPerfil.html">
-                            <svg class="iconos" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <circle cx="12" cy="7" r="4" />
-                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                              </svg>
-                        </a>
-                    
-                    </div>
-                    
-    
-    
-    
-    
-                    
-    
-                </div>
-    
-                <div class="menu">
-                    <p>
-                        <a href="catalogolibros.html">Catálogo libros</a>
-                        <a href="landingPageProducto.html">Nuestra empresa</a>
-                        <a href="landingPageEquipo.html">Neon Team</a>
-                        
-                    </p>
-                </div>
+                <a href="editOrdenes.html">Ver pedidos</a><br>
+                <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+                <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+                <a href="reportesYPuntos.html">Reportes</a><br>
+                <a href="editOrdenes.html">Editar ordenes </a><br>
+                <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+                <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
+                <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
+                <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
+                <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br>          
     
     
             </div>
-    
     
         </div>
         <div class="linea_encabezado"></div>
@@ -107,22 +55,7 @@
 <div class="subEncabezado">
     
     <h1>Catalogo de puntos de entrega</h1>
-    
-
-    <div class="linea_encabezado"></div>
-    
-    
-
-    <a href="editOrdenes.html">Ver pedidos</a><br>
-    <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
-    <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
-    <a href="reportesYPuntos.html">Reportes</a><br>
-    <a href="editOrdenes.html">Editar ordenes </a><br>
-    <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
-    <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
-    <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
-    <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
-    <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br>
+  
 </div>
 
 
@@ -133,7 +66,7 @@
 
 <div class="backgroundAbajo">
 <div class="tabla">
-    <table border="1" id="tablaPuntoDeEntrega" >
+    <table style = "margin: 0 auto;" border="1" id="tablaPuntoDeEntrega" >
             <tr>
                 <td>provincia</td>
                 <td>cantón</td>
@@ -159,7 +92,7 @@
         <input type="text" id="long" placeholder="long" />
         <input type="text" id="Direccion" placeholder="Direccion" />
         
-        <button type="button"  onclick="insertarPunto()">Inserta Libro</button>
+        <button type="button"  onclick="insertarPunto()">Insertar Punto de Entrega</button>
         </form>
     </div>
 </div>

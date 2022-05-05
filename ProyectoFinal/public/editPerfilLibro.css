@@ -182,6 +182,7 @@ p{
   background-image: url("img/fon2.jpg");
   background-clip: border-box;
   
+  
 
 }
 
@@ -206,4 +207,17 @@ color: white;
 .searchBar{
   padding: 50px;
   text-align: center;
+}
+
+table tr:nth-child(odd) {background-color: #5B2924;}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  background: #000 url("gradient.gif") bottom left repeat-x;
+  color: #F2EADC;
+}
+
+body {
+  background-color: #F2D2B3;
 }
