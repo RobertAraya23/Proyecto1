@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="editPerfilLibro.css">
+    <link rel="stylesheet" href="headerAdmin.css">
+    <title>Editar Usuario</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body onload="cargarTabla()">
+
+    <div class="container">
+
+        <!--logo y nombre de empresa (izquirda arriba)-->
+        <div class="busqueda">
+
+            <img class="img_logo" src="img/logoNeo.png">
+
+        </div>
+        <div class="logo titulo">
+
+            <h1>El bazar de <span> las Sorpresas</span> </h1>
+        </div>
+
+        <div class="menuLinksAdmin" >
+
+
+            <a href="editOrdenes.html">Ver pedidos</a><br>
+            <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+            <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+            <a href="reportesYPuntos.html">Reportes</a><br>
+            <a href="editOrdenes.html">Editar ordenes </a><br>
+            <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+            <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
+            <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
+            <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
+            <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br> 
+            <a href="editarUsuario.html">Editor de Usuarios</a><br>     
+            <a href="inicioSecion.html">Cerrar Sesión</a><br>       
+
+
+        </div>
+
+    </div>
+    <div class="linea_encabezado"></div>
+
+        <!--End Header-->
+
+
+
+    <div class="subEncabezado">
+
+        <h1>Pedidos Realizados</h1>
+
+    </div>
+
+
+    <div class="searchBar">
+        <h1>Busqueda por Mes:</h1>
+        <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por Mes">
+    </div>
+
+    <div class="backgroundAbajo">
+        <div class="tabla">
+            <table style = "margin: 0 auto;"border="1" id="tablaDatosUsuario">
+                <tr>
+                    <td>Id Pedido</td>
+                    <td>Mes de la Compra</td>
+                    <td>Nombre del Libro</td>
+                    <td>Precio</td>
+                    <td>Fecha de la Compra </td>
+
+                </tr>
+            </table>
+            <br />
+        </div>
+    </div>
+
+    <script>
+
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+            console.log("This is working")
+            //inicializando variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tablaDatosUsuario");
+            tr = table.getElementsByTagName("tr")
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none"
+                    }
+                }
+
+            }
+        }
+
+
+        function cargarTabla() {
+            fetch("http://localhost:8080/pedidosUsuarios/")
+                .then(
+                    function (response) {
+                        return response.json();
+                    }
+                )
+                .then(
+                    function (json) {
+                        for (var cont = 0; json.length > cont; cont++) {
+
+                            var linea = "<tr><td>" + json[cont]._id + "</td><td>" + json[cont].mesCompra + "</td><td>" + json[cont].nombreLibro + "</td><td>" + json[cont].precio + "</td><td>" + json[cont].fechaCompra + "</td></tr>";
+
+                            document.getElementById("tablaDatosUsuario").insertAdjacentHTML("beforeend", linea);
+                        }
+                    }
+                )
+            
+        }
+
+    </script>
+</body>
+
+</html>

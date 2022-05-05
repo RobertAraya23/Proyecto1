@@ -156,20 +156,20 @@
 
 function cargarTabla() {
             fetch("http://localhost:8080/libros/")
-            .then(
-                function(response){
-                return response.json();
-                }
-            )
-            .then (
-                function(json) {
-                for(var cont = 0; json.length > cont; cont++) {
+                .then(
+                    function(response){
+                    return response.json();
+                    }
+                )
+                .then (
+                    function(json) {
+                    for(var cont = 0; json.length > cont; cont++) {
+                        
+                        var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].nombreAutor+"</td><td>"+json[cont].idAutor+"</td><td>"+json[cont].descuento+"%</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                     
-                    var linea = "<tr><td>"+json[cont].nombre+"</td><td>"+json[cont].disponibilidad+"</td><td>"+json[cont].fechaDePublicacion+"</td><td>"+json[cont].formato+"</td><td>"+json[cont].genero+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].resenna+"</td><td>"+json[cont].imagen+"</td><td>"+json[cont].ism+"</td><td>"+json[cont].editorial+"</td><td>"+json[cont].premiosEnHonor+"</td><td>"+json[cont].nombreAutor+"</td><td>"+json[cont].idAutor+"</td><td>"+json[cont].descuento+"%</td><td><a href='actualizarLibro.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
-                   
-                    document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
-                }
-                }
+                        document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+                    }
+                    }
             ) 
             }
         
