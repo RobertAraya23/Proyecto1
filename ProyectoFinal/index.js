@@ -30,6 +30,8 @@ app.use('/socioComercial', require('./api/sociosComerciales.js'));
 app.use('/puntosDeEntrega', require('./api/puntosDeEntrega.js'));
 app.use('/orden', require('./api/ordenes.js'));
 app.use('/pedido', require('./api/pedidosUsuario.js'));
+app.use('/reporteAdmin', require('./api/reportesAdmin.js'));
+
 
 
 

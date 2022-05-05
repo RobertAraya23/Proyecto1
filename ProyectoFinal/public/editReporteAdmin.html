@@ -1,0 +1,247 @@
+<html>
+
+
+<head>
+    
+    <link rel="stylesheet" href="editPerfilLibro.css">
+    <link rel="stylesheet" href="headerAdmin.css">
+    <title>Editar perfil libro</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body onload="cargarTabla()">
+
+    
+    <div class="container">
+
+        <!--logo y nombre de empresa (izquirda arriba)-->
+        <div class="busqueda">
+
+            <img class="img_logo" src="img/logoNeo.png">
+
+        </div>
+        <div class="logo titulo">
+
+            <h1>El bazar de <span> las Sorpresas</span> </h1>
+        </div>
+
+        <div class="menuLinksAdmin" >
+
+
+            <a href="editOrdenes.html">Ver pedidos</a><br>
+            <a href="solicitarClienteFrecuente.html">Tarjeta Cliente Frecuente Modificaciones</a><br>
+            <a href="editPuntajeGanado.html">Modificar Puntaje ganado por compras</a><br>
+            <a href="reportesYPuntos.html">Reportes</a><br>
+            <a href="editOrdenes.html">Editar ordenes </a><br>
+            <a href="descuentosIva.html">Porcentaje de descuento y el iva </a><br>
+            <a href="edicionPerfilLibro.html">Editor de catálogo de libros </a><br>
+            <a href="edicionPerfilAutor.html">Editor de catálogo de Autores</a><br>
+            <a href="sociosComerciales.html">Editor de catálogo de socios comerciales</a><br>
+            <a href="puntosDeEntrega.html">Editor de catálogo de puntos de entrega</a><br>   
+            <a href="editarUsuario.html">Editor de Usuarios</a><br>  
+            <a href="inicioSecion.html">Cerrar Sesión</a><br> 
+             
+
+
+
+        </div>
+
+    </div>
+    <div class="linea_encabezado"></div>
+    <!--END HEADER-->
+<!--cuerpo de la pagina-->
+    
+
+<div class="subEncabezado">
+    
+    <h1>Catalogo de libros</h1>
+    
+    
+</div>
+
+
+<div class="searchBar">
+    <h1>Busqueda por nombre:</h1>
+    <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por nombre">
+</div>
+
+<div class="backgroundAbajo">
+<div class="tabla">
+    
+    <div >
+        <table style="margin:0 auto; font-size: 24px;" border="1" id="tablaLibro" >
+                <tr>
+                    <td>ID compra</td>
+                    <td>Mes compra</td>
+                    <td>Nombre compra</td>
+                    <td>precio</td>
+                    <td>Fecha compra</td>
+                    <td>Actualizar</td>
+                    
+                </tr>
+            </table>
+    </div>
+        <br/>
+
+        <div class="subEncabezado">
+            <h1>Insertar libro</h1>
+        </div>
+
+
+        <form class="formularioIncertar"> 
+        <input type="text" id="mesCompra" placeholder="Mes de la Compra" />
+        <input type="text" id="nombreLibro" placeholder="Nombre del Libro" />
+        <input type="number" id="precio" placeholder="Precio" />
+        <input type="text" id="fechaCompra" placeholder="Fecha de la Compra" />
+        
+        
+        <button type="button"  onclick="insertarLibro()">Insertar Libro</button>
+        </form>
+    </div>
+</div>
+
+
+
+    <script>
+
+
+
+
+
+    function tableSearch(){
+        let input, filter, table, tr, td, txtValue;
+        console.log("This is working")
+        //inicializando variables
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tablaLibro");
+        tr = table.getElementsByTagName("tr")
+
+        for(let i = 0; i<tr.length; i++){
+            td=tr[i].getElementsByTagName("td")[0];
+            if(td){
+                txtValue= td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                }
+                else{
+                    tr[i].style.display = "none"
+                }
+            }
+
+        }
+    }
+
+
+function cargarTabla() {
+            fetch("http://localhost:8080/reporteAdmin/")
+                .then(
+                    function(response){
+                    return response.json();
+                    }
+                )
+                .then (
+                    function(json) {
+                    for(var cont = 0; json.length > cont; cont++) {
+                        
+                        var linea = "<tr><td>"+json[cont]._id+"</td><td>"+json[cont].mesCompra+"</td><td>"+json[cont].nombreLibro+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].fechaCompra+"</td><td><a href='actualizarReporteAdmin.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
+                    
+                        document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+                    }
+                    }
+            ) 
+            }
+        
+        function insertarLibro() {
+
+            var mesCompra = document.getElementById("mesCompra")
+            var precio = document.getElementById("precio")
+            var fechaCompra = document.getElementById("fechaCompra")
+            var nombreLibro = document.getElementById("nombreLibro")
+            
+
+            
+
+            if( mesCompra.value == ""){
+                    alert("Error: Ingrese un mes para la compra")
+                    
+                    return false
+                } 
+                if( precio.value == ""){
+                alert("Error: Ingrese un precio para la compra")
+                return false
+            }
+
+                if( fechaCompra.value == ""){
+                alert("Error: Ingrese una fecha de la compra")
+                return false
+            }
+
+            if( nombreLibro.value == ""){
+                alert("Error: Ingrese el nombre de un libro")
+                return false
+            }
+
+            
+
+            alert("Los datos ingresados se han guardado exitosamente")
+        
+
+            var datos = {
+            mesCompra: document.getElementById("mesCompra").value,
+            precio: document.getElementById("precio").value,
+            fechaCompra: document.getElementById("fechaCompra").value,
+            nombreLibro: document.getElementById("nombreLibro").value,
+            
+            }
+            
+
+
+            console.log(datos)
+
+            fetch("http://localhost:8080/reporteAdmin/insertar", {
+            method: 'POST',
+            body: JSON.stringify(datos),
+            headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                return response.json();
+                }
+            ).then(
+
+                function(json){
+
+                    console.log("llegamos");
+
+                var linea = "<tr><td>"+json._id+"</td><td>"+json.mesCompra+"</td><td>"+json.precio+"</td><td>"+json.fechaCompra+"</td><td>"+json.nombreLibro+"</td><td><a href='actualizarReporteAdmin.html?id="+json._id+"'>Actualizar</a></td></tr>";
+
+                console.log(linea);
+
+                document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
+            }
+            )
+        }
+        
+
+
+            //validaciones
+        
+
+        
+        function buscar(){
+    
+            var search = { busqueda : document.getElementById("resultadoBusqueda").value}
+            console.log(search)
+
+
+            document.getElementById("content").innerHTML='<object type="type/html" data="home.html" ></object>';
+        }
+    </script>
+</body>
+
+
+</html>
