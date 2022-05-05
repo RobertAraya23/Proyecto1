@@ -52,7 +52,7 @@ router.post('/insertarDatosUsuario', function(req, res) {
     var contrasenna = req.body.contrasenna;
     var puntaje = req.body.puntaje
     // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-    datosUsuario.findOneAndUpdate({nombre: nombre},{$set:{apellido:apellido, fechaDeNacimiento:fechaDeNacimiento, correoElectronico:correoElectronico, contrasenna:contrasenna, puntaje:puntaje}}, {useFindAndModify: false, new: true}, function (err, doc) {
+    datosUsuario.findOneAndUpdate({correoElectronico:correoElectronico},{$set:{apellido:apellido, fechaDeNacimiento:fechaDeNacimiento, nombre: nombre, contrasenna:contrasenna, puntaje:puntaje}}, {useFindAndModify: false, new: true}, function (err, doc) {
       res.json(doc);
     });
   });

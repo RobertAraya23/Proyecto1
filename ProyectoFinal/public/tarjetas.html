@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="editPerfilLibro.css">
+    <link rel="stylesheet" href="header.css">
+    <title>Editar Usuario</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body onload="cargarTabla()">
+    
+    <div class="container">
+
+        <!--logo y nombre de empresa (izquirda arriba)-->
+        <div class="busqueda">
+
+            <img class="img_logo" src="img/logoNeo.png">
+
+        </div>
+        <div class="logo titulo">
+
+            <h1>El bazar de <span> las Sorpresas</span> </h1>
+        </div>
+
+
+
+        <!--busqueda, carrito, menu (derecha arriba)-->
+        <div class="links">
+            <p>
+                <a href="home.html">Bienvenido al bazar de las sorpresas</a>
+                <i class="arrow right"></i>
+                <a href="registro.html">Registrarse</a>
+                <i class="arrow right"></i>
+                <a href="inicioSecion.html">Iniciar sesión</a>
+            </p>
+            
+            <div >
+                
+
+
+                <!--BUSQUEDA-->
+
+                
+                <input class="barraBusqueda" type="text" id="resultadoBusqueda" placeholder="Digite lo que desea buscar.....................">  
+                <div>
+                    <button class="button" id="busquedaAutor" type="button" onclick="location.href = 'resultadoDeBusquedaAutor.html?nombreAutor='+getElementById('resultadoBusqueda').value">Buscar por autor</button>
+
+                    <button class="button" id="busqueda" type="button" onclick="location.href = 'resultadoDeBusqueda.html?nombre='+getElementById('resultadoBusqueda').value">Buscar por nombre</button>
+
+                    <button class="button" id="busquedaGenero" type="button" onclick="location.href = 'resultadoDeBusquedaGenero.html?genero='+getElementById('resultadoBusqueda').value">Buscar por genero</button>
+                
+                    <a href="carritoCompras.html">
+                        <svg class="iconos" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus carrito" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="6" cy="19" r="2" />
+                            <circle cx="17" cy="19" r="2" />
+                            <path d="M17 17h-11v-14h-2" />
+                            <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                            <path d="M15 6h6m-3 -3v6" />
+                        </svg>
+                    </a>
+    
+                    <a href="editarPerfil.html">
+                        <svg class="iconos" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                          </svg>
+                    </a>
+                
+                </div>
+                
+
+
+
+
+                
+
+            </div>
+
+            <div class="menu">
+                <p>
+                    <a href="catalogolibros.html">Catálogo libros</a>
+                    <a href="landingPageProducto.html">Nuestra empresa</a>
+                    <a href="landingPageEquipo.html">Neon Team</a>
+                    
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="linea_encabezado"></div>
+
+        <!--End Header-->
+
+
+
+    <div class="subEncabezado">
+
+        <h1>Pedidos Realizados</h1>
+
+    </div>
+
+    <div class="searchBar">
+        <h1>Busqueda por Mes:</h1>
+        <input type="text" id="myInput" onkeyup="tableSearch()" placeholder="Busqueda por Mes">
+    </div>
+
+    <div class="backgroundAbajo">
+        <div class="tabla">
+            <table style = "margin: 0 auto;"border="1" id="tablaDatosUsuario">
+                <tr>
+                    <td>Id Pedido</td>
+                    <td>Mes de la Compra</td>
+                    <td>Nombre del Libro</td>
+                    <td>Precio</td>
+                    <td>Fecha de la Compra </td>
+                    <td>Puntos Ganados </td>
+                    <td>Puntos Usados </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+    </div>
+
+    <script>
+
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+            console.log("This is working")
+            //inicializando variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tablaDatosUsuario");
+            tr = table.getElementsByTagName("tr")
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none"
+                    }
+                }
+
+            }
+        }
+
+
+        function cargarTabla() {
+            fetch("http://localhost:8080/pedido/")
+                .then(
+                    function (response) {
+                        return response.json();
+                    }
+                )
+                .then(
+                    function (json) {
+                        for (var cont = 0; json.length > cont; cont++) {
+
+                            var linea = "<tr><td>" + json[cont]._id + "</td><td>" + json[cont].mesCompra + "</td><td>" + json[cont].nombreLibro + "</td><td>" + json[cont].precio + "</td><td>" + json[cont].fechaCompra + "</td><td>" + json[cont].puntosGanados + "</td><td>" + json[cont].puntosUsados + "</td></tr>";
+
+                            document.getElementById("tablaDatosUsuario").insertAdjacentHTML("beforeend", linea);
+                        }
+                    }
+                )
+            
+        }
+
+    </script>
+</body>
+
+</html>
