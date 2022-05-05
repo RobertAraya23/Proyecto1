@@ -6,6 +6,8 @@ var pedidoUsuarioSchema = mongoose.Schema({
   nombreLibro: String,
   precio: Number,
   fechaCompra: String,
+  puntosGanados: Number,
+  puntosUsados: Number
   
 });
 

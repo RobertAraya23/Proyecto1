@@ -121,7 +121,8 @@
                     <td>Nombre del Libro</td>
                     <td>Precio</td>
                     <td>Fecha de la Compra </td>
-
+                    <td>Puntos Ganados </td>
+                    <td>Puntos Usados </td>
                 </tr>
             </table>
             <br />
@@ -166,7 +167,7 @@
                     function (json) {
                         for (var cont = 0; json.length > cont; cont++) {
 
-                            var linea = "<tr><td>" + json[cont]._id + "</td><td>" + json[cont].mesCompra + "</td><td>" + json[cont].nombreLibro + "</td><td>" + json[cont].precio + "</td><td>" + json[cont].fechaCompra + "</td></tr>";
+                            var linea = "<tr><td>" + json[cont]._id + "</td><td>" + json[cont].mesCompra + "</td><td>" + json[cont].nombreLibro + "</td><td>" + json[cont].precio + "</td><td>" + json[cont].fechaCompra + "</td><td>" + json[cont].puntosGanados + "</td><td>" + json[cont].puntosUsados + "</td></tr>";
 
                             document.getElementById("tablaDatosUsuario").insertAdjacentHTML("beforeend", linea);
                         }
