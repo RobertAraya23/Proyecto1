@@ -27,16 +27,18 @@ router.post('/buscar', function(req, res) {
 
 
 router.post('/actualizar', function(req, res) {
-    var id = req.body._id;
+    
     var mesCompra = req.body.mesCompra;
     var nombreLibro = req.body.nombreLibro;
     var precio = req.body.precio;
     var fechaCompra = req.body.fechaCompra;
+    var puntosGanados = req.body.puntosGanados;
+    var puntosUsados = req.body.puntosUsados;
     
 
 
   // findOneAndUpdate - Filtro - Valores - Opciones - Función anónima
-  reporteAdmin.findOneAndUpdate({id: id},{$set:{mesCompra:mesCompra, nombreLibro:nombreLibro, precio:precio, fechaCompra:fechaCompra }}, {useFindAndModify: false, new: true}, function (err, doc) {
+  reporteAdmin.findOneAndUpdate({puntosGanados: puntosGanados},{$set:{ mesCompra:mesCompra, nombreLibro:nombreLibro, precio:precio, fechaCompra:fechaCompra, puntosGanados:puntosGanados, puntosUsados:puntosUsados   }}, {useFindAndModify: false, new: true}, function (err, doc) {
     res.json(doc);
   });
 });
@@ -49,6 +51,8 @@ router.post('/insertar', function(req, res) {
     precio: req.body.precio,
     fechaCompra: req.body.fechaCompra,
     nombreLibro: req.body.nombreLibro,
+    puntosGanados : req.body.puntosGanados,
+    puntosUsados : req.body.puntosUsadosx   
     });
 
     reporteNuevo.save()

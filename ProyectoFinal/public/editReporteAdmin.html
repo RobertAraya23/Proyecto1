@@ -80,6 +80,8 @@
                     <td>Nombre compra</td>
                     <td>precio</td>
                     <td>Fecha compra</td>
+                    <td>Puntos ganados</td>
+                    <td>Puntos usados</td>
                     <td>Actualizar</td>
                     
                 </tr>
@@ -93,11 +95,13 @@
 
 
         <form class="formularioIncertar"> 
-        <input type="text" id="mesCompra" placeholder="Mes de la Compra" />
-        <input type="text" id="nombreLibro" placeholder="Nombre del Libro" />
+        <input type="text" id="mesCompra" placeholder="Mes de la compra" />
+        <input type="text" id="nombreLibro" placeholder="Nombre del libro" />
         <input type="number" id="precio" placeholder="Precio" />
-        <input type="text" id="fechaCompra" placeholder="Fecha de la Compra" />
-        
+        <input type="text" id="fechaCompra" placeholder="Fecha de la compra" />
+        <input type="number" id="puntosGanados" placeholder="Puntos ganados" />
+        <input type="number" id="puntosUsados" placeholder="Puntos usados" />
+
         
         <button type="button"  onclick="insertarLibro()">Insertar Libro</button>
         </form>
@@ -148,7 +152,7 @@ function cargarTabla() {
                     function(json) {
                     for(var cont = 0; json.length > cont; cont++) {
                         
-                        var linea = "<tr><td>"+json[cont]._id+"</td><td>"+json[cont].mesCompra+"</td><td>"+json[cont].nombreLibro+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].fechaCompra+"</td><td><a href='actualizarReporteAdmin.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
+                        var linea = "<tr><td>"+json[cont]._id+"</td><td>"+json[cont].mesCompra+"</td><td>"+json[cont].nombreLibro+"</td><td>"+json[cont].precio+"</td><td>"+json[cont].fechaCompra+"</td><td>"+json[cont].puntosGanados+"</td><td>"+json[cont].puntosUsados+"</td><td><a href='actualizarReporteAdmin.html?id="+json[cont]._id+"'>Actualizar</a></td></tr>";
                     
                         document.getElementById("tablaLibro").insertAdjacentHTML("beforeend", linea);
                     }
@@ -162,6 +166,8 @@ function cargarTabla() {
             var precio = document.getElementById("precio")
             var fechaCompra = document.getElementById("fechaCompra")
             var nombreLibro = document.getElementById("nombreLibro")
+            var puntosUsados = document.getElementById("puntosUsados")
+            var puntosGanados = document.getElementById("puntosGanados")
             
 
             
@@ -171,6 +177,7 @@ function cargarTabla() {
                     
                     return false
                 } 
+
                 if( precio.value == ""){
                 alert("Error: Ingrese un precio para la compra")
                 return false
@@ -186,6 +193,13 @@ function cargarTabla() {
                 return false
             }
 
+            if( puntosGanados.value == ""){
+                    alert("Error: Ingrese un mes para la compra")
+                    
+                    return false
+                }
+
+               
             
 
             alert("Los datos ingresados se han guardado exitosamente")
@@ -196,6 +210,9 @@ function cargarTabla() {
             precio: document.getElementById("precio").value,
             fechaCompra: document.getElementById("fechaCompra").value,
             nombreLibro: document.getElementById("nombreLibro").value,
+            puntosGanados: document.getElementById("puntosGanados").value,
+            puntosUsados: document.getElementById("puntosUsados").value
+
             
             }
             
@@ -217,7 +234,7 @@ function cargarTabla() {
 
                     console.log("llegamos");
 
-                var linea = "<tr><td>"+json._id+"</td><td>"+json.mesCompra+"</td><td>"+json.precio+"</td><td>"+json.fechaCompra+"</td><td>"+json.nombreLibro+"</td><td><a href='actualizarReporteAdmin.html?id="+json._id+"'>Actualizar</a></td></tr>";
+                var linea = "<tr><td>"+json._id+"</td><td>"+json.mesCompra+"</td><td>"+json.precio+"</td><td>"+json.fechaCompra+"</td><td>"+json.nombreLibro+"</td><td>"+json.puntosGanados+"</td><td>"+json.puntosUsados+"</td><td><a href='actualizarReporteAdmin.html?id="+json._id+"'>Actualizar</a></td></tr>";
 
                 console.log(linea);
 

@@ -6,6 +6,8 @@ var reporteAdminSchema = mongoose.Schema({
     nombreLibro: String,
     precio: Number,
     fechaCompra: String,
+    puntosGanados: Number,
+    puntosUsados: Number
 });
 
 module.exports = mongoose.model('reporteAdmin', reporteAdminSchema, 'reportesAdmin');

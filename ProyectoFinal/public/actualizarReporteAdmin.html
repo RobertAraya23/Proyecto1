@@ -54,10 +54,14 @@
       
     </div>
     <form class="formularioIncertar"> 
-        <input type="text" id="mesCompra" placeholder="mesCompra" />
+
+        <input type="text" id="mesCompra" placeholder="mes de compra" />
         <input type="text" id="precio" placeholder="precio" />
-        <input type="text" id="fechaCompra" placeholder="fechaCompra" />
-        <input type="text" id="nombreLibro" placeholder="nombreLibro" />
+        <input type="text" id="fechaCompra" placeholder="fecha de compra" />
+        <input type="text" id="nombreLibro" placeholder="nombre del libro" />
+        <input type="text" id="puntosGanados" placeholder="Puntos ganados" />
+        <input type="text" id="puntosUsados" placeholder="Puntos usados" />
+
         <button type="button"  onclick="actualizarAutor()">Actualizar Libro</button>
         </form>
     
@@ -70,11 +74,14 @@ function actualizarAutor(){
             nombreLibro: document.getElementById("nombreLibro").value,
             precio: document.getElementById("precio").value,
             fechaCompra: document.getElementById("fechaCompra").value,
+            puntosGanados: document.getElementById("puntosGanados").value,
+            puntosUsados: document.getElementById("puntosUsados").value
+
             
           
             }
 
-
+            console.log(datos)
             
 
             fetch("http://localhost:8080/reporteAdmin/actualizar", {
@@ -124,6 +131,9 @@ function cargarTabla() {
               document.getElementById("precio").value = json.precio;
               document.getElementById("fechaCompra").value = json.fechaCompra;
               document.getElementById("nombreLibro").value = json.nombreLibro;
+              document.getElementById("puntosGanados").value = json.puntosGanados;
+              document.getElementById("puntosUsados").value = json.puntosUsados;
+
             }
           ) 
       }
